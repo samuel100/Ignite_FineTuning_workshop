@@ -1,7 +1,7 @@
 # Introduction
 
 > [!NOTE]
->This is a **75-minute** workshop that will give you a hands-on introduction to the core concepts and best practices for interacting with OpenAI models.
+>This is a **10-minute** lab that will give you a hands-on introduction to setting up the environment for the workshop.
 
 ## Learning Objectives
 
