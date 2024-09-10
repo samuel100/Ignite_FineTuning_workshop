@@ -2,16 +2,16 @@
 
 Welcome,
 
-> The following resources are intended for a presenter to learn and deliver the session.
+> [!NOTE]
+>This repository contains the resources needed to deliver the session "Fine-Tuning NLP Models with Microsoft Olive" at Microsoft Ignite 2022. The following resources are intended for a presenter to learn and deliver the session.
 
 We're glad you are here and look forward to your delivery of this amazing content. As an experienced presenter, we know you know HOW to present so this guide will focus on WHAT you need to present. It will provide you a full run-through of the presentation created by the presentation design team. 
 
 Along with the video of the presentation, this document will link to all the assets you need to successfully present including PowerPoint slides and demo instructions &
 code.
 
-1.Read document in its entirety.
-<!-- 1.  Watch the video presentation -->
-1.Ask questions of the Lead Presenter
+> [!NOTE]
+> Read document in its entirety, watch the video presentation, ask questions of the Lead Presenter
 
 ## File Summary
 
@@ -34,8 +34,7 @@ The [slides](https://aka.ms/...) have presenter notes in each part of the sessio
 
 ### Timing
 
-> [NOTE!]
->  For workshops, Q&A usually happens as the workshop is running. Might scrape these 5 minutes in favor of more hands-on time.​
+For workshops, Q&A usually happens as the workshop is running. Might scrape these 5 minutes in favor of more hands-on time.​
 
 | Time        | Description
 --------------|-------------

@@ -1,15 +1,30 @@
 # Introduction
 
 > [!NOTE]
->This is a **75-minute** workshop that will give you a hands-on introduction to the core concepts and best practices for interacting with OpenAI models.
+>This is a **20-minute** workshop that will give you a hands-on introduction to the core concepts of fine tuning with Microsoft Olive using local GPU resources.
 
 ## Learning Objectives
 
 By the end of this workshop, you should be able to:
-// This is a placeholder for the learning objectives. The objectives should be a bulleted list of the skills that the learner will acquire by completing the lab.
+
+- Undertake fine-tuning of a pre-trained model
+- Use Local GPU resources for fine-tuning
 
 ## Lab Scenario
 // This is a placeholder for the lab scenario. The scenario should be a brief description of the lab content.
 
 ## Lab Outline
-//// This is a placeholder for the lab outline. The outline should be a bulleted list of the lab sections. Each section should be a link to the corresponding lab markdown file.
+This repo provides a tutorial on how to get started with Olive finetuning. You'll need the following:
+
+- An Nvidia GPU device
+- A Python installation
+
+## Installation
+
+We recommend creating a new Python environment:
+
+```bash
+cd Lab7_Local_Olive
+conda create -n -y olive-ai python=3.11
+conda activate olive-ai
+pip install -r requirements.txt
