@@ -10,7 +10,7 @@ This repo provides a tutorial on how to get started with Olive finetuning. You'l
 We recommend creating a new Python environment:
 
 ```bash
-cd olive-workshop/notebooks
+cd Lab3_Simple_Finetuning/notebooks
 conda create -n -y olive-ai python=3.11
 conda activate olive-ai
 pip install -r requirements.txt
