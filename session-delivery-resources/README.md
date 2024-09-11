@@ -48,7 +48,7 @@ For workshops, Q&A usually happens as the workshop is running. Might scrape thes
 240:00 - 255:00 |Q&A and Wrap-Up (15 minutes)
 Open floor for questions Recap of key takeaways Next steps and additional resources
 
-## Workshop Instructions on SKillable
+## Workshop Instructions on Skillable Lab On Demand
 
 [You can get a high level overview of the tools and how we will be using them here](/lab/Skillable%20Workshop%20Instructions/01_Set_up.md).
 
