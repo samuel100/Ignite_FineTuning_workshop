@@ -12,7 +12,7 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 
 ## Session Overview 
 
-**1. Introduction and Overview (30 minutes)**
+**1. Introduction and Overview (15 minutes)**
 - Welcome and objectives
 - Overview of Microsoft Olive
 - Importance of fine-tuning in NLP
@@ -32,21 +32,26 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 - Data augmentation strategies
 - Hands-on exercise: Implementing advanced techniques
 
-**5. Optimizing Performance (30 minutes)**
+**5. Optimizing Performance (15 minutes)**
 - Monitoring and evaluating model performance
 - Using Microsoft Olive for optimization
 - Hands-on exercise: Performance tuning
 
-**6. Deploying Fine-Tuned Models (30 minutes)**
+**6. Deploying Fine-Tuned Models (15 minutes)**
 - Deployment strategies on Azure
 - Local deployment considerations
 - Hands-on exercise: Deploying a model
 
-**7. Consumption of the Model (15 minutes)**
+**7. Evaluation of Fine-Tuned Models (15 minutes)**
+- Evaluating the fine-tuned model
+- Responsible AI considerations
+- Hands-on exercise: Evaluating the model
+
+**8. Consumption of the Model (15 minutes)**
 - Using .NET Aspire Application to consumed the fine tuned model
 - Optimize the model for specific hardware
 
-**8. Q&A and Wrap-Up (15 minutes)**
+**9. Q&A and Wrap-Up (15 minutes)**
 - Open floor for questions
 - Recap of key takeaways
 - Next steps and additional resources
