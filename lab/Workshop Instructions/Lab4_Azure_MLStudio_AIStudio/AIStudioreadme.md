@@ -15,10 +15,7 @@ The lab scenario of this lab, you will fine-tune the GPT model using Azure AI St
 ## Lab Outline
 This lab consists of the following exercises:
 1. Fine-tune and Deploy the GPT model in Azure AI Studio
-
-
-
-The Azure AI Studio’s model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
+1. The Azure AI Studio’s model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
 
 In this exercise, you'll explore the model catalog in Azure AI Studio.
 
@@ -26,9 +23,10 @@ This exercise will take approximately **25** minutes.
 
 ## Create an Azure AI hub
 
-You need an Azure AI hub in your Azure subscription to host projects. You can either create this resource while creating a project, or provision it ahead of time (which is what we'll do in this exercise).
+You need an [Azure AI Studio hub](https://ai.azure.com) in your Azure subscription to host projects. You can either create this resource while creating a project, 
 
-1. In the **Management** section, select **All hubs**, then select **+ New hub**. Create a new hub with the following settings:
+1. Go to [Azure AI Studio](https://ai.azure.com)
+2. In the **Management** section, select **All hubs**, then select **+ New hub**. Create a new hub with the following settings:
     - **Hub name**: *A unique name*
     - **Subscription**: *Your Azure subscription*
     - **Resource group**: *Create a new resource group with a unique name, or select an existing one*
@@ -66,7 +64,7 @@ After the Azure AI hub has been created, it should look similar to the following
 
 An Azure AI hub provides a collaborative workspace within which you can define one or more *projects*. Let's create a project in your Azure AI hub.
 
-1. In Azure AI Studio, ensure you're in the hub you just created (you can verify your location by checking the path at the top of the screen).
+1. In [Azure AI Studio](https://ai.azure.com, ensure you're in the hub you just created (you can verify your location by checking the path at the top of the screen).
 1. Navigate to **All projects** using the menu on the left.
 1. Select **+ New project**.
 1. In the **Create a new project** wizard, create a project with the following settings:
