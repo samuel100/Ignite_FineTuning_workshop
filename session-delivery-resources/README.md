@@ -3,7 +3,8 @@
 Welcome,
 
 > [!NOTE]
->This repository contains the resources needed to deliver the session "Fine-Tuning NLP Models with Microsoft Olive" at Microsoft Ignite 2022. The following resources are intended for a presenter to learn and deliver the session.
+>This repository contains the resources needed to deliver the session "Fine-Tuning NLP Models with Microsoft Olive" at Microsoft Ignite 2024.
+> The following resources are intended for a presenter to learn and deliver the session.
 
 We're glad you are here and look forward to your delivery of this amazing content. As an experienced presenter, we know you know HOW to present so this guide will focus on WHAT you need to present. It will provide you a full run-through of the presentation created by the presentation design team. 
 
@@ -50,20 +51,19 @@ Open floor for questions Recap of key takeaways Next steps and additional resour
 
 ## Workshop Instructions on Skillable Lab On Demand
 
-[You can get a high level overview of the tools and how we will be using them here](/lab/Skillable%20Workshop%20Instructions/01_Set_up.md).
-
 | Section | Minutes | 
 -------------------------------------------------------------------------------------------------------|---------|
-|  [Lab1](/lab/Workshop%20Instructions/Lab1_Environment_Setup/readme.md) |       | 
-|  [Lab2](/lab/Workshop%20Instructions/Lab2_Data_Preparation/readme.md) |    |
-|  [Lab3](/lab/Workshop%20Instructions/Lab3_Simple_Finetuning/) |   | 
-|  [Lab4](/lab/Workshop%20Instructions/Lab4_AI_Studio/readme.md) |        | 
-|  [Lab5](/lab/Skillable%20Workshop%20Instructions/04_Multimodal_Interfaces.md) | | 
-|  [Lab6](/lab/Skillable%20Workshop%20Instructions/05_AI_Assistants.md) |    | 
-|  [Lab7](/lab/Skillable%20Workshop%20Instructions/06_Function_Calling.md) |  | 
-|  [Lab 8](/lab/Workshop%20Instructions/Lab8_Deploying_Models/readme.md) | |
-|  [Lab9](/lab/Workshop%20Instructions/Lab9_Evaluation/) | |
-|  [Lab10](/lab/Workshop%20Instructions/Lab10_Consumption/) | |
+|  [Lab1](/lab/Workshop%20Instructions/Lab1_Environment_Setup/readme.md) | Environment Setup      | 
+|  [Lab2](/lab/Workshop%20Instructions/Lab2_Data_Preparation/readme.md) |  Data Preperation  |
+|  [Lab3](/lab/Workshop%20Instructions/Lab3_Azure_AIStudio/readme.md) | Fine Tuning with Azure AI Studio  | 
+|  [Lab4](/lab/Workshop%20Instructions/Lab4_AI_MLStudio/readme.md) | Fine Tuning with Azure ML Studio       | 
+|  [Lab5](/lab/Workshop%20Instructions/Lab5_local_Cloud_MLStudio/readme.md) | Fine Tuning locally with Cloud Compute | 
+|  [Lab6](/lab/Workshop%20Instructions/Lab6_local_Cloud_Olive/readme.md) | Fine Tuning with Olive using Cloud Compute   | 
+|  [Lab7](/lab/Workshop%20Instructions/Lab7_Local_Olive/readme.md) | Fine Tuning with Olive using local GPU/CPU | 
+|  [Lab 8](/lab/Workshop%20Instructions/Lab8_Deploying_Models/readme.md) |Deploy the finetuned model to Azure |
+|  [Lab9](/lab/Workshop%20Instructions/Lab9_Evaluation/) | Evaluate the finetuned model |
+|  [Lab10](/lab/Workshop%20Instructions/Lab10_Consumption/) | Consume the finetuned model with an application|
+|  [Lab11](/lab/Workshop%20Instructions/Lab11_CleanUp/) | Cleanup resources |
 
 ## Running the Workshops Outside Skillable
 
@@ -71,3 +71,11 @@ To deliver this session with no Skillable access, please make sure to that the a
 
 - An Azure subscription - [Create one for free.](https://azure.microsoft.com/free/cognitive-services)
 - An Azure AI resource with [GPT-4o and Phi-3.5 model supported in a supported region](https://docs.microsoft.com/en-us/azure/cognitive-services/phi-3-5-models)
+- An Azure ML Studio Environment
+- An Azure AI Studio Environment
+- Visual Studio Code 
+- Visual Studio Code Extensions
+  - Python
+  - Jupyter Notebooks
+  - AI Toolkit
+  
