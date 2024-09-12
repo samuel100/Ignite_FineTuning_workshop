@@ -42,28 +42,28 @@ az login
 
 - Select your Azure subscription to use.
 
-![](/lab/Workshop%20Instructions/Lab3_Simple_Finetuning/images/07-1-azlogin.png)
+![](/lab/Workshop%20Instructions/Lab5_local_Cloud_MLStudio/images/07-1-azlogin.png)
 
 > [!TIP]
 >Having trouble signing in to Azure? Try using a device code.Open a terminal window and type the following command to log in to your Azure account. `az login --use-device-code` Visit the website displayed in the terminal window and enter the provided code on that site.
 
-![](/lab/Workshop%20Instructions/Lab3_Simple_Finetuning/images/07-2-az-login.png)
+![](/lab/Workshop%20Instructions/Lab5_local_Cloud_MLStudio/images/07-2-az-login.png)
 
 - Inside the website, select Next.
 
-![](/lab/Workshop%20Instructions/Lab3_Simple_Finetuning/images/07-2-type-code.png)
+![](/lab/Workshop%20Instructions/Lab5_local_Cloud_MLStudio/images/07-2-type-code.png)
 
 - Select the account to use in this tutorial
 
-![](/lab/Workshop%20Instructions/Lab3_Simple_Finetuning/images/07-3-select-account.png)
+![](/lab/Workshop%20Instructions/Lab5_local_Cloud_MLStudio/images/07-3-select-account.png)
 
 - Select continue to complete login.
 
-![](/lab/Workshop%20Instructions/Lab3_Simple_Finetuning/images/07-4-select-continue.png)
+![](/lab/Workshop%20Instructions/Lab5_local_Cloud_MLStudio/images/07-4-select-continue.png)
 
 - After successful login, go back to your terminal and select your Azure subscription to use.
 
-![](/lab/Workshop%20Instructions/Lab3_Simple_Finetuning/images/07-5-select-subscription.png)
+![](/lab/Workshop%20Instructions/Lab5_local_Cloud_MLStudio/images/07-5-select-subscription.png)
 
 ### Add code to the `fine_tune.py` file
 
@@ -381,4 +381,4 @@ python setup_ml.py
 
 In this exercise, you successfully fine-tuned the Phi-3 model using Azure Machine Learning. By running the setup_ml.py script, you have set up the Azure Machine Learning environment and initiated the fine-tuning process defined in fine_tune.py file. Please note that the fine-tuning process can take a considerable amount of time. After running the python setup_ml.py command, you need to wait for the process to complete. You can monitor the status of the fine-tuning job by following the link provided in the terminal to the Azure Machine Learning portal.
  
-![](/lab/Workshop%20Instructions/Lab3_Simple_Finetuning/images/07-7-see-finetuning-job.png)
+![](/lab/Workshop%20Instructions/Lab5_local_Cloud_MLStudio/images/07-7-see-finetuning-job.png)
