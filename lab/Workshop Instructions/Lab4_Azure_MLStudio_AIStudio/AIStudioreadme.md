@@ -6,6 +6,8 @@ This exercise will take approximately **45** minutes.
 
 ## Learning Objectives
 By the end of this workshop, you should be able to:
+1. Explore the model catalog in Azure AI Studio.
+1. Deploy a model from the model catalog
 1. Fine-tune and deploy the GPT model in Azure AI Studio
 1. Test the fine-tuned model
 
@@ -16,10 +18,6 @@ The lab scenario of this lab, you will fine-tune the GPT model using Azure AI St
 This lab consists of the following exercises:
 1. Fine-tune and Deploy the GPT model in Azure AI Studio
 1. The Azure AI Studio’s model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
-
-In this exercise, you'll explore the model catalog in Azure AI Studio.
-
-This exercise will take approximately **25** minutes.
 
 ## Create an Azure AI hub
 
