@@ -64,7 +64,7 @@ After the Azure AI hub has been created, it should look similar to the following
 
 An Azure AI hub provides a collaborative workspace within which you can define one or more *projects*. Let's create a project in your Azure AI hub.
 
-1. In [Azure AI Studio](https://ai.azure.com, ensure you're in the hub you just created (you can verify your location by checking the path at the top of the screen).
+1. In [Azure AI Studio](https://ai.azure.com), ensure you're in the hub you just created (you can verify your location by checking the path at the top of the screen).
 1. Navigate to **All projects** using the menu on the left.
 1. Select **+ New project**.
 1. In the **Create a new project** wizard, create a project with the following settings:
