@@ -130,7 +130,7 @@ If you already know exactly which model you want to deploy, you may prefer to do
     - **Tokens per Minute Rate Limit (thousands)**: 5K
     - **Content filter**: Default
 
-    > [!NOTE]
+> [!NOTE]
 > You may have noticed some models showing the Model benchmarks, but not as an option in your model catalog. Model availability differs per location. Your location is specified on the AI hub level, where you can use the **Location helper** to specify the model you want to deploy to get a list of locations you can deploy it in.
 
 ## Test your models in the chat playground
@@ -175,7 +175,7 @@ Before you can fine-tune a model, you need a dataset.
     - **Training data**: Upload files
     - **Upload file**: Select the JSONL file you downloaded in a previous step.
 
-    > [!TIP]
+> [!TIP]
 > You don't have to wait for the data processing to be completed to continue to the next step.
 
     - **Validation data**: None
