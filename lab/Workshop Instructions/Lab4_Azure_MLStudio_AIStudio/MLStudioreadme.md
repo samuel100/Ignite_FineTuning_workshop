@@ -36,7 +36,7 @@ In this exercise, you will:
 
 - Select + New.
 
-![](/lab/Workshop%20Instructions/Lab4_Azure_Studio/images/06-01-select-compute.png) 
+![](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/06-01-select-compute.png) 
 
 Perform the following tasks:
 
@@ -50,7 +50,7 @@ Perform the following tasks:
 
 - Select the Virtual machine size to `Standard_NC24ads_A100_v4`.
 
-![](/lab/Workshop%20Instructions/Lab4_Azure_Studio/images/06-02-create-cluster.png)
+![](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/06-02-create-cluster.png)
 	
 - Select Next.
 
@@ -64,7 +64,7 @@ Perform the following tasks:
 
 - Select the Idle seconds before scale down to 120.
 
-![](/lab/Workshop%20Instructions/Lab4_Azure_Studio/images/06-03-create-cluster.png)
+![](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/06-03-create-cluster.png)
 
 - Select Create.
 
@@ -74,17 +74,17 @@ Visit Azure ML Studio.[https://ml.azure.com)]
 
 - Select the Azure Machine Learning workspace that you created.
 
-![](/lab/Workshop%20Instructions/Lab4_Azure_Studio/images/06-04-select-workspace.png)
+![](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/06-04-select-workspace.png)
 
 Perform the following tasks:
 
 - Select Model catalog from the left side tab.
 - Type phi-3-mini-4k in the search bar and select - Phi-3-mini-4k-instruct from the options that appear.
 
-![](/lab/Workshop%20Instructions/Lab4_Azure_Studio/images/06-05-type-phi-3-mini-4k.png)
+![](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/06-05-type-phi-3-mini-4k.png)
 
 - Select Fine-tune from the navigation menu.
-![](/lab/Workshop%20Instructions/Lab4_Azure_Studio/images/06-06-select-fine-tune.png)
+![](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/06-06-select-fine-tune.png)
 
 Perform the following tasks:
 
@@ -96,7 +96,7 @@ Perform the following tasks:
 
 - Select + Select data to upload Validation data.
 
-![](/lab/Workshop%20Instructions/Lab4_Azure_Studio/images/06-07-fill-finetuning.png)
+![](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/06-07-fill-finetuning.png)
 
 > [!TIP]
 >You can select Advanced settings to customize configurations such as `learning_rate` and `lr_scheduler_type` to optimize the fine-tuning process according to your specific needs.
@@ -105,4 +105,4 @@ Perform the following tasks:
 
  After running the fine-tuning job, you need to wait for it to complete. You can monitor the status of the fine-tuning job by navigating to the Jobs tab on the left side of your Azure Machine Learning Workspace. In the next series, you will deploy the fine-tuned model and integrate it with Prompt flow.
 
-![](/lab/Workshop%20Instructions/Lab4_Azure_Studio/images/06-08-output.png)
+![](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/06-08-output.png)
