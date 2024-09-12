@@ -6,6 +6,8 @@ This exercise will take approximately **45** minutes.
 
 ## Learning Objectives
 By the end of this workshop, you should be able to:
+1. Explore the model catalog in Azure AI Studio.
+1. Deploy a model from the model catalog
 1. Fine-tune and deploy the GPT model in Azure AI Studio
 1. Test the fine-tuned model
 
@@ -16,10 +18,6 @@ The lab scenario of this lab, you will fine-tune the GPT model using Azure AI St
 This lab consists of the following exercises:
 1. Fine-tune and Deploy the GPT model in Azure AI Studio
 1. The Azure AI Studio’s model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
-
-In this exercise, you'll explore the model catalog in Azure AI Studio.
-
-This exercise will take approximately **25** minutes.
 
 ## Create an Azure AI hub
 
@@ -50,12 +48,12 @@ You need an [Azure AI Studio hub](https://ai.azure.com) in your Azure subscripti
 
 After the Azure AI hub has been created, it should look similar to the following image:
 
-![Screenshot of a Azure AI hub details in Azure AI Studio.](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/azure-ai-resource.png)
+![Screenshot of a Azure AI hub details in Azure AI Studio.](/lab/Workshop%20Instructions/Lab3_Azure_AIStudio/images/azure-ai-resource.png)
 
 1. Open a new browser tab (leaving the Azure AI Studio tab open) and browse to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Azure credentials if prompted.
 1. Browse to the resource group where you created your Azure AI hub, and view the Azure resources that have been created.
 
-    ![Screenshot of an Azure AI hub and related resources in the Azure portal.](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/azure-portal.png)
+    ![Screenshot of an Azure AI hub and related resources in the Azure portal.](/lab/Workshop%20Instructions/Lab3_Azure_AIStudio/images/azure-portal.png)
 
 1. Return to the Azure AI Studio browser tab.
 1. View each of the pages in the pane on the left side of the page for your Azure AI hub, and note the artifacts you can create and manage. On the **Connections** page, observe that connections to Azure OpenAI and AI services have already been created.
@@ -72,7 +70,7 @@ An Azure AI hub provides a collaborative workspace within which you can define o
     - **Project name**: *A unique name for your project*
 1. Wait for your project to be created. When it's ready, it should look similar to the following image:
 
-    ![Screenshot of a project details page in Azure AI Studio.](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/azure-ai-project.png)
+    ![Screenshot of a project details page in Azure AI Studio.](/lab/Workshop%20Instructions/Lab3_Azure_AIStudio/images/azure-ai-project.png)
 
 1. View the pages in the pane on the left side, expanding each section, and note the tasks you can perform and the resources you can manage in a project.
 
