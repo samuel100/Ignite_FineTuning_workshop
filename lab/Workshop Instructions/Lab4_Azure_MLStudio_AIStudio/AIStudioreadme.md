@@ -49,9 +49,10 @@ You need an Azure AI hub in your Azure subscription to host projects. You can ei
 > [!NOTE] 
 > Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit in scenarios where you are sharing a tenant with other users. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region.
 
-    After the Azure AI hub has been created, it should look similar to the following image:
 
-    ![Screenshot of a Azure AI hub details in Azure AI Studio.](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/azure-ai-resource.png)
+After the Azure AI hub has been created, it should look similar to the following image:
+
+![Screenshot of a Azure AI hub details in Azure AI Studio.](/lab/Workshop%20Instructions/Lab4_Azure_MLStudio_AIStudio/images/azure-ai-resource.png)
 
 1. Open a new browser tab (leaving the Azure AI Studio tab open) and browse to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Azure credentials if prompted.
 1. Browse to the resource group where you created your Azure AI hub, and view the Azure resources that have been created.
