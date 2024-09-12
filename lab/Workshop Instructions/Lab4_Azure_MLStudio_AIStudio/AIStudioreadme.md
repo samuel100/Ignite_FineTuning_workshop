@@ -46,7 +46,7 @@ You need an Azure AI hub in your Azure subscription to host projects. You can ei
     - **Connect Azure AI Services or Azure OpenAI**: *Select to create a new AI Services or use an existing one*
     - **Connect Azure AI Search**: Skip connecting
 
-    > [!NOTE] 
+> [!NOTE] 
 > Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit in scenarios where you are sharing a tenant with other users. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region.
 
     After the Azure AI hub has been created, it should look similar to the following image:
