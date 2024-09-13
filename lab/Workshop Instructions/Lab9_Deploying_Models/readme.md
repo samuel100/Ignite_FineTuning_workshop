@@ -229,10 +229,10 @@ python deploy_model.py
 - Select Studio web URL to open the Azure Machine Learning workspace.
 - Select Endpoints from the left side tab.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/11-select-endpoints.png)
+![](/lab/Workshop%20Instructions/Lab9_Deploying_Models/images/11-select-endpoints.png)
 
 -Select endpoint that you created.
  
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/11-select-endpoint-created.png)
+![](/lab/Workshop%20Instructions/Lab9_Deploying_Models/images/11-select-endpoint-created.png)
 
 - On this page, you can manage the endpoints created during the deployment process.
