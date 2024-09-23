@@ -1,14 +1,15 @@
-# Introduction
+# Optimize model for on-device inference
 
 > [!NOTE]
->This is a **20-minute** workshop that will give you a hands-on introduction to the core concepts of fine tuning with Microsoft Olive using local GPU resources.
+>This is a **20-minute** workshop that will give you a hands-on introduction to the core concepts of optimizing models for on-device inference using Olive.
 
 ## Learning Objectives
 
 By the end of this workshop, you should be able to:
 
-- Undertake fine-tuning of a pre-trained model
-- Use Local GPU resources for fine-tuning
+- Quantize an AI Model.
+- Fine-tune a quantized model.
+- Generate LoRA adapters for efficient on-device inference.
 
 ## Lab Scenario
 // This is a placeholder for the lab scenario. The scenario should be a brief description of the lab content.

@@ -1,4 +1,4 @@
-# Introduction
+# Deploy an AI Model to a cloud endpoint using Azure AI 
 
 > [!NOTE]
 >This is a **20-minute** exercise, you will successfully fine-tune the Phi-3 model using Azure Machine Learning Code First Approach. Please note that the fine-tuning process can take a considerable amount of time.
