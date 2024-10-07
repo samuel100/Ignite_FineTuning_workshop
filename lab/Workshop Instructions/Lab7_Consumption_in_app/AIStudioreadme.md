@@ -41,7 +41,7 @@ You need to create a Hub before creating the Project. A Hub acts like a Resource
 - Select All hubs from the left side tab.
 
 - Select + New hub from the navigation menu.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-01-create-hub.png)
+![](./images/08-01-create-hub.png)
 
 - Perform the following tasks:
 
@@ -52,7 +52,7 @@ You need to create a Hub before creating the Project. A Hub acts like a Resource
 - Select the Connect Azure AI Services to use (create a new one if needed).
 - Select Connect Azure AI Search to Skip connecting.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-02-fill-hub.png)
+![](./images/08-02-fill-hub.png)
 
 - Select Next.
 
@@ -62,10 +62,10 @@ You need to create a Hub before creating the Project. A Hub acts like a Resource
 In the Hub that you created, select All projects from the left side tab.
 
 - Select + New project from the navigation menu.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-04-select-new-project.png)	
+![](./images/08-04-select-new-project.png)	
 
 - Enter Project name. It must be a unique value.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-05-create-project.png)
+![](./images/08-05-create-project.png)
 
 - Select Create a project.
 
@@ -80,16 +80,16 @@ To integrate your custom Phi-3 model with Prompt flow, you need to save the mode
 - Navigate to the Azure Machine learning workspace that you created.
 
 - Select Endpoints from the left side tab.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-06-select-endpoints.png)
+![](./images/08-06-select-endpoints.png)
 
 - Select endpoint that you created.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-07-select-endpoint-created.png)
+![](./images/08-07-select-endpoint-created.png)
 
 - Select Consume from the navigation menu.
 
 - Copy your REST endpoint and Primary key.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-08-copy-endpoint-key.png)	
+![](./images/08-08-copy-endpoint-key.png)	
 
 - Add the Custom Connection
 - Visit [Azure AI Studio](https://ai.azure.com).
@@ -100,11 +100,11 @@ To integrate your custom Phi-3 model with Prompt flow, you need to save the mode
 
 - Select + New connection.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-09-select-new-connection.png)
+![](./images/08-09-select-new-connection.png)
 
 - Select Custom keys from the navigation menu.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-10-select-custom-keys.png)
+![](./images/08-10-select-custom-keys.png)
 
 Perform the following tasks:
 
@@ -114,7 +114,7 @@ For the key name, enter endpoint and paste the endpoint you copied from Azure ML
 For the key name, enter key and paste the key you copied from Azure ML Studio into the value field.
 - After adding the keys, select is secret to prevent the key from being exposed.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-11-add-connection.png)
+![](./images/08-11-add-connection.png)
 
 - Select Add connection.
 
@@ -130,13 +130,13 @@ You have added a custom connection in Azure AI Studio. Now, let's create a Promp
 
 - Select + Create from the navigation menu.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-12-select-promptflow.png) 
+![](./images/08-12-select-promptflow.png) 
 - Select Chat flow from the navigation menu.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-13-select-flow-type.png)
+![](./images/08-13-select-flow-type.png)
 
 - Enter Folder name to use.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-14-enter-name.png)
+![](./images/08-14-enter-name.png)
 
 - Select Create.
 
@@ -177,7 +177,7 @@ nodes:
 
 - Select Save.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-15-select-raw-file-mode.png)
+![](./images/08-15-select-raw-file-mode.png)
 
 - Add the following code to `integrate_with_promptflow.py`  file to use the custom Phi-3 model in Prompt flow.
 
@@ -240,20 +240,20 @@ def my_python_tool(input_data: str, connection: CustomConnection) -> str:
     """
     return query_phi3_model(input_data, connection)
 ```
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-16-paste-promptflow-code.png)
+![](./images/08-16-paste-promptflow-code.png)
 
 > [!NOTE]
 >For more detailed information on using Prompt flow in Azure AI Studio, you can refer to Prompt flow in Azure AI Studio.
 
 - Select Chat input, Chat output to enable chat with your model.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-17-select-input-output.png)
+![](./images/08-17-select-input-output.png)
 
 Now you are ready to chat with your custom Phi-3 model. In the next exercise, you will learn how to start Prompt flow and use it to chat with your fine-tuned Phi-3 model.
 
 > [!NOTE]
 >The rebuilt flow should look like the image below:
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/08-18-graph-example.png)
+![](./images/08-18-graph-example.png)
 
 ## Chat with your custom Phi-3 model
 
@@ -262,22 +262,22 @@ Now that you have fine-tuned and integrated your custom Phi-3 model with Prompt 
 ### Start Prompt flow
 
 -Select Start compute sessions to start Prompt flow.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/09-01-start-compute-session.png)
+![](./images/09-01-start-compute-session.png)
 
 - Select Validate and parse input to renew parameters.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/09-02-validate-input.png)
+![](./images/09-02-validate-input.png)
 
 - Select the Value of the connection to the custom connection you created. For example, connection.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/09-03-select-connection.png)
+![](./images/09-03-select-connection.png)
 
 ### Chat with your custom Phi-3 model
  
 
 - Select Chat.
 - 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/09-04-select-chat.png)
+![](./images/09-04-select-chat.png)
 
 Here's an example of the results: Now you can chat with your custom Phi-3 model. It is recommended to ask questions based on the data used for fine-tuning.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/09-05-chat-with-promptflow.png)
+![](./images/09-05-chat-with-promptflow.png)
