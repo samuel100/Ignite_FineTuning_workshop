@@ -40,9 +40,9 @@ In this exercise, you will:
 
 - Navigate to the Azure Machine learning workspace that you created.
 -Select Endpoints from the left side tab.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/11-select-endpoints.png)
+![](./images/11-select-endpoints.png)
 -Select endpoint that you created.
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/11-select-endpoint-created.png)
+![](./images/11-select-endpoint-created.png)
 
 - Select Consume from the navigation menu.
 
@@ -50,7 +50,7 @@ In this exercise, you will:
 
 - Copy and paste your Primary key into the `config.py` file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` with your Primary key.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/11-copy-apikey-endpoint.png)	
+![](./images/11-copy-apikey-endpoint.png)	
 
 ### Add code to the flow.dag.yml file
 
@@ -158,5 +158,5 @@ pf flow serve --source ./ --port 8080 --host localhost
 
 Here's an example of the results: Now you can chat with your custom Phi-3 model. It is recommended to ask questions based on the data used for fine-tuning.
 
-![](/lab/Workshop%20Instructions/Lab10_Consumption/images/11-1-promptflow-example.png)
+![](./images/11-1-promptflow-example.png)
 
