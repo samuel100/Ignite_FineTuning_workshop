@@ -27,7 +27,7 @@ Visit [Azure ML Studio](https://ml.azure.com).
 
 - Select the Azure Machnine Learning workspace that you created.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/06-04-select-workspace.png)
+![](./images/06-04-select-workspace.png)
 
 - Select Models from the left side tab.
 
@@ -35,10 +35,10 @@ Visit [Azure ML Studio](https://ml.azure.com).
 
 - Select From a job output.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-01-register-model.png) 
+![](./images/07-01-register-model.png) 
 
 - Select the job that you created.
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-02-select-job.png)
+![](./images/07-02-select-job.png)
 
 - Select Next.
 
@@ -46,17 +46,17 @@ Visit [Azure ML Studio](https://ml.azure.com).
 
 - Ensure that Job output is selected; it should be automatically selected.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-03-select-output.png
+![](./images/07-03-select-output.png
 
 - Select Next.
 
 - Select Register.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-04-register.png)
+![](./images/07-04-register.png)
 
 - You can view your registered model by navigating to the Models menu from the left side tab.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-05-registered-model.png)
+![](./images/07-05-registered-model.png)
 
 ### Deploy the fine-tuned model
  
@@ -65,13 +65,13 @@ Visit [Azure ML Studio](https://ml.azure.com).
 - Select Endpoints from the left side tab.
 
 - Select Real-time endpoints from the navigation menu.
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-06-create-endpoint.png)
+![](./images/07-06-create-endpoint.png)
 
 - Select Create.
 
 - select the registered model that you created.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-07-select-registered-model.png)
+![](./images/07-07-select-registered-model.png)
 
 - Select Select.
 
@@ -87,7 +87,7 @@ Perform the following tasks:
 
 - Enter Deployment name. It must be a unique value.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-08-deployment-setting.png) 
+![](./images/07-08-deployment-setting.png) 
 
 - Select Deploy.
 
@@ -104,7 +104,7 @@ Select Endpoints from the left side tab.
 
 Select the endpoint that you created.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-09-check-deployment.png)
+![](./images/07-09-check-deployment.png)
 
 - On this page, you can manage the endpoints during the deployment process.
 
