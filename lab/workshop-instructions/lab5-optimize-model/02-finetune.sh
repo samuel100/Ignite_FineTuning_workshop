@@ -7,5 +7,4 @@ olive finetune \
     --text_template "<|user|>\n{prompt}<|end|>\n<|assistant|>\n{response}<|end|>" \
     --max_steps 15 \
     --output_path ./models/ft \
-    --target_modules o_proj,kv_proj \
     --log_level 1
