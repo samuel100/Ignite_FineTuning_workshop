@@ -3,10 +3,12 @@ import numpy as np
 from olive.common.utils import load_weights
 import os
 
-model_folder = "models/ft-onnx/model"
+model_folder = "models/phi/ft-onnx/model"
 
 # Load the base model and tokenizer
+print("loading model....", end="")
 model = og.Model(model_folder)
+print("DONE")
 tokenizer = og.Tokenizer(model)
 tokenizer_stream = tokenizer.create_stream()
 
