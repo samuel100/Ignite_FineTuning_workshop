@@ -8,13 +8,11 @@
 
 ## 🎓 Learning Objectives
 
-By the end of this lab, you will be able to:
+By the end of this lab, you will be able to use OLIVE to:
 
 - Quantize an AI Model using the AWQ quantization method.
 - Fine-tune an AI model for a specific task.
 - Generate LoRA adapters (fine-tuned model) for efficient on-device inference on the ONNX Runtime.
-
-## ☑️ Prerequisites
 
 ### ❔What is OLIVE
 
@@ -37,7 +35,9 @@ OLIVE executes a *workflow*, which is an ordered sequence of individual model op
 - **Hugging Face** and **Azure AI** Integration.
 - Built-in **caching** mechanism to **save costs**.
 
-### 🖥️ Create Azure AI Compute
+## 📖 Lab Instructions
+
+### Step 1: Create Azure AI Compute
 You'll need the following an Azure AI Compute Instance, which can be created using the following steps:
 
 1. Sign in to [Azure AI Studio](https://ai.azure.com) and select your project. If you don't have a project already, first create one [following this guide](https://learn.microsoft.com/en-us/azure/ai-studio/how-to/create-projects?tabs=ai-studio).
@@ -54,9 +54,7 @@ You'll need the following an Azure AI Compute Instance, which can be created usi
 
 1. Select **Review+Create** and then **Create**.
 
-## 📖 Lab Instructions
-
-### 1. Clone this repo
+### Step 2: Clone this repo
 
 On your Azure AI Compute Instance, run the following commands in a terminal window. In VS Code, you can open a new terminal with **Ctrl+j**.
 
@@ -65,13 +63,13 @@ cd ~/cloudfiles
 git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 ```
 
-### 2. Open Folder in VS Code
+### Step 3: Open Folder in VS Code
 
 In your Azure AI VS Code, open the clone repo folder by selecting **File** > **Open Folder**.
 
 Choose the following path: `lab/workshop-instructions/lab5-optimize-model`
 
-### 3. Install dependencies
+### Step 4: Install dependencies
 
 Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+j**) and execute:
 
@@ -82,7 +80,7 @@ pip install -r requirements.txt
 sudo apt-get -y install cudnn9-cuda-12
 ```
 
-### 4. Execute OLIVE commands 
+### Step 5: Execute OLIVE commands 
 
 #### Option A: Execute commands in Notebook
 
@@ -99,9 +97,9 @@ conda activate olive-ai
 Next, execute the following scripts...
 
 1. Execute [Active Aware Quantization (AWQ)](https://arxiv.org/abs/2306.00978) using:
-    ```bash
-    ./scripts/01-quantize.sh
-    ```
+   
+   https://github.com/Azure/Ignite_FineTuning_workshop/blob/a7b948fb5f8f03905464017b251f6bb20907df59/lab/workshop-instructions/lab5-optimize-model/scripts/01-quantize.sh#L1
+   
     **It takes ~10mins to complete the AWQ quantization.**
 1. Fine-tune the quantized model using:
     ```bash
