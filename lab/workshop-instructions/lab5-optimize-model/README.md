@@ -98,7 +98,7 @@ conda activate olive-ai
 
 Next, execute the following scripts...
 
-1. Execute Quantization using:
+1. Execute [Active Aware Quantization (AWQ)](https://arxiv.org/abs/2306.00978) using:
     ```bash
     ./scripts/01-quantize.sh
     ```
