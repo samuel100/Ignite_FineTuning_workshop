@@ -98,7 +98,7 @@ Next, execute the following scripts...
 
 1. Execute [Active Aware Quantization (AWQ)](https://arxiv.org/abs/2306.00978) using:
    
-   https://github.com/Azure/Ignite_FineTuning_workshop/blob/a7b948fb5f8f03905464017b251f6bb20907df59/lab/workshop-instructions/lab5-optimize-model/scripts/01-quantize.sh#L1-L10
+   https://github.com/Azure/Ignite_FineTuning_workshop/blob/649a75802ccccdbb13ad77122eb96a9061e421df/lab/workshop-instructions/lab5-optimize-model/scripts/01-quantize.sh#L1-L5
 
     **It takes ~10mins to complete the AWQ quantization.**
 1. Fine-tune the quantized model using:
