@@ -97,17 +97,27 @@ conda activate olive-ai
 Next, execute the following scripts...
 
 1. Execute [Active Aware Quantization (AWQ)](https://arxiv.org/abs/2306.00978) using:
+    
     ```bash
     ./scripts/01-quantize.sh
     ```
-    **It takes ~10mins to complete the AWQ quantization.**
+    
+    > [!NOTE]
+    > It takes ~10mins to complete the AWQ quantization.
 1. Fine-tune the quantized model using:
+    
     ```bash
     ./scripts/02-finetune.sh
     ```
-    **It takes ~10mins to complete the Fine-tuning (depending on the number of epochs).**
+    
+    > [!NOTE]
+    > It takes ~10mins to complete the Fine-tuning (depending on the number of epochs).
+
 1. Generate adapters and optimize for the ONNX runtime:
+    
     ```bash
     ./scripts/03-gen-adapters.sh
     ```
-    **It takes ~2mins to complete the AWQ quantization.**
+    
+    > [!NOTE]
+    > It takes ~2mins to complete the AWQ quantization.
