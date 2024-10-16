@@ -102,16 +102,15 @@ Next, execute the following scripts...
     ./scripts/01-quantize.sh
     ```
     
-    > [!NOTE]
-    > It takes ~10mins to complete the AWQ quantization.
+    It takes **~10mins** to complete the AWQ quantization.
+
 1. Fine-tune the quantized model using:
     
     ```bash
     ./scripts/02-finetune.sh
     ```
     
-    > [!NOTE]
-    > It takes ~10mins to complete the Fine-tuning (depending on the number of epochs).
+    It takes **~10mins** to complete the Fine-tuning (depending on the number of epochs).
 
 1. Generate adapters and optimize for the ONNX runtime:
     
@@ -119,5 +118,4 @@ Next, execute the following scripts...
     ./scripts/03-gen-adapters.sh
     ```
     
-    > [!NOTE]
-    > It takes ~2mins to complete the AWQ quantization.
+    It takes **~2mins** to complete the adapter extraction and ONNX optimization.
