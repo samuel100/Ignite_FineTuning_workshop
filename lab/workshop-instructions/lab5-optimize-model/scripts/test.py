@@ -3,7 +3,7 @@ import numpy as np
 from olive.common.utils import load_weights
 import os
 
-model_folder = "models/phi/ft-onnx/model"
+model_folder = "models/phi/onnx/model"
 
 # Load the base model and tokenizer
 print("loading model....", end="")

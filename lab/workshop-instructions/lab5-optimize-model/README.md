@@ -112,10 +112,18 @@ Next, execute the following scripts...
     
     It takes **~10mins** to complete the Fine-tuning (depending on the number of epochs).
 
-1. Generate adapters and optimize for the ONNX runtime:
+1. Capture the ONNX Graph - this will save the model weights into ONNX format and capture the Neural Network graph (so that it can run on the ONNX Runtime):
     
     ```bash
-    ./scripts/03-gen-adapters.sh
+    ./scripts/03-capture-onnx-graph.sh
+    ```
+    
+    It takes **~10mins** to complete the Fine-tuning (depending on the number of epochs).
+
+1. Generate adapters - this will mutate the base model so that it can accept adapters:
+    
+    ```bash
+    ./scripts/04-gen-adapters.sh
     ```
     
     It takes **~2mins** to complete the adapter extraction and ONNX optimization.

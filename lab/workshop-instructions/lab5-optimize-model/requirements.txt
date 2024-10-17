@@ -1,4 +1,4 @@
-git+https://github.com/microsoft/Olive#egg=olive-ai[gpu,auto-opt,finetune,capture-onnx-graph,bnb]
+olive-ai[finetune, bnb]==0.7.0
 ipykernel
 autoawq
 --extra-index-url=https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/ORT-Nightly/pypi/simple/
