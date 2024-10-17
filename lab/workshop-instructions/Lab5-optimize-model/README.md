@@ -56,7 +56,11 @@ Select a hub from the dropdown to host your project. For information about the r
 
 ![Screenshot of the project details page within the create project dialog.](./images/projects-create-details.png)
 
-**Note:** To create a hub, you must have Owner or Contributor permissions on the selected resource group. It's recommended to share a hub with your team. This lets you share configurations like data connections with all projects, and centrally manage security settings and spend. For more options to create a hub, see how to create and manage an Azure AI Studio hub. A project name must be unique between projects that share the same hub.
+> [!NOTE]
+> To create a hub, you must have Owner or Contributor permissions on the selected resource group. It's recommended to share a
+> hub with your team. This lets you share configurations like data connections with all projects, and centrally manage security
+> settings and spend. For more options to create a hub, see how to create and manage an Azure AI Studio hub. A project name must
+> be unique between projects that share the same hub.
 
 If you're creating a new hub, enter a name.
 
@@ -64,7 +68,11 @@ Select your Azure subscription from the Subscription dropdown. Choose a specific
 
 Leave the Resource group as the default to create a new resource group. Alternatively, you can select an existing resource group from the dropdown.
 
-**Tip:** Especially for getting started it's recommended to create a new resource group for your project. This allows you to easily manage the project and all of its resources together. When you create a project, several resources are created in the resource group, including a hub, a container registry, and a storage account.
+> [!TIP]
+> Especially for getting started it's recommended to create a new resource group for your project.
+> This allows you to easily manage the project and all of its resources together.
+> When you create a project, several resources are created in the resource group, including a hub, a container registry, and a
+> storage account.
 
 Enter the Location for the hub and then select Next. The location is the region where the hub is hosted. The location of the hub is also the location of the project. Azure AI services availability differs per region. For example, certain models might not be available in certain regions.
 
@@ -88,11 +96,12 @@ On the project Settings page you can find information about the project, such as
 
 ![Screenshot of an AI Studio project settings page.](./images/project-settings.png)
 
-Name: The name of the project corresponds to the selected project in the left panel.
-Hub: The hub that hosts the project.
-Location: The location of the hub that hosts the project. For supported locations, see Azure AI Studio regions.
-Subscription: The subscription that hosts the hub that hosts the project.
-Resource group: The resource group that hosts the hub that hosts the project.
+**Name:** The name of the project corresponds to the selected project in the left panel.
+**Hub:** The hub that hosts the project.
+**Location:** The location of the hub that hosts the project. For supported locations, see Azure AI Studio regions.
+**Subscription:** The subscription that hosts the hub that hosts the project.
+**Resource group:** The resource group that hosts the hub that hosts the project.
+
 Select Manage in the Azure portal to navigate to the project resources in the Azure portal.
 
 ### Access project resources
