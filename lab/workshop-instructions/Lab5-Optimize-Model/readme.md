@@ -41,20 +41,6 @@ OLIVE executes a *workflow*, which is an ordered sequence of individual model op
 > [!NOTE]
 > Please ensure you have provision your Azure AI Studio Hub and Project as per Lab 1.
 
-### Access project resources
-
-1. Under **Settings**, select **Create compute**.
-
-    <img src="./images/compute-create.png" alt="create Azure AI Compute" width="600"/>
-
-1. Select your **Virtual machine type** as **GPU**. *Filter* the list of **Virtual machine size** on **A100**: 
-    
-    <img src="./images/compute-size.png" alt="ccompute size" width="600"/>
-    
-    Select a VM you have available quota for.
-
-1. Select **Review+Create** and then **Create**.
-
 ### Step 2: Clone this repo
 
 On your Azure AI Compute Instance, run the following commands in a terminal window. In VS Code, you can open a new terminal with **Ctrl+j**.
