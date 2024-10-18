@@ -1,4 +1,6 @@
-# Optimize AI models for on-device inference
+#Lab5. Optimize AI models for on-device inference
+
+## Introduction 
 
 > [!IMPORTANT]
 > This lab requires an **Nvidia A10 or A100 GPU** with associated drivers and CUDA toolkit (version 12+) installed.
