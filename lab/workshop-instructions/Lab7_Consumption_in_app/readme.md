@@ -1,4 +1,6 @@
-# Introduction
+# Lab7. Consumption of your Model within an Application 
+
+## Introduction
 
 > [!NOTE]
 >This is a **10-minute** workshop that will give you a hands-on introduction to the core concepts of using a code first approach to consuming a deployed model endpoint.
@@ -40,9 +42,9 @@ In this exercise, you will:
 
 - Navigate to the Azure Machine learning workspace that you created.
 -Select Endpoints from the left side tab.
-![](./images/11-select-endpoints.png)
+![Screenshot select endpoint](./images/11-select-endpoints.png)
 -Select endpoint that you created.
-![](./images/11-select-endpoint-created.png)
+![screeshot of endpoints available](./images/11-select-endpoint-created.png)
 
 - Select Consume from the navigation menu.
 
@@ -50,7 +52,7 @@ In this exercise, you will:
 
 - Copy and paste your Primary key into the `config.py` file, replacing `AZURE_ML_API_KEY = "your_fine_tuned_model_api_key"` with your Primary key.
 
-![](./images/11-copy-apikey-endpoint.png)	
+![Screenshot of API Keys](./images/11-copy-apikey-endpoint.png)	
 
 ### Add code to the flow.dag.yml file
 
@@ -158,5 +160,5 @@ pf flow serve --source ./ --port 8080 --host localhost
 
 Here's an example of the results: Now you can chat with your custom Phi-3 model. It is recommended to ask questions based on the data used for fine-tuning.
 
-![](./images/11-1-promptflow-example.png)
+![Screenshot of example deployment](./images/11-1-promptflow-example.png)
 
