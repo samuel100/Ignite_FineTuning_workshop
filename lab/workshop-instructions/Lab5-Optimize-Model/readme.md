@@ -1,4 +1,4 @@
-#Lab5. Optimize AI models for on-device inference
+# Lab 5. Optimize AI models for on-device inference
 
 ## Introduction 
 
