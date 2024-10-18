@@ -38,64 +38,8 @@ OLIVE executes a *workflow*, which is an ordered sequence of individual model op
 - Built-in **caching** mechanism to **save costs**.
 
 ## Lab Instructions
-
-### Step 1: Create Azure AI Compute
-You'll need the following an Azure AI Compute Instance, which can be created using the following steps:
-
-1. Sign in to [Azure AI Studio](https://ai.azure.com) and select your project. If you don't have a project already, first create one 
-
-### Step 2. Creating a Hub and Project 
-
-To create a project in Azure AI Studio, follow these steps:
-
-Go to the Home page of [Azure AI Studio](https://ai.azure.com).
-
-Select + New project.
-
-Enter a name for the project.
-
-Select a hub from the dropdown to host your project. For information about the relationship between hubs and projects, see the hubs and projects overview documentation. If you don't yet have a hub, select Create a new hub.
-
-![Screenshot of the project details page within the create project dialog.](./images/projects-create-details.png)
-
-**Note:** To create a hub, you must have Owner or Contributor permissions on the selected resource group. It's recommended to share a hub with your team. This lets you share configurations like data connections with all projects, and centrally manage security settings and spend. For more options to create a hub, see how to create and manage an Azure AI Studio hub. A project name must be unique between projects that share the same hub.
-
-If you're creating a new hub, enter a name.
-
-Select your Azure subscription from the Subscription dropdown. Choose a specific Azure subscription for your project for billing, access, or administrative reasons. For example, this grants users and service principals with subscription-level access to your project.
-
-Leave the Resource group as the default to create a new resource group. Alternatively, you can select an existing resource group from the dropdown.
-
-**Tip:** Especially for getting started it's recommended to create a new resource group for your project. This allows you to easily manage the project and all of its resources together. When you create a project, several resources are created in the resource group, including a hub, a container registry, and a storage account.
-
-Enter the Location for the hub and then select Next. The location is the region where the hub is hosted. The location of the hub is also the location of the project. Azure AI services availability differs per region. For example, certain models might not be available in certain regions.
-
-Select an existing Azure AI services resource (including Azure OpenAI) from the dropdown or create a new one.
-
-![Screenshot of the create resource page within the create project dialog.](./images/projects-create-resource.png)
-
-On the Review and finish page, you see the Azure AI services resource name and other settings to review.
-
-![Screenshot of the review and finish page within the create project dialog.](./images/projects-create-review-finish.png)
-
-Review the project details and then select Create a project. You see progress of resource creation and the project is created when the process is complete.
-
-![Screenshot of the resource creation progress within the create project dialog.](./images/projects-create-review-finish-progress.png)
-
-
-Once a project is created, you can access the playground, tools, and other assets in the left navigation panel.
-
-
-On the project Settings page you can find information about the project, such as the project name, description, and the hub that hosts the project. You can also find the project ID, which is used to identify the project via SDK or API.
-
-![Screenshot of an AI Studio project settings page.](./images/project-settings.png)
-
-Name: The name of the project corresponds to the selected project in the left panel.
-Hub: The hub that hosts the project.
-Location: The location of the hub that hosts the project. For supported locations, see Azure AI Studio regions.
-Subscription: The subscription that hosts the hub that hosts the project.
-Resource group: The resource group that hosts the hub that hosts the project.
-Select Manage in the Azure portal to navigate to the project resources in the Azure portal.
+> [!NOTE]
+> Please ensure you have provision your Azure AI Studio Hub and Project as per Lab 1.
 
 ### Access project resources
 

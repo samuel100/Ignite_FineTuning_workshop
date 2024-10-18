@@ -1,4 +1,4 @@
-#Lab 3. Fine-tune a language model for chat completion in the Azure AI Studio
+# Lab 3. Fine-tune a language model for chat completion in the Azure AI Studio
 
 ## Introduction
 
@@ -14,53 +14,15 @@ By the end of this workshop, you should be able to:
 1. Test the fine-tuned model
 
 ## Lab Scenario
-The lab scenario of this lab, you will fine-tune the GPT model using Azure AI Studio and Azure Model Catalog.
+The lab scenario of this lab, you will fine-tune the GPT3.5 model using Azure AI Studio one button fine tuning and Azure Model Catalog.
 
 ## Lab Outline
 This lab consists of the following exercises:
 1. Fine-tune and Deploy the GPT model in Azure AI Studio
 1. The Azure AI Studio’s model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
 
-## Create an Azure AI hub
 
-You need an [Azure AI Studio hub](https://ai.azure.com) in your Azure subscription to host projects. You can either create this resource while creating a project, 
-
-1. Go to [Azure AI Studio](https://ai.azure.com)
-2. In the **Management** section, select **All hubs**, then select **+ New hub**. Create a new hub with the following settings:
-    - **Hub name**: *A unique name*
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create a new resource group with a unique name, or select an existing one*
-    - **Location**: *Make a **random** choice from any of the following regions*\*
-        - Australia East
-        - Canada East
-        - East US
-        - East US 2
-        - France Central
-        - Japan East
-        - North Central US
-        - Sweden Central
-        - Switzerland North
-        - UK South
-    - **Connect Azure AI Services or Azure OpenAI**: *Select to create a new AI Services or use an existing one*
-    - **Connect Azure AI Search**: Skip connecting
-
-> [!NOTE] 
-> Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit in scenarios where you are sharing a tenant with other users. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region.
-
-
-After the Azure AI hub has been created, it should look similar to the following image:
-
-![Screenshot of a Azure AI hub details in Azure AI Studio.](./images/azure-ai-resource.png)
-
-1. Open a new browser tab (leaving the Azure AI Studio tab open) and browse to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Azure credentials if prompted.
-1. Browse to the resource group where you created your Azure AI hub, and view the Azure resources that have been created.
-
-    ![Screenshot of an Azure AI hub and related resources in the Azure portal.](./images/azure-portal.png)
-
-1. Return to the Azure AI Studio browser tab.
-1. View each of the pages in the pane on the left side of the page for your Azure AI hub, and note the artifacts you can create and manage. On the **Connections** page, observe that connections to Azure OpenAI and AI services have already been created.
-
-## Create a project
+## Create a new project
 
 An Azure AI hub provides a collaborative workspace within which you can define one or more *projects*. Let's create a project in your Azure AI hub.
 

@@ -1,4 +1,4 @@
-# Lab6. Evaluate your AI Model 
+# Lab 6. Evaluate your AI Model 
 
 ## Introduction
 
