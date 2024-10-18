@@ -1,4 +1,6 @@
-# Deploy an AI Model to a cloud endpoint using Azure AI 
+# Lab4. Deploy an AI Model to a cloud endpoint using Azure AI 
+
+## Introduction 
 
 > [!NOTE]
 >This is a **20-minute** exercise, you will successfully fine-tune the Phi-3 model using Azure Machine Learning Code First Approach. Please note that the fine-tuning process can take a considerable amount of time.
@@ -229,10 +231,10 @@ python deploy_model.py
 - Select Studio web URL to open the Azure Machine Learning workspace.
 - Select Endpoints from the left side tab.
 
-![](./images/11-select-endpoints.png)
+![AML endpoints](./images/11-select-endpoints.png)
 
 -Select endpoint that you created.
  
-![](./images/11-select-endpoint-created.png)
+![Select Endpoint](./images/11-select-endpoint-created.png)
 
 - On this page, you can manage the endpoints created during the deployment process.
