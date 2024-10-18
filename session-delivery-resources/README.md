@@ -13,11 +13,11 @@ Fine-Tuning and Optimizing Models for Travel Applications
 In this hands-on session, we will explore the integration of Large Language Models (LLMs) into a travel companion application, leveraging Azure AI Studio and Python. Participants will engage in a comprehensive learning experience that combines both a user-friendly, one-button fine-tuning approach and a code-first methodology for model optimization.
 
 **Session Highlights:**
-Introduction to LLMs: Understand the role of LLMs in enhancing travel applications, providing personalized recommendations, and assisting with itinerary planning.
-Azure AI Studio: Experience the simplicity of fine-tuning GPT models using Azure AI Studio’s intuitive interface. Learn how to prepare data, initiate one-button fine-tuning, and deploy the model for real-time inference.
-Code-First Approach: Dive deeper into the technical aspects of model fine-tuning using Python and Microsoft Olive. Gain hands-on experience in preprocessing data, fine-tuning models, and optimizing performance through pruning and quantization techniques.
+- **Introduction to LLMs:** Understand the role of LLMs in enhancing travel applications, providing personalized recommendations, and assisting with itinerary planning.
+- **Azure AI Studio:** Experience the simplicity of fine-tuning GPT models using Azure AI Studio’s intuitive interface. Learn how to prepare data, initiate one-button fine-tuning, and deploy the model for real-time inference.
+- **Code-First Approach:** Dive deeper into the technical aspects of model fine-tuning using Python and Microsoft Olive. Gain hands-on experience in preprocessing data, fine-tuning models, and optimizing performance through pruning and quantization techniques.
 Comparison and Evaluation: Analyze the outcomes of both approaches, compare their performance, and evaluate the user experience. Understand the strengths and limitations of Azure AI Studio’s UI versus a code-first approach.
-Practical Applications: Deploy and test the fine-tuned models in a real-world travel companion application. Assess the models' accuracy, responsiveness, and ability to provide valuable travel assistance.
+- **Practical Applications:** Deploy and test the fine-tuned models in a real-world travel companion application. Assess the models' accuracy, responsiveness, and ability to provide valuable travel assistance.
 
 By the end of this session, participants will have developed a robust travel application powered by fine-tuned GPT models, optimized for both cloud and local inference. This session will empower participants with the knowledge and skills to choose the best methodologies for their AI projects, combining ease of use and technical precision.
 
@@ -64,7 +64,7 @@ Open floor for questions Recap of key takeaways Next steps and additional resour
 
 ### Scenario
 
-Develop a travel companion application that leverages Large Language Models (LLMs) to provide personalized travel recommendations, itinerary planning, and real-time assistance to travelers. The labs will focus on fine-tuning a GPT model using Azure AI Studio and a code-first approach using Python and Microsoft Olive.
+Develop a travel companion application that leverages Large Language Models (LLMs) to provide personalized travel recommendations, itinerary planning, and real-time assistance to travellers. The labs will focus on fine-tuning a GPT model using Azure AI Studio and a code-first approach using Python and Microsoft Olive.
 
 We will focus on the specific areas 
 - Setting up Azure AI Studio
