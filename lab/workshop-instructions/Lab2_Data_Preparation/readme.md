@@ -1,4 +1,5 @@
-# Introduction
+# Lab2. Data Preperation
+## Introduction
 
 > [!NOTE]
 >This is a **15-minute** workshop that will give you a hands-on introduction to the core concepts and best practices for data preparation.
