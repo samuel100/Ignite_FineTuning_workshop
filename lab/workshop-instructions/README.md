@@ -2,7 +2,7 @@
 
 ### Scenario
 
-Develop a travel companion application that leverages Large Language Models (LLMs) to provide personalized travel recommendations, itinerary planning, and real-time assistance to travelers. The labs will focus on fine-tuning a GPT model using Azure AI Studio and a code-first approach using Python and Microsoft Olive.
+Develop a travel companion application that leverages Large Language Models (LLMs) to provide personalized travel recommendations, itinerary planning, and real-time assistance to travellers. The labs will focus on fine-tuning a GPT model using Azure AI Studio and a code-first approach using Python and Microsoft Olive.
 
 We will focus on the specific areas 
 - Setting up Azure AI Studio
