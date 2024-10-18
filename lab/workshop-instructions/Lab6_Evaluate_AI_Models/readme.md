@@ -1,4 +1,6 @@
-# Introduction
+# Lab6. Evaluate your AI Model 
+
+## Introduction
 
 > [!NOTE]
 >This is a **35-minute** workshop that will give you a hands-on introduction Fine-tuning a model can sometimes lead to unintended or undesired responses. To ensure that the model remains safe and effective, it's important to evaluate it. This evaluation helps to assess the model's potential to generate harmful content and its ability to produce accurate, relevant, and coherent responses.
@@ -14,7 +16,7 @@ Introduction to Azure AI Studio's Prompt flow evaluation
 
 ## Lab Outline
 
-![](./images/architecture1.png)
+![Project Architecture](./images/architecture1.png)
 
 ### Introduction to Azure AI Studio's Prompt flow evaluation
 
@@ -22,7 +24,7 @@ To ensure that your AI model is ethical and safe, it's crucial to evaluate it ag
 
 ### Microsoft’s Responsible AI Principles
 
-![](./images/responsibleai2.png)	
+![Microsoft RAI Principles](./images/responsibleai2.png)	
   
 Before beginning the technical steps, it's essential to understand Microsoft's Responsible AI Principles, an ethical framework designed to guide the responsible development, deployment, and operation of AI systems. These principles guide the responsible design, development, and deployment of AI systems, ensuring that AI technologies are built in a way that is fair, transparent, and inclusive. These principles are the foundation for evaluating the safety of AI models.
 
@@ -38,7 +40,7 @@ Privacy and Security: As AI becomes more prevalent, protecting privacy and secur
 
 Accountability: The people who design and deploy AI systems must be accountable for how their systems operate. Organizations should draw upon industry standards to develop accountability norms. These norms can ensure that AI systems aren't the final authority on any decision that affects people's lives. They can also ensure that humans maintain meaningful control over otherwise highly autonomous AI systems.
 
-![](./images/2_safety-evaluation.jpg)
+![Model Evaluation](./images/2_safety-evaluation.jpg)
 
 > [!NOTE]
 >To learn more about Microsoft's Responsible AI Principles, visit the What is Responsible AI?.
@@ -58,14 +60,14 @@ In this lab, you will evaluate the safety of the fine-tuned Phi-3 / Phi-3.5 mode
 
 Evaluating these aspects ensures that the AI model does not produce harmful or offensive content, aligning it with societal values and regulatory standards.
 
-![](./images/4_evaluate-based-on-safety.png)	
+![Safety Standard](./images/4_evaluate-based-on-safety.png)	
 
 ### Introduction to performance evaluation
 
 To ensure that your AI model is performing as expected, it's important to evaluate its performance against performance metrics. In Azure AI Studio, performance evaluations allow you to evaluate your model's effectiveness in generating accurate, relevant, and coherent responses.
 
 
-![](./images/5_performance-evaluation.jpg)
+![Performance Evaluation](./images/5_performance-evaluation.jpg)
 
 ### Performance metrics
  
@@ -81,7 +83,7 @@ In this lab, you will evaluate the performance of the fine-tuned Phi-3 / Phi-3.5
 
 These metrics help you evaluate the model's effectiveness in generating accurate, relevant, and coherent responses.
 
-![](/lab/Workshop%20Instructions/Lab11_Evaluation/images/6_evaluate-based-on-performance.png)
+![Screenshot of RAI Metrics](./images/6_evaluate-based-on-performance.png)
 
 ## Evaluating the Phi-3 / Phi-3.5 model in Azure AI Studio
  
@@ -118,7 +120,7 @@ You need to create a Hub before creating the Project. A Hub acts like a Resource
 
 - Select + New hub from the navigation menu.
 
-![](./images/7_create-hub.png)
+![Screenshot Create an AI Studio Hub for Evaluation](./images/7_create-hub.png)
 
 Perform the following tasks:
 
@@ -129,7 +131,7 @@ Perform the following tasks:
 - Select the Connect Azure AI Services to use (create a new one if needed).
 - Select Connect Azure AI Search to Skip connecting.
 
-![](./images/8_fill-hub.png)
+![Screenshot of hub settings](./images/8_fill-hub.png)
 
 - Select Next.
 
@@ -138,10 +140,10 @@ Perform the following tasks:
 In the Hub that you created, select All projects from the left side tab.
 
 - Select + New project from the navigation menu.
-![](/lab/Workshop%20Instructions/Lab11_Evaluation/images/9_select-new-project.png)
+![Screenshot of creating and AI Hub](./images/9_select-new-project.png)
 
 - Enter Project name. It must be a unique value.
-![](/lab/Workshop%20Instructions/Lab11_Evaluation/images/10_create-project.png)
+![Screenshot of seeting up an AI project](./images/10_create-project.png)
 
 - Select Create a project.
 
@@ -157,16 +159,16 @@ To integrate your custom Phi-3 / Phi-3.5 model with Prompt flow, you need to sav
 
 - Select Endpoints from the left side tab.
 
-![](./images/11_select-endpoints.png) 
+![Screenshot selecting endpoins](./images/11_select-endpoints.png) 
 
 - Select endpoint that you created.
 
-![](./images/12_select-endpoint-created.png)
+![screenshot of endpoint selection](./images/12_select-endpoint-created.png)
 
 - Select Consume from the navigation menu.
 
 - Copy your REST endpoint and Primary key.
-![](/lab/Workshop%20Instructions/Lab11_Evaluation/images/13_copy-endpoint-key.png)
+![](./images/13_copy-endpoint-key.png)
 
 - Add the Custom Connection
 
@@ -178,10 +180,10 @@ To integrate your custom Phi-3 / Phi-3.5 model with Prompt flow, you need to sav
 
 - Select + New connection.
 
-![](./images/14_select-new-connection.png)
+![screenshot of creating new connection](./images/14_select-new-connection.png)
 
 - Select Custom keys from the navigation menu.
-![](/lab/Workshop%20Instructions/Lab11_Evaluation/images/15_select-custom-keys.png)
+![Screenshot of creating keys](./images/15_select-custom-keys.png)
 
 Perform the following tasks:
 
@@ -191,7 +193,7 @@ For the key name, enter endpoint and paste the endpoint you copied from Azure ML
 For the key name, enter key and paste the key you copied from Azure ML Studio into the value field.
 - After adding the keys, select is secret to prevent the key from being exposed.
 
-![](/lab/Workshop%20Instructions/Lab11_Evaluation/images/16_add-connection.png)
+![Screenshot of adding the connection](./images/16_add-connection.png)
 
 - Select Add connection.
 
@@ -205,14 +207,14 @@ You have added a custom connection in Azure AI Studio. Now, let's create a Promp
 
 - Select + Create from the navigation menu.
 
-![](./images/17_select-promptflow.png)
+![Screenshot Create new prompt flow](./images/17_select-promptflow.png)
 
 - Select Chat flow from the navigation menu.
 
-![](./images/18_select-flow-type.png)
+![Screenshot of Selection of the flow](./images/18_select-flow-type.png)
 
 - Enter Folder name to use.
-![](./images/19_enter-name.png)
+![Screenshot of creating a new prompt flow](./images/19_enter-name.png)
 
 - Select Create.
 
@@ -249,7 +251,7 @@ nodes:
 ```
 - Select Save.
 
-![](./images/20_select-raw-file-mod.png)
+![Screenshot of modifying the flow](./images/20_select-raw-file-mod.png)
 
 Add the following code to integrate_with_promptflow.py to use the custom Phi-3 / Phi-3.5 model in Prompt flow.
 
@@ -317,36 +319,35 @@ def my_python_tool(input_data: str, connection: CustomConnection) -> str:
 
 - Select Chat input, Chat output to enable chat with your model.
 
-![](./images/21_select-input-output.png)
+![Screenshot of the output](./images/21_select-input-output.png)
 
 Now you are ready to chat with your custom Phi-3 / Phi-3.5 model. In the next exercise, you will learn how to start Prompt flow and use it to chat with your fine-tuned Phi-3 / Phi-3.5 model.
 
 > [!NOTE]
 > The rebuilt flow should look like the image below:
-![](./images/22_graph-example.png)
+![Screenshot of chart/graph output](./images/22_graph-example.png)
 
 ### Start Prompt flow
 
 Select Start compute sessions to start Prompt flow.
 
-![](./images/23_start-compute-session.png)
+![Screenshot of starting the prompt flow session](./images/23_start-compute-session.png)
 
 - Select Validate and parse input to renew parameters.
 
-![](./images/24_validate-input.png)
+![Screenshot of validating the flow](./images/24_validate-input.png)
 
 - Select the Value of the connection to the custom connection you created. For example, connection.
 
- 
-![](./images/25_select-connection.png)
+![Screenshot of selecting the flow](./images/25_select-connection.png)
 
 ### Chat with your custom Phi-3 / Phi-3.5 model
  
 - Select Chat.
-![](./images/26_select-chat.png)
+![Screenshot of chat interaction with the model](./images/26_select-chat.png)
 
 Here's an example of the results: Now you can chat with your custom Phi-3 / Phi-3.5 model. It is recommended to ask questions based on the data used for fine-tuning.
-![](./images/27_chat-with-promptflow.png)
+![screenshot of prompt flow](./images/27_chat-with-promptflow.png)
 
 ### Deploy Azure OpenAI to evaluate the Phi-3 / Phi-3.5 model
 
@@ -358,17 +359,17 @@ To evaluate the Phi-3 / Phi-3.5 model in Azure AI Studio, you need to deploy an 
 
 Navigate to the Azure AI Studio project that you created. 
 
-![](./images/28_select-project-created.png)
+![Screenshot of project deployment](./images/28_select-project-created.png)
 
 In the Project that you created, select Deployments from the left side tab.
 
 - Select + Deploy model from the navigation menu.
 
 - Select Deploy base model.
-![](./images/29_deploy-openai-model.png)
+![Screenshot selecting to deploy a model](./images/29_deploy-openai-model.png)
 
 - Select Azure OpenAI model you'd like to use. For example, gpt-4o.
-![](./images/31_select-openai-model.png)	
+![Screenshot selecting model type to deploy](./images/31_select-openai-model.png)	
 
 - Select Confirm.
 
@@ -379,16 +380,16 @@ In the Project that you created, select Deployments from the left side tab.
 - Visit [Azure AI Studio](https://ai.azure.com).
 
 - Navigate to the Azure AI Studio project that you created.
-![](./images/32_select-project-created.png)
+![Screenshot showing AI Studio](./images/32_select-project-created.png)
 
 In the Project that you created, select Evaluation from the left side tab.
 
 - Select + New evaluation from the navigation menu. 
 
-![](./images/33_select-evaluation.png)
+![Screenshot of selecting model evaluation](./images/33_select-evaluation.png)
 
 - Select Prompt flow evaluation.
-![](./images/34_promptflow-evaluation.png)
+![screenshot of prompt flow evaluation](./images/34_promptflow-evaluation.png)
 
 
 Perform the following tasks:
@@ -397,7 +398,7 @@ Perform the following tasks:
 Select Question and answer without context as the task type. Because, the UlTRACHAT_200k dataset used in this tutorial does not contain context.
 - Select the prompt flow you'd like to evaluate.
 
-![](./images/35_evaluation-setting.png)	
+![screenshot of evaluation settings](./images/35_evaluation-setting.png)	
  
 
 - Select Next.
@@ -407,14 +408,14 @@ Perform the following tasks:
 - Select Add your dataset to upload the dataset. For example, you can upload the test dataset file, such as test_data.json1, which is included when you download the ULTRACHAT_200k dataset.
 - Select the appropriate Dataset column that matches your dataset. For example, if you are using the ULTRACHAT_200k dataset, select ${data.prompt} as the dataset column.
 
-![](./images/36_evaluation-setting.png)
+![Screenshot of Evaluation result](./images/36_evaluation-setting.png)
 - Select Next.
 
 Perform the following tasks to configure the performance and quality metrics:
 
 - Select the performance and quality metrics you'd like to use.
 - Select the Azure OpenAI model that you created for evaluation. For example, select gpt-4o.
-![](./images/37_evaluation-setting.png)
+![Screenshot of evaluation metrics](./images/37_evaluation-setting.png)
 
 Perform the following tasks to configure the risk and safety metrics:
 
@@ -423,7 +424,7 @@ Perform the following tasks to configure the risk and safety metrics:
 - For question, select Data source to {$data.prompt}.
 - For answer, select Data source to {$run.outputs.answer}.
 - For ground_truth, select Data source to {$data.message}.
-![](./images/38_evaluation-setting.png)
+![screenshot of evaluation output](./images/38_evaluation-setting.png)
 
 - Select Next.
 
@@ -442,14 +443,14 @@ Once the evaluation is complete, you can review the results for both performance
 Performance and quality metrics:
 
 - evaluate the model’s effectiveness in generating coherent, fluent, and relevant responses.
-![](./images/39_evaluation-result-gpu.png)
+![Screenshot of Coherent, fluent and relevant responses](./images/39_evaluation-result-gpu.png)
 
 Risk and safety metrics:
 
 - Ensure that the model’s outputs are safe and align with Responsible AI Principles, avoiding any harmful or offensive content.
-![](./images/40_evaluation-result-gpu.png
+![screenshot of results and if the contain harmful responses](./images/40_evaluation-result-gpu.png
 
 You can scroll down to view Detailed metrics result.
-![](./images/41_detailed-metrics-result.png)
+![Screenshot of detailed metrics](./images/41_detailed-metrics-result.png)
 
 By evaluating your custom Phi-3 / Phi-3.5 model against both performance and safety metrics, you can confirm that the model is not only effective, but also adheres to responsible AI practices, making it ready for real-world deployment.
