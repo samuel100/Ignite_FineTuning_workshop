@@ -1,4 +1,4 @@
-# Lab2. Data Preperation
+# Lab 2. Data Preperation
 ## Introduction
 
 > [!NOTE]

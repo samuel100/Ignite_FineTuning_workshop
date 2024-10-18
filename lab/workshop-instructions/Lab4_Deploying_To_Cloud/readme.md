@@ -1,4 +1,4 @@
-# Lab4. Deploy an AI Model to a cloud endpoint using Azure AI 
+# Lab 4. Deploy an AI Model to a cloud endpoint using Azure AI 
 
 ## Introduction 
 

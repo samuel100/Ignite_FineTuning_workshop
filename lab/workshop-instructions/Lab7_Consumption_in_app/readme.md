@@ -1,4 +1,4 @@
-# Lab7. Consumption of your Model within an Application 
+# Lab 7. Consumption of your Model within an Application 
 
 ## Introduction
 
