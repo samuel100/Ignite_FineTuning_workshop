@@ -1,5 +1,21 @@
 # Workshop
 
+### Scenario
+
+Develop a travel companion application that leverages Large Language Models (LLMs) to provide personalized travel recommendations, itinerary planning, and real-time assistance to travelers. The labs will focus on fine-tuning a GPT model using Azure AI Studio and a code-first approach using Python and Microsoft Olive.
+
+We will focus on the specific areas 
+- Setting up Azure AI Studio
+- Prepare Training Data
+- One-Button Fine-Tuning with Azure AI Studio
+- Import a pre-trained model into the project.
+- Deploy the Fine-Tuned Model
+- Test the model by querying travel recommendations and itinerary planning.
+- Python code to fine-tune GPT model with the prepared data.
+- Use Microsoft Olive for model optimization, including pruning and quantization.
+- Evaluate the model's performance and compare it with the Azure-deployed model.
+- Evaluate which method provided better performance and insights.
+
 | Lab # | Title | Description |
 | ----- | ------ |----------- |
 | 1 | Set up | Learn how to set-up your Azure resources and local environment for this lab. |
