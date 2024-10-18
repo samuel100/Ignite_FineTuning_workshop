@@ -51,19 +51,17 @@ Open floor for questions Recap of key takeaways Next steps and additional resour
 
 ## Workshop Instructions on Skillable Lab On Demand
 
-| Section | Minutes | 
--------------------------------------------------------------------------------------------------------|---------|
-|  [Lab1](/lab/Workshop%20Instructions/Lab1_Environment_Setup/readme.md) | Environment Setup      | 
-|  [Lab2](/lab/Workshop%20Instructions/Lab2_Data_Preparation/readme.md) |  Data Preperation  |
-|  [Lab3](/lab/Workshop%20Instructions/Lab3_Azure_AIStudio/readme.md) | Fine Tuning with Azure AI Studio  | 
-|  [Lab4](/lab/Workshop%20Instructions/Lab4_AI_MLStudio/readme.md) | Fine Tuning with Azure ML Studio       | 
-|  [Lab5](/lab/Workshop%20Instructions/Lab5_local_Cloud_MLStudio/readme.md) | Fine Tuning locally with Cloud Compute | 
-|  [Lab6](/lab/Workshop%20Instructions/Lab6_local_Cloud_Olive/readme.md) | Fine Tuning with Olive using Cloud Compute   | 
-|  [Lab7](/lab/Workshop%20Instructions/Lab7_Local_Olive/readme.md) | Fine Tuning with Olive using local GPU/CPU | 
-|  [Lab 8](/lab/Workshop%20Instructions/Lab8_Deploying_Models/readme.md) |Deploy the finetuned model to Azure |
-|  [Lab9](/lab/Workshop%20Instructions/Lab9_Evaluation/) | Evaluate the finetuned model |
-|  [Lab10](/lab/Workshop%20Instructions/Lab10_Consumption/) | Consume the finetuned model with an application|
-|  [Lab11](/lab/Workshop%20Instructions/Lab11_CleanUp/) | Cleanup resources |
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 1 | Set up | Learn how to set-up your Azure resources and local environment for this lab. |
+| 2 | Data Prep | Learn how to prepare data for Finetuning and evaluation. |
+| 3 | Finetuning with Azure AI Studio | Learn how to finetune with Azure AI Studio - both an Azure OpenAI model, and an OSS Model using the Olive CLI. |
+| 4 | Deploying models to a cloud endpoint | Learn how to deploy models to a cloud endpoint for inference using Azure AI Studio. |
+| 5 | Optimize your model for Inference using Microsoft Olive | Learn to optimize your model for on-device inference using Olive. This will include quantization methods and ONNX runtime optimizations. |
+| 6 | How to evaluate AI models | In this lab we show you how to evaluate your models to ensure they give trustworthy and safe responses. |
+| 7 | Bring it all together in an app | In this lab we build an application that consumes the AI models you trained and optimized in previous labs. The application will call 2 different models: 1 model will be in the cloud and the other will be on-device. |
+| 8 | Clean up | In this lab, we clean up all the resources.
+
 
 ## Running the Workshops Outside Skillable
 
@@ -71,11 +69,10 @@ To deliver this session with no Skillable access, please make sure to that the a
 
 - An Azure subscription - [Create one for free.](https://azure.microsoft.com/free/cognitive-services)
 - An Azure AI resource with [GPT-4o and Phi-3.5 model supported in a supported region](https://docs.microsoft.com/en-us/azure/cognitive-services/phi-3-5-models)
-- An Azure ML Studio Environment
-- An Azure AI Studio Environment
-- Visual Studio Code 
-- Visual Studio Code Extensions
-  - Python
-  - Jupyter Notebooks
-  - AI Toolkit
+- [An Azure ML Studio Environment](https://ml.azure.com)
+- [An Azure AI Studio Environment](https://ai.azure.com)
+- [Visual Studio Code](https://code.visualstudio.com/) 
+- [Visual Studio Code Extensions](https://marketplace.visualstudio.com/VSCode)
+  - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
+  - [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
   
