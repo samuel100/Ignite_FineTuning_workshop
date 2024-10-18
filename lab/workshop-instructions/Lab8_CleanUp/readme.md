@@ -1,5 +1,6 @@
-# Clean up Resources
+# Lab 8. Clean up Resources
 
+## Introduction 
 In this exercise, you will delete the resources you created in the previous labs to avoid unnecessary Azure costs.
 
 This exercise will take approximately **15** minutes.
