@@ -1,4 +1,6 @@
-# Fine-tune a language model for chat completion in the Azure AI Studio
+#Lab 3. Fine-tune a language model for chat completion in the Azure AI Studio
+
+## Introduction
 
 In this exercise, you'll fine-tune a language model with the Azure AI Studio that you want to use for a custom copilot scenario.
 
