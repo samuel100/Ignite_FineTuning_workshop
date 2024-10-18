@@ -8,7 +8,7 @@
 ## Learning Objectives
 
 By the end of this workshop, you should be able to:
-1. Deploy the fine-tuned model using a Azure AI Studio approach.
+1. Deploy the fine-tuned model using Azure AI Studio model deployment.
 
 
 ## Lab Scenario
