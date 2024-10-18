@@ -30,7 +30,7 @@ We will focus on the specific areas
 - Use Microsoft Olive for model optimization, including pruning and quantization.
 - Evaluate the model's performance and compare it with the Azure-deployed model.
 - Evaluate which method provided better performance and insights.
-- 
+  
 ### Set up the environment for the workshop
 
 ## Create an Azure AI hub
