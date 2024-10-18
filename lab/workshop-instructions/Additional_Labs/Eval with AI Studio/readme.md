@@ -275,7 +275,6 @@ Now that you have fine-tuned and integrated your custom Phi-3 model with Prompt 
  
 
 - Select Chat.
-- 
 ![](./images/09-04-select-chat.png)
 
 Here's an example of the results: Now you can chat with your custom Phi-3 model. It is recommended to ask questions based on the data used for fine-tuning.

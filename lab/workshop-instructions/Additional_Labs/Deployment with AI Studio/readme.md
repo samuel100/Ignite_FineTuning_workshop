@@ -111,4 +111,4 @@ Select the endpoint that you created.
 > [!NOTE]
 > Once the deployment is complete, ensure that Live traffic is set to 100%. If it is not, select Update traffic to adjust the traffic settings. Note that you cannot test the model if the traffic is set to 0%.
 
-![](/lab/Workshop%20Instructions/Lab8_Deploying_Models/images/07-10-set-traffic.png)
+![](./images/07-10-set-traffic.png)
