@@ -13,8 +13,8 @@ By the end of this workshop, you should be able to:
 > [!NOTE]
 >In this workshop lab, you will:
 
-- CReate a new Azure AI Studio HUb and Project
- 
+- Create a new Azure AI Studio Hub
+- Create a new Azure AI Project
 
 
 ### Set up the environment for the workshop
@@ -97,7 +97,6 @@ Go to the Home page of [Azure AI Studio](https://ai.azure.com).
 
 Once a project is created, you can access the playground, tools, and other assets in the left navigation panel.
 
-
 On the project Settings page you can find information about the project, such as the project name, description, and the hub that hosts the project. You can also find the project ID, which is used to identify the project via SDK or API.
 
 ![Screenshot of an AI Studio project settings page.](./images/project-settings.png)
@@ -108,3 +107,17 @@ Location: The location of the hub that hosts the project. For supported location
 Subscription: The subscription that hosts the hub that hosts the project.
 Resource group: The resource group that hosts the hub that hosts the project.
 Select Manage in the Azure portal to navigate to the project resources in the Azure portal.
+
+## Create your Cloud Compute Resources
+
+1. Under **Settings**, select **Create compute**.
+
+    <img src="./images/compute-create.png" alt="create Azure AI Compute" width="600"/>
+
+1. Select your **Virtual machine type** as **GPU**. *Filter* the list of **Virtual machine size** on **A100**: 
+    
+    <img src="./images/compute-size.png" alt="ccompute size" width="600"/>
+    
+    Select a VM you have available quota for.
+
+1. Select **Review+Create** and then **Create**.
