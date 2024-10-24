@@ -60,7 +60,7 @@ code Ignite_FineTuning_workshop/lab/workshop-instructions/lab5-optimize-model
 
 ### Step 3: Install dependencies
 
-Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+j**) and execute:
+Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+J**) and execute:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -71,7 +71,7 @@ sudo apt-get -y install cudnn9-cuda-12
 
 ### Step 5: Execute OLIVE commands 
 
-Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+j**) and ensure the `olive-ai` conda environment is activated:
+Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+J**) and ensure the `olive-ai` conda environment is activated:
 
 ```bash
 conda activate olive-ai
@@ -89,7 +89,11 @@ Next, execute the following scripts in the command line.
 1. **🗜️ Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called [Active Aware Quantization (AWQ)](https://arxiv.org/abs/2306.00978), which provides more accurate results than the Round to Nearest (RTN) technique:
     
     ```bash
-    ./scripts/01-quantize.sh 
+    olive quantize \
+        --model_name_or_path microsoft/Phi-3.5-mini-instruct \
+        --algorithm awq \
+        --output_path models/phi/awq \
+        --log_level 1
     ```
     
     It takes **~10mins** to complete the AWQ quantization.
@@ -97,27 +101,38 @@ Next, execute the following scripts in the command line.
 1. **👟 Train the model:** Next, the `olive finetune` command finetunes the quantized model. We find that quantizing the model *before* fine-tuning greatly improves the accuracy.
     
     ```bash
-    ./scripts/02-finetune.sh
+    olive finetune \
+        --method lora \
+        --model_name_or_path models/phi/awq \
+        --trust_remote_code \
+        --data_files "data/data_sample_travel.jsonl" \
+        --data_name "json" \
+        --text_template "<|user|>\n{prompt}<|end|>\n<|assistant|>\n{response}<|end|>" \
+        --max_steps 15 \
+        --output_path ./models/phi/ft \
+        --log_level 1
     ```
     
-    It takes **~10mins** to complete the Fine-tuning (depending on the number of epochs).
-
-    🧠 Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others](https://huggingface.co/docs/optimum/en/exporters/onnx/overview).
-
-    ☕ It can take around 5-10mins for the finetuning complete. At the end of the process you will have an PEFT adapter.
-
-    ⚙️ For more information on available options, read the [Olive Finetune documentation](https://microsoft.github.io/Olive/features/cli.html#finetune).
+    It takes **~10mins** to complete the Fine-tuning (depending on the number of epochs).Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others](https://huggingface.co/docs/optimum/en/exporters/onnx/overview). For more information on available options, read the [Olive Finetune documentation](https://microsoft.github.io/Olive/features/cli.html#finetune).
 
 1. **📸 Capture ONNX Graph:** With the model trained, you need to capture the ONNX graph, which will add the adapter nodes into the graph.
 
     ```bash
-    ./scripts/03-capture-onnx.sh
+    olive capture-onnx-graph \
+        --model_name_or_path models/phi/ft/model \
+        --adapter_path models/phi/ft/adapter \
+        --use_ort_genai \
+        --output_path models/phi/onnx \
+        --log_level 1
     ```
 
 1. **🔌 Generate adapters:** The following command will change the adapter nodes of the ONNX graph into inputs and saves the weights in a separate file:
     
     ```bash
-    ./scripts/04-gen-adapters.sh
+    olive generate-adapter \
+        --model_name_or_path models/phi/onnx \
+        --output_path models/phi/ft-ready \
+        --log_level 1
     ```
     
     It takes **~2mins** to complete the adapter extraction and ONNX optimization.
