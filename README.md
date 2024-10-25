@@ -12,45 +12,96 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 
 ## Session Overview 
 
-**1. Introduction and Overview (15 minutes)**
-- Welcome and objectives
-- Overview of Microsoft Olive
-- Importance of fine-tuning in NLP
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 1 | Set up | Learn how to set-up your Azure resources and local environment for this lab. |
+| 2 | Data Prep | Learn how to prepare data for Finetuning and evaluation. |
+| 3 | Finetuning with Azure AI Studio | Learn how to finetune with Azure AI Studio - both an Azure OpenAI model, and an OSS Model using the Olive CLI. |
+| 4 | Deploying models to a cloud endpoint | Learn how to deploy models to a cloud endpoint for inference using Azure AI Studio. |
+| 5 | Optimize your model for Inference using Microsoft Olive | Learn to optimize your model for on-device inference using Olive. This will include quantization methods and ONNX runtime optimizations. |
+| 6 | How to evaluate AI models | In this lab we show you how to evaluate your models to ensure they give trustworthy and safe responses. |
+| 7 | Bring it all together in an app | In this lab we build an application that consumes the AI models you trained and optimized in previous labs. The application will call 2 different models: 1 model will be in the cloud and the other will be on-device. |
+| 8 | Clean up | In this lab, we clean up all the resources.
 
-**2. Setting Up the Environment (45 minutes)**
+**0. Introduction and Overview (15 minutes)**
+- Welcome and objectives
+- Overview of Fine Tuning 
+- Solution Scenario 
+
+
+**1. Setting Up the Environment (45 minutes)**
 - Introduction to Azure and Local GPU setups
 - Step-by-step guide to configuring Azure for fine-tuning
 - Setting up a local GPU environment
 
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 1 | Set up | Learn how to set-up your Azure resources and local environment for this lab. |
+
+**2. Data Preperation**
+- Creating Synthentic Data using GPTs
+
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 2 | Data Prep | Learn how to prepare data for Finetuning and evaluation. |
+
 **3. Fine-Tuning Basics (45 minutes)**
 - Understanding pre-trained models
 - Introduction to fine-tuning techniques
-- Hands-on exercise: Fine-tuning a simple model
-
-**4. Advanced Fine-Tuning Techniques (45 minutes)**
 - Hyperparameter tuning
 - Data augmentation strategies
 - Hands-on exercise: Implementing advanced techniques
+- Hands-on exercise: Fine-tuning a simple model
+
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 3 | Finetuning with Azure AI Studio | Learn how to finetune with Azure AI Studio|
+
+**4. Deployment of a Model (45 minutes)**
+- Deployment strategies on Azure
+- Local deployment considerations
+- Deploy the Model: Once fine-tuned, deploy the model using the managed compute deployment option
+- Create an Endpoint: Set up an endpoint for real-time inference
+- Test the Endpoint: Use sample data to test the deployed model and ensure it's working correctly
+
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 4 | Deploying models to a cloud endpoint | Learn how to deploy models to a cloud endpoint for inference using Azure AI Studio. |
 
 **5. Optimizing Performance (15 minutes)**
 - Monitoring and evaluating model performance
 - Using Microsoft Olive for optimization
 - Hands-on exercise: Performance tuning
 
-**6. Deploying Fine-Tuned Models (15 minutes)**
-- Deployment strategies on Azure
-- Local deployment considerations
-- Hands-on exercise: Deploying a model
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 5 | Optimize your model for Inference using Microsoft Olive | Learn to optimize your model for on-device inference using Olive. This will include quantization methods and ONNX runtime optimizations. |
 
-**7. Evaluation of Fine-Tuned Models (15 minutes)**
+
+
+**6. Evaluation of Fine-Tuned Models (15 minutes)**
 - Evaluating the fine-tuned model
 - Responsible AI considerations
 - Hands-on exercise: Evaluating the model
 
-**8. Consumption of the Model (15 minutes)**
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 6 | How to evaluate AI models | In this lab we show you how to evaluate your models to ensure they give trustworthy and safe responses. |
+
+**7. Consumption of the Model (15 minutes)**
 - Using .NET Aspire Application to consumed the fine tuned model
 - Optimize the model for specific hardware
 
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 7 | Bring it all together in an app | In this lab we build an application that consumes the AI models you trained and optimized in previous labs. The application will call 2 different models: 1 model will be in the cloud and the other will be on-device. |
+
+**8. Clean Up**
+- Remove Azure Resources and Cleanup Resource Groups
+
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 8 | Clean up | In this lab, we clean up all the resources.
 **9. Q&A and Wrap-Up (15 minutes)**
 - Open floor for questions
 - Recap of key takeaways
