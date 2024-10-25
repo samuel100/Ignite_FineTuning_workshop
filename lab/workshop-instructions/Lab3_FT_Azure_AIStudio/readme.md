@@ -2,9 +2,12 @@
 
 ## Introduction
 
-In this exercise, you'll fine-tune a language model with the Azure AI Studio that you want to use for a custom copilot scenario.
+In this exercise, you'll fine-tune a language model with the Azure AI Studio that you want to use for a custom chat application scenario. You'll compare the fine-tuned model with a base model to assess whether the fine-tuned model fits your needs better.
 
-This exercise will take approximately **45** minutes.
+You work for a travel agency and you're developing a chat application to help people plan their vacations. The goal is to create a simple and inspiring chat that suggests destinations and activities. Since the chat isn't connected to any data sources, it should **not** provide specific recommendations for hotels, flights, or restaurants to ensure trust with your customers.
+
+This exercise will take approximately **60** minutes.
+
 
 ## Learning Objectives
 By the end of this workshop, you should be able to:
@@ -21,109 +24,34 @@ This lab consists of the following exercises:
 1. Fine-tune and Deploy the GPT model in Azure AI Studio
 1. The Azure AI Studio’s model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
 
+# Fine-tune a language model for chat completion in the Azure AI Studio
 
-## Create a new project
+When you want a language model to behave a certain way, you can use prompt engineering to define the desired behavior. When you want to improve the consistency of the desired behavior, you can opt to fine-tune a model, comparing it to your prompt engineering approach to evaluate which method best fits your needs.
 
-An Azure AI hub provides a collaborative workspace within which you can define one or more *projects*. Let's create a project in your Azure AI hub.
+## Create an AI hub and project in the Azure AI Studio
 
-1. In [Azure AI Studio](https://ai.azure.com), ensure you're in the hub you just created (you can verify your location by checking the path at the top of the screen).
-1. Navigate to **All projects** using the menu on the left.
-1. Select **+ New project**.
+You start by creating an Azure AI Studio project within an Azure AI hub:
+
+1. In a web browser, open [https://ai.azure.com](https://ai.azure.com) and sign in using your Azure credentials.
+1. Select the **Home** page, then select **+ New project**.
 1. In the **Create a new project** wizard, create a project with the following settings:
-    - **Current hub**: *Your AI hub*
     - **Project name**: *A unique name for your project*
-1. Wait for your project to be created. When it's ready, it should look similar to the following image:
+    - **Hub**: *Create a new hub with the following settings:*
+    - **Hub name**: *A unique name*
+    - **Subscription**: *Your Azure subscription*
+    - **Resource group**: *A new resource group*
+    - **Location**: Select **Help me choose** and then select **gpt-35-turbo** in the Location helper window and use the recommended region\*
+    - **Connect Azure AI Services or Azure OpenAI**: *Create a new connection*
+    - **Connect Azure AI Search**: Skip connecting
 
-    ![Screenshot of a project details page in Azure AI Studio.](./images/azure-ai-project.png)
+    > \* Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions in the location helper include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region. Learn more about [model availability per region](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#gpt-35-turbo-model-availability)
 
-1. View the pages in the pane on the left side, expanding each section, and note the tasks you can perform and the resources you can manage in a project.
-
-## Choose a model using model benchmarks
-
-Before deploying a model, you can explore the model benchmarks to decide which model best fits your needs.
-
-Imagine you want to create a custom copilot that serves as a travel assistant. Specifically, you want your copilot to offer support for travel-related inquiries, such as visa requirements, weather forecasts, local attractions, and cultural norms.
-
-Your copilot will need to provide factually accurate information, so groundedness is important. Next to that, you want the copilot's answers to be easy to read and understand. Therefore, you also want to pick a model that is rates high on fluency and coherence.
-
-1. In the Azure AI Studio, navigate to **Model benchmarks** under the **Get started** section, using the menu on the left.
-    In the **Quality benchmarks** tab, you can find some charts already visualized for you, comparing different models.
-1. Filter the shown models:
-    - **Tasks**: Question answering
-    - **Collections**: Azure OpenAI
-    - **Metrics**: Coherence, Fluency, Groundedness
-1. Explore the resulting charts and the comparison table. When exploring, you can try and answer the following questions:
-    - Do you notice a difference in performance between GPT-3.5 and GPT-4 models?
-    - Is there a difference between versions of the same model?
-    - How do the 32k variants differ from the base models?
-
-From the Azure OpenAI collection, you can choose between GPT-3.5 and GPT-4 models. Let's deploy these two models and explore how they compare for your use case.
-
-## Deploy Azure OpenAI models
-
-Now that you have explored your options through model benchmarks, you're ready to deploy language models. You can browse the model catalog, and deploy from there, or you can deploy a model through the **Deployments** page. Let's explore both options.
-
-### Deploy a model from the Model catalog
-
-Let's start by deploying a model from the Model catalog. You may prefer this option when you want to filter through all available models.
-
-1. Navigate to the **Model catalog** page under the **Get started** section, using the menu on the left.
-1. Search for and deploy the `gpt-35-turbo` model, curated by Azure AI, with the following settings:
-    - **Deployment name**: *A unique name for your model deployment, indicating it's a GPT-3.5 model*
-    - **Model version**: *Select the default version*
-    - **Deployment type**: Standard
-    - **Connected Azure OpenAI resource**: *Select the default connection that was created when you created your hub*
-    - **Tokens per Minute Rate Limit (thousands)**: 5K
-    - **Content filter**: Default
-
-### Deploy a model through Deployments
-
-If you already know exactly which model you want to deploy, you may prefer to do it through Deployments.
-
-1. Navigate to the **Deployments** page under the **Components** section, using the menu on the left.
-1. In the **Model deployments** tab, create a new deployment with the following settings:
-    - **Model**: gpt-4
-    - **Deployment name**: *A unique name for your model deployment, indicating it's a GPT-4 model*
-    - **Model version**: *Select the default version*
-    - **Deployment type**: Standard
-    - **Connected Azure OpenAI resource**: *Select the default connection that was created when you created your hub*
-    - **Tokens per Minute Rate Limit (thousands)**: 5K
-    - **Content filter**: Default
-
-> [!NOTE]
-> You may have noticed some models showing the Model benchmarks, but not as an option in your model catalog. Model availability differs per location. Your location is specified on the AI hub level, where you can use the **Location helper** to specify the model you want to deploy to get a list of locations you can deploy it in.
-
-## Test your models in the chat playground
-
-Now that we have two models to compare, let's see how the models behave in a conversational interaction.
-
-1. Navigate to the **Chat** page under the **Project playground** section, using the menu on the left.
-1. In the **Chat playground**, select your GPT-3.5 deployment.
-1. In the chat window, enter the query `What can you do?` and view the response.
-    The answers are very generic. Remember we want to create a custom copilot that serves as a travel assistant. You can specify what kind of help you want in the question you ask.
-1. In the chat window, enter the query `Imagine you're a travel assistant, what can you help me with?`
-    The answers are already more specific. You may not want your end-users to have to provide the necessary context every time they interact with your copilot. To add global instructions, you can edit the system message.
-1. Update the system message with the following prompt:
-
-   ```plaintext
-   You are an AI travel assistant that helps people plan their trips. Your objective is to offer support for travel-related inquiries, such as visa requirements, weather forecasts, local attractions, and cultural norms.
-   ```
-
-1. Select **Apply changes**, and **Clear chat**.
-1. In the chat window, enter the query `What can you do?` and view the new response. Observe how it's different from the answer you received before. The answer is specific to travel now.
-1. Continue the conversation by asking: `I'm planning a trip to London, what can I do there?`
-    The copilot offers a lot of travel related information. You may want to improve the output still. For example, you may want the answer to be more succinct.
-1. Update the system message by adding `Answer with a maximum of two sentences.` to the end of the message. Apply the change, clear the chat, and test the chat again by asking: `I'm planning a trip to London, what can I do there?`
-    You may also want your copilot to continue the conversation instead of simply answering the question.
-1. Update the system message by adding `End your answer with a follow-up question.` to the end of the message. Apply the change, clear the chat, and test the chat again by asking: `I'm planning a trip to London, what can I do there?`
-1. Change your **Deployment** to your GPT-4 model and repeat all steps in this section. Notice how the models may vary in their outputs.
-1. Finally, test both models on the query `Who is the prime minister of the UK?`. The performance on this question is related to the groundedness (whether the response is factually accurate) of the models. Does the performance correlate with your conclusions from the Model benchmarks?
-
-Now that you have explored both models, consider what model you would choose now for your use case. At first, the outputs from the models may differ, and you may prefer one model over the other. However, after updating the system message, you may notice that the difference is minimal. From a cost optimization perspective, you may then opt for the GPT-3.5 model over the GPT-4 model, as their performance is very similar.
+1. Review your configuration and create your project.
+1. Wait for your project to be created.
 
 ## Fine-tune a GPT-3.5 model
 
-Before you can fine-tune a model, you need a dataset.
+As fine-tuning a model takes some time to complete, you'll start the fine-tuning job first. Before you can fine-tune a model, you need a dataset.
 
 1. Save the training dataset as JSONL file locally: https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-finetune.jsonl
 1. Navigate to the **Fine-tuning** page under the **Tools** section, using the menu on the left.
@@ -135,19 +63,55 @@ Before you can fine-tune a model, you need a dataset.
     - **Training data**: Upload files
     - **Upload file**: Select the JSONL file you downloaded in a previous step.
 
-> [!TIP]
-> You don't have to wait for the data processing to be completed to continue to the next step.
+    > **Tip**: You don't have to wait for the data processing to be completed to continue to the next step.
 
     - **Validation data**: None
     - **Task parameters**: *Keep the default settings*
-1. Finetuning will start and may take some time to complete.
+1. Fine-tuning will start and may take some time to complete.
 
-> [!NOTE] 
-> Fine-tuning and deployment can take some time, so you may need to check back periodically to complete the next step.
+> **Note**: Fine-tuning and deployment can take some time, so you may need to check back periodically. You can already continue with the next step while you wait.
+
+## Chat with a base model
+
+While you wait for the fine-tuning job to complete, let's chat with a base GPT 3.5 model to assess how it performs.
+
+1. Navigate to the **Deployments** page under the **Components** section, using the menu on the left.
+1. Select the **+ Deploy model** button, and select the **Deploy base model** option.
+1. Deploy a `gpt-35-turbo` model, which is the same type of model you used when fine-tuning.
+1. When deployment is completed, navigate to the **Chat** page under the **Project playground** section.
+1. Select your deployed `gpt-35-model` base model in the setup deployment.
+1. In the chat window, enter the query `What can you do?` and view the response.
+    The answers are very generic. Remember we want to create a chat application that inspires people to travel.
+1. Update the system message with the following prompt:
+    ```
+    You are an AI assistant that helps people plan their holidays.
+    ```
+1. Select **Save**, then select **Clear chat**, and ask again `What can you do?`
+    As a response, the assistant may tell you that it can help you book flights, hotels and rental cars for your trip. You want to avoid this behavior.
+1. Update the system message again with a new prompt:
+
+    ```
+    You are an AI travel assistant that helps people plan their trips. Your objective is to offer support for travel-related inquiries, such as visa requirements, weather forecasts, local attractions, and cultural norms.
+    You should not provide any hotel, flight, rental car or restaurant recommendations.
+    Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
+    ```
+
+1. Select **Save**, and **Clear chat**.
+1. Continue testing your chat application to verify it doesn't provide any information that isn't grounded in retrieved data. For example, ask the following questions and explore the model's answers:
+   
+     `Where in Rome should I stay?`
+    
+    `I'm mostly there for the food. Where should I stay to be within walking distance of affordable restaurants?`
+    
+    `Give me a list of five hotels in Trastevere.`
+
+    The model may provide you with a list of hotels, even when you instructed it not to give hotel recommendations. This is an example of inconsistent behavior. Let's explore whether the fine-tuned model performs better in these cases.
+
+1. Navigate to the **Fine-tuning** page under **Tools** to find your fine-tuning job and its status. If it's still running, you can opt to continue manually evaluating your deployed base model. If it's completed, you can continue with the next section.
 
 ## Deploy the fine-tuned model
 
-When fine-tuning has successfully completed, you can deploy the model.
+When fine-tuning has successfully completed, you can deploy the fine-tuned model.
 
 1. Select the fine-tuned model. Select the **Metrics** tab and explore the fine-tune metrics.
 1. Deploy the fine-tuned model with the following configurations:
@@ -155,12 +119,25 @@ When fine-tuning has successfully completed, you can deploy the model.
     - **Deployment type**: Standard
     - **Tokens per Minute Rate Limit (thousands)**: 5K
     - **Content filter**: Default
+1. Wait for the deployment to be complete before you can test it, this may take a while.
 
 ## Test the fine-tuned model
 
-Now that you deployed your fine-tuned model, you can test the model like you can test any other deployed model.
+Now that you deployed your fine-tuned model, you can test the model like you can tested the your deployed base model.
 
 1. When the deployment is ready, navigate to the fine-tuned model and select **Open in playground**.
-1. In the chat window, enter the query `What can you do?`
-    Notice that even though you didn't specify the system message to instruct your model to answer travel-related questions, the model already understands what it should focus on.
-1. Try with another query like `Where should I go on holiday for my 30th birthday?`
+1. Update the system message with the following instructions:
+
+    ```
+    You are an AI travel assistant that helps people plan their trips. Your objective is to offer support for travel-related inquiries, such as visa requirements, weather forecasts, local attractions, and cultural norms.
+    You should not provide any hotel, flight, rental car or restaurant recommendations.
+    Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
+    ```
+
+1. Test your fine-tuned model to assess whether its behavior is more consistent now. For example, ask the following questions again and explore the model's answers:
+   
+     `Where in Rome should I stay?`
+    
+    `Where should i go on Holiday for my 30th Birthday and I love active Sight seeing trips?`
+    
+
