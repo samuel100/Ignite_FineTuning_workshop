@@ -3,11 +3,11 @@
 ## Introduction
 
 > [!NOTE]
->This is a **35-minute** workshop that will give you a hands-on introduction Fine-tuning a model can sometimes lead to unintended or undesired responses. To ensure that the model remains safe and effective, it's important to evaluate it. This evaluation helps to assess the model's potential to generate harmful content and its ability to produce accurate, relevant, and coherent responses.
+>This is a **45-minute** workshop that will give you a hands-on introduction Fine-tuning a model can sometimes lead to unintended or undesired responses. To ensure that the model remains safe and effective, it's important to evaluate it. This evaluation helps to assess the model's potential to generate harmful content and its ability to produce accurate, relevant, and coherent responses.
 
 ## Learning Objectives
 
-You will learn how to evaluate the safety and performance of a fine-tuned Phi-3 / Phi-3.5 model integrated with Prompt flow in Azure AI Studio.
+You will learn how to evaluate the safety and performance of a fine-tuned model integrated with Prompt flow in Azure AI Studio.
 
 ## Lab Scenario
 Introduction to Azure AI Studio's Prompt flow evaluation
@@ -49,7 +49,7 @@ Accountability: The people who design and deploy AI systems must be accountable 
 ### Safety metrics
  
 
-In this lab, you will evaluate the safety of the fine-tuned Phi-3 / Phi-3.5 model using Azure AI Studio's safety metrics. These metrics help you assess the model's potential to generate harmful content and its vulnerability to jailbreak attacks. The safety metrics include:
+In this lab, you will evaluate the safety of the fine-tuned model using Azure AI Studio's safety metrics. These metrics help you assess the model's potential to generate harmful content and its vulnerability to jailbreak attacks. The safety metrics include:
 
  
 -Self-harm-related Content: Evaluates whether the model has a tendency to produce self-harm related content.
@@ -71,7 +71,7 @@ To ensure that your AI model is performing as expected, it's important to evalua
 
 ### Performance metrics
  
-In this lab, you will evaluate the performance of the fine-tuned Phi-3 / Phi-3.5 model using Azure AI Studio's performance metrics. These metrics help you assess the model's effectiveness in generating accurate, relevant, and coherent responses. The performance metrics include:
+In this lab, you will evaluate the performance of the fine-tuned model using Azure AI Studio's performance metrics. These metrics help you assess the model's effectiveness in generating accurate, relevant, and coherent responses. The performance metrics include:
 
 - Groundedness: Evaluate how well the generated answers align with the information from the input source.
 - Relevance: Evaluates the pertinence of generated responses to the given questions.
