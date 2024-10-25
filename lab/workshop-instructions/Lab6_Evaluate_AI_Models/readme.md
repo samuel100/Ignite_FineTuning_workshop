@@ -85,31 +85,97 @@ These metrics help you evaluate the model's effectiveness in generating accurate
 
 ![Screenshot of RAI Metrics](./images/6_evaluate-based-on-performance.png)
 
-## Evaluating the Phi-3 / Phi-3.5 model in Azure AI Studio
+## Evaluating the model in Azure AI Studio
  
-In this lab, you will deploy an Azure OpenAI model as an evaluator in Azure AI Studio and use it to evaluate your fine-tuned Phi-3 / Phi-3.5 model.
+In this lab, you will deploy an model as an evaluator in Azure AI Studio and use it to evaluate your fine-tuned model.
 
 Before you begin this tutorial, make sure you have the following prerequisites, as described in the previous tutorials:
 
-- A prepared dataset to evaluate the fine-tuned Phi-3 / Phi-3.5 model.
-- A Phi-3 / Phi-3.5 model that has been fine-tuned and deployed to Azure Machine Learning.
-- A Prompt flow integrated with your fine-tuned Phi-3 / Phi-3.5 model in Azure AI Studio.
+- A prepared dataset to evaluate the fine-tuned model.
+- A model that has been fine-tuned and deployed
+- A Prompt flow integrated with your fine-tuned model in Azure AI Studio.
 
 > [!NOTE]
->You will use the test_data.jsonl file, located in the data folder from the ULTRACHAT_200k dataset downloaded in the previous blog posts, as the dataset to evaluate the fine-tuned Phi-3 / Phi-3.5 model.
+>You will use the test_data.jsonl file, located in the data folder from the ULTRACHAT_200k dataset downloaded in the previous blog posts, as the dataset to evaluate the fine-tuned model.
 
  
 
-Integrate the custom Phi-3 / Phi-3.5 model with Prompt flow in Azure AI Studio(Code first approach)
+## Manually evaluate a language model in the Azure AI Studio
+
+You can manually review model responses based on test data. Manually reviewing allows you to test different inputs one at a time to evaluate whether the model performs as expected.
+
+1. In the **Chat playground**, select the **Evaluate**  dropdown from the top bar, and select **Manual evaluation**.
+1. Change the **System message** to the same message as you used above (included here again):
+
+   ```
+   **Objective**: Assist users with travel-related inquiries, offering tips, advice, and recommendations as a knowledgeable travel agent.
+
+   **Capabilities**:
+   - Provide up-to-date travel information, including destinations, accommodations, transportation, and local attractions.
+   - Offer personalized travel suggestions based on user preferences, budget, and travel dates.
+   - Share tips on packing, safety, and navigating travel disruptions.
+   - Help with itinerary planning, including optimal routes and must-see landmarks.
+   - Answer common travel questions and provide solutions to potential travel issues.
+    
+   **Instructions**:
+   1. Engage with the user in a friendly and professional manner, as a travel agent would.
+   2. Use available resources to provide accurate and relevant travel information.
+   3. Tailor responses to the user's specific travel needs and interests.
+   4. Ensure recommendations are practical and consider the user's safety and comfort.
+   5. Encourage the user to ask follow-up questions for further assistance.
+   ```
+
+1. In the **Manual evaluation result** section, you'll add five inputs for which you will review the output. Enter the following five questions as five separate **Inputs**:
+
+   `Can you provide a list of the top-rated budget hotels in Rome?`
+
+   `I'm looking for a vegan-friendly restaurant in New York City. Can you help?`
+
+   `Can you suggest a 7-day itinerary for a family vacation in Orlando, Florida?`
+
+   `Can you help me plan a surprise honeymoon trip to the Maldives?`
+
+   `Are there any guided tours available for the Great Wall of China?`
+
+1. Select **Run** from the top bar to generate outputs for all questions you added as inputs.
+1. You can now manually review the outputs for each question by selecting the thumbs up or down icon at the bottom right of a response. Rate each response, ensuring you include at least one thumbs up and one thumbs down response in your ratings.
+1. Select **Save results** from the top bar. Enter `manual_evaluation_results` as the name for the results.
+1. Using the menu on the left, navigate to **Evaluation**.
+1. Select the **Manual evaluations** tab to find the manual evaluations you just saved. Note that you can explore your previously created manual evaluations, continue where you left of, and save the updated evaluations.
+
+## Evaluate your with built-in metrics
+
+When you have created a copilot with a chat flow, you can evaluate the flow by doing a batch run and assessing the performance of the flow with built-in metrics.
+
+1. Select the **Automated evaluations** tab and create a **New evaluation** with the following settings:
+    <details>  
+      <summary><b>Troubleshooting tip</b>: Permissions error</summary>
+        <p>If you receive a permissions error when you create a new prompt flow, try the following to troubleshoot:</p>
+        <ul>
+          <li>In the Azure portal, select the AI Services resource.</li>
+          <li>On the Identity tab under Resource Management, confirm that it is system assigned managed identity.</li>
+          <li>Navigate to the associated Storage Account. On the IAM page, add role assignment <em>Storage blob data reader</em>.</li>
+          <li>Under <strong>Assign access to</strong>, choose <strong>Managed Identity</strong>, <strong>+ Select members</strong>, and select the <strong>All system-assigned managed identities</strong>.</li>
+          <li>Review and assign to save the new settings and retry the previous step.</li>
+        </ul>
+    </details>
+
+    - **What do you want to evaluate?**: Dataset
+    - **Evaluation name**: *Enter a unique name*
+    - **What kind of scenario are you evaluating?**: Question and answer without context
+    - Select **Next**
+    - **Select the data you want to evaluate**: Add your dataset
+        - Download the https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-qa.jsonl JSONL file and upload it to the UI.
+    - **Select metrics**: Coherence, Fluency
+    - **Connection**: *Your AI Services connection*
+    - **Deployment name/Model**: *Your deployed GPT-3.5 model*
+1. Select **Next** then review your data and submit the new evaluation.
+1. Wait for the evaluations to be completed, you may need to refresh.
+1. Select the evaluation run you just created.
+1. Explore the **Metric dashboard** and **Detailed metrics result**.
+
+## Integrate the custom model with Prompt flow in Azure AI Studio(Code first approach)
  
-
-> [!NOTE]
->If you followed the AI Studio approach described in Lab 8 Azure AI Studio, you can skip this exercise and proceed to the next one. However, if you followed the code-first approach described in the process of connecting your model to Prompt flow is slightly different. You will learn this process in this exercise.
-
-
-To proceed, you need to integrate your fine-tuned Phi-3 / Phi-3.5 model into Prompt flow in Azure AI Studio.
-
-
 ### Create Azure AI Studio Hub
 
 You need to create a Hub before creating the Project. A Hub acts like a Resource Group, allowing you to organize and manage multiple Projects within Azure AI Studio.
@@ -218,8 +284,8 @@ You have added a custom connection in Azure AI Studio. Now, let's create a Promp
 
 - Select Create.
 
-### Set up Prompt flow to chat with your custom Phi-3 / Phi-3.5 model
- You need to integrate the fine-tuned Phi-3 / Phi-3.5 model into a Prompt flow. However, the existing Prompt flow provided is not designed for this purpose. Therefore, you must redesign the Prompt flow to enable the integration of the custom model.
+### Set up Prompt flow to chat with your custom model
+ You need to integrate the fine-tuned model into a Prompt flow. However, the existing Prompt flow provided is not designed for this purpose. Therefore, you must redesign the Prompt flow to enable the integration of the custom model.
 
 In the Prompt flow, perform the following tasks to rebuild the existing flow:
 
@@ -253,7 +319,7 @@ nodes:
 
 ![Screenshot of modifying the flow](./images/20_select-raw-file-mod.png)
 
-Add the following code to integrate_with_promptflow.py to use the custom Phi-3 / Phi-3.5 model in Prompt flow.
+Add the following code to integrate_with_promptflow.py to use the custom model in Prompt flow.
 
 ``` 
 import logging
@@ -271,7 +337,7 @@ logger = logging.getLogger(__name__)
 
 def query_phi3_model(input_data: str, connection: CustomConnection) -> str:
     """
-    Send a request to the Phi-3 / Phi-3.5 model endpoint with the given input data using Custom Connection.
+    Send a request to the model endpoint with the given input data using Custom Connection.
     """
 
     # "connection" is the name of the Custom Connection, "endpoint", "key" are the keys in the Custom Connection
@@ -346,12 +412,12 @@ Select Start compute sessions to start Prompt flow.
 - Select Chat.
 ![Screenshot of chat interaction with the model](./images/26_select-chat.png)
 
-Here's an example of the results: Now you can chat with your custom Phi-3 / Phi-3.5 model. It is recommended to ask questions based on the data used for fine-tuning.
+Here's an example of the results: Now you can chat with your custom model. It is recommended to ask questions based on the data used for fine-tuning.
 ![screenshot of prompt flow](./images/27_chat-with-promptflow.png)
 
-### Deploy Azure OpenAI to evaluate the Phi-3 / Phi-3.5 model
+### Deploy Azure OpenAI to evaluate the model
 
-To evaluate the Phi-3 / Phi-3.5 model in Azure AI Studio, you need to deploy an Azure OpenAI model. This model will be used to evaluate the performance of the Phi-3 / Phi-3.5 model.
+To evaluate the model in Azure AI Studio, you need to deploy an Azure OpenAI model. This model will be used to evaluate the performance of the model.
 
 ### Deploy Azure OpenAI
 
@@ -373,7 +439,7 @@ In the Project that you created, select Deployments from the left side tab.
 
 - Select Confirm.
 
-### Evaluate the fine-tuned Phi-3 / Phi-3.5 model using Azure AI Studio's Prompt flow evaluation
+### Evaluate the fine-tuned model using Azure AI Studio's Prompt flow evaluation
 
 
 - Start a new evaluation
@@ -453,4 +519,6 @@ Risk and safety metrics:
 You can scroll down to view Detailed metrics result.
 ![Screenshot of detailed metrics](./images/41_detailed-metrics-result.png)
 
-By evaluating your custom Phi-3 / Phi-3.5 model against both performance and safety metrics, you can confirm that the model is not only effective, but also adheres to responsible AI practices, making it ready for real-world deployment.
+By evaluating your custom model against both performance and safety metrics, you can confirm that the model is not only effective, but also adheres to responsible AI practices, making it ready for real-world deployment.
+
+
