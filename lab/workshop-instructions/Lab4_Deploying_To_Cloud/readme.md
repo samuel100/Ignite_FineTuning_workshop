@@ -8,11 +8,36 @@
 ## Learning Objectives
 
 By the end of this workshop, you should be able to:
-1. Deploy the fine-tuned model using Azure AI Studio model deployment.
+1. Deploy a standard model using Azure AI Studio model deployment.
+2. Deploy the fine-tuned model using Azure AI Studio model deployment.
 
+
+## Deploy and test a model
+
+A full exploration of all of the development options available in Azure AI Studio is beyond the scope of this exercise, but we'll explore some basic ways in which you can work with models in a project.
+
+1. In the pane on the left for your project, in the **Components** section, select the **Deployments** page.
+1. On the **Deployments** page, in the **Model deployments** tab, select **+ Deploy model**.
+1. Search for the **gpt-35-turbo** model from the list, select and confirm.
+1. Deploy the model with the following settings:
+    - **Deployment name**: *A unique name for your model deployment*
+    - **Deployment type**: Standard
+    - **Model version**: *Select the default version*
+    - **AI resource**: *Select the resource created previously*
+    - **Tokens per Minute Rate Limit (thousands)**: 5K
+    - **Content filter**: DefaultV2
+    - **Enable dynamic quota**: Disabled
+      
+    > **Note**: Reducing the TPM helps avoid over-using the quota available in the subscription you are using. 5,000 TPM is sufficient for the data used in this exercise.
+
+1. After the model has been deployed, in the deployment overview page, select **Open in playground**.
+1. In the **Chat playground** page, ensure that your model deployment is selected in the **Deployment** section.
+1. In the chat window, enter a query such as *What is AI?* and view the response:
+
+    ![Screenshot of the playground in Azure AI Studio.](./images/playground.png)
 
 ## Lab Scenario
-To integrate the fine-tuned Phi-3 model with an application, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
+To integrate the fine-tuned model with an application, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
 
 ## Lab Outline
 In this exercise, you will:
