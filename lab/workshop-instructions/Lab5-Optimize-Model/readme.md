@@ -41,9 +41,17 @@ OLIVE executes a *workflow*, which is an ordered sequence of individual model op
 > [!NOTE]
 > Please ensure you have provision your Azure AI Studio Hub and Project as per Lab 1.
 
+### Step 0: Connect to your Azure AI Compute
+
+You'll connect to the Azure AI compute using the remote feature in VS Code. Open your VS Code desktop application:
+
+1. Open the **command palette** using  **Shift+Ctrl+P**
+1. In the command palette search for **AzureML - remote: Connect to compute instance in New Window**.
+1. Follow the on-screen instructions to connect to the Compute. This will involve selecting your Azure Subscription, Resource Group, Project and Compute name you set up in Lab 1.
+
 ### Step 1: Clone this repo
 
-On your Azure AI Compute Instance, run the following commands in a terminal window. In VS Code, you can open a new terminal with **Ctrl+j**.
+In VS Code, you can open a new terminal with **Ctrl+J** and clone this repo:
 
 ```bash
 cd ~/code/cloudfiles
@@ -52,15 +60,17 @@ git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 
 ### Step 2: Open Folder in VS Code
 
-To open VS Code in the relevant folder execute the following command in the terminal, which will open a new browser tab:
+To open VS Code in the relevant folder execute the following command in the terminal, which will open a new window:
 
 ```bash
-code Ignite_FineTuning_workshop/lab/workshop-instructions/lab5-optimize-model
+code Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model
 ```
 
-### Step 3: Install dependencies
+Alternatively, you can open the folder by selecting **File** > **Open Folder**. 
 
-Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+J**) and execute:
+### Step 3: Dependencies
+
+Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+J**) and execute the following commands to install the dependencies:
 
 ```bash
 conda create -n olive-ai python=3.11 -y
@@ -69,7 +79,16 @@ pip install -r requirements.txt
 sudo apt-get -y install cudnn9-cuda-12
 ```
 
-### Step 5: Execute OLIVE commands 
+In this lab you'll download and upload models to the Azure AI Model catalog. So that you can access the model catalog, you'll need to login to Azure using:
+
+```bash
+az login
+```
+
+> [!NOTE]
+> At login time you'll be asked to select your subscription. Ensure you set the subscription to the one provided for this lab.
+
+### Step 4: Execute OLIVE commands 
 
 Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+J**) and ensure the `olive-ai` conda environment is activated:
 
@@ -77,10 +96,7 @@ Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl
 conda activate olive-ai
 ```
 
-Next, execute the following scripts in the command line.
-
-> [!NOTE]
-> The scripts will print the OLIVE CLI command that is being executed.
+Next, execute the following Olive commands in the command line.
 
 1. **🔎 Inspect the data:** In this example, you're going to fine-tune Phi-3.5-Mini model so that it is specialized in answering travel related questions. The code below displays the first few records of the dataset, which are in JSON lines format:
     ```bash
@@ -90,13 +106,13 @@ Next, execute the following scripts in the command line.
     
     ```bash
     olive quantize \
-        --model_name_or_path microsoft/Phi-3.5-mini-instruct \
+        --model_name_or_path azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4 \
         --algorithm awq \
         --output_path models/phi/awq \
         --log_level 1
     ```
     
-    It takes **~10mins** to complete the AWQ quantization.
+    It takes **~5mins** to complete the AWQ quantization.
 
 1. **👟 Train the model:** Next, the `olive finetune` command finetunes the quantized model. We find that quantizing the model *before* fine-tuning greatly improves the accuracy.
     
@@ -108,7 +124,7 @@ Next, execute the following scripts in the command line.
         --data_files "data/data_sample_travel.jsonl" \
         --data_name "json" \
         --text_template "<|user|>\n{prompt}<|end|>\n<|assistant|>\n{response}<|end|>" \
-        --max_steps 15 \
+        --max_steps 100 \
         --output_path ./models/phi/ft \
         --log_level 1
     ```
@@ -136,3 +152,60 @@ Next, execute the following scripts in the command line.
     ```
     
     It takes **~2mins** to complete the adapter extraction and ONNX optimization.
+
+### Step 5: Model inference quick test
+
+To test inferencing the model, create a Python file in your folder called **app.py** and copy-and-paste the following code:
+
+```python
+import onnxruntime_genai as og
+import numpy as np
+
+model = og.Model("models/phi/ft-ready/model")
+adapters = og.Adapters(model)
+adapters.load("models/phi/ft-ready/model/adapter_weights.onnx_adapter", "travel")
+
+tokenizer = og.Tokenizer(model)
+tokenizer_stream = tokenizer.create_stream()
+
+params = og.GeneratorParams(model)
+params.set_search_options(max_length=100, past_present_share_buffer=False)
+params.input_ids = tokenizer.encode("Tell me what to do in London")
+
+generator = og.Generator(model, params)
+
+generator.set_active_adapter(adapters, "travel")
+
+print(f"[Travel]: Tell me what to do in London")
+
+while not generator.is_done():
+    generator.compute_logits()
+    generator.generate_next_token()
+
+    new_token = generator.get_next_tokens()[0]
+    print(tokenizer_stream.decode(new_token), end='', flush=True)
+
+print("\n")
+```
+
+Execute the code using:
+
+```bash
+python app.py
+```
+
+### Step 6: Upload model to Azure AI
+
+Uploading the model to an Azure AI model repository makes the model sharable with other members of your development team and also handles version control of the model. To upload the model run the following command:
+
+> [!NOTE]
+> Update the `{}` placeholders with the name of your resource group and Azure AI Project Name.
+
+```bash
+az ml model create \
+    --name ft-for-travel \
+    --version 1 \
+    --path ./models/phi/ft-ready \
+    --resource-group {RESOURCE_GROUP_NAME} \
+    --workspace-name {PROJECT_NAME}
+```
