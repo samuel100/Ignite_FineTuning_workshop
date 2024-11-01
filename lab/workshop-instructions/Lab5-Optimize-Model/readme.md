@@ -98,11 +98,11 @@ conda activate olive-ai
 
 Next, execute the following Olive commands in the command line.
 
-1. **🔎 Inspect the data:** In this example, you're going to fine-tune Phi-3.5-Mini model so that it is specialized in answering travel related questions. The code below displays the first few records of the dataset, which are in JSON lines format:
+1. **Inspect the data:** In this example, you're going to fine-tune Phi-3.5-Mini model so that it is specialized in answering travel related questions. The code below displays the first few records of the dataset, which are in JSON lines format:
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **🗜️ Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called [Active Aware Quantization (AWQ)](https://arxiv.org/abs/2306.00978), which provides more accurate results than the Round to Nearest (RTN) technique:
+1. **Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called [Active Aware Quantization (AWQ)](https://arxiv.org/abs/2306.00978), which provides more accurate results than the Round to Nearest (RTN) technique:
     
     ```bash
     olive quantize \
@@ -114,7 +114,7 @@ Next, execute the following Olive commands in the command line.
     
     It takes **~5mins** to complete the AWQ quantization.
 
-1. **👟 Train the model:** Next, the `olive finetune` command finetunes the quantized model. We find that quantizing the model *before* fine-tuning greatly improves the accuracy.
+1. **Train the model:** Next, the `olive finetune` command finetunes the quantized model. We find that quantizing the model *before* fine-tuning greatly improves the accuracy.
     
     ```bash
     olive finetune \
@@ -131,7 +131,7 @@ Next, execute the following Olive commands in the command line.
     
     It takes **~10mins** to complete the Fine-tuning (depending on the number of epochs).Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others](https://huggingface.co/docs/optimum/en/exporters/onnx/overview). For more information on available options, read the [Olive Finetune documentation](https://microsoft.github.io/Olive/features/cli.html#finetune).
 
-1. **📸 Capture ONNX Graph:** With the model trained, you need to capture the ONNX graph, which will add the adapter nodes into the graph.
+1. **Capture ONNX Graph:** With the model trained, you need to capture the ONNX graph, which will add the adapter nodes into the graph.
 
     ```bash
     olive capture-onnx-graph \
@@ -142,7 +142,7 @@ Next, execute the following Olive commands in the command line.
         --log_level 1
     ```
 
-1. **🔌 Generate adapters:** The following command will change the adapter nodes of the ONNX graph into inputs and saves the weights in a separate file:
+1. **Generate adapters:** The following command will change the adapter nodes of the ONNX graph into inputs and saves the weights in a separate file:
     
     ```bash
     olive generate-adapter \
