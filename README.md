@@ -18,7 +18,7 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 - Solution Scenario 
 
 
-**1. Setting Up the Environment (45 minutes)**
+**1. Setting Up the Environment (15 minutes)**
 - Introduction to Azure and Local GPU setups
 - Step-by-step guide to configuring Azure for fine-tuning
 - Setting up a local GPU environment
@@ -27,14 +27,14 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 | ----- | ------ |----------- |
 | 1 | Set up | Learn how to set-up your Azure resources and local environment for this lab. |
 
-**2. Data Preperation**
+**2. Data Preperation (15 minutes)**
 - Creating Synthentic Data using GPTs
 
 | Lab # | Title | Description |
 | ----- | ------ |----------- |
 | 2 | Data Prep | Learn how to prepare data for Finetuning and evaluation. |
 
-**3. Fine-Tuning Basics (45 minutes)**
+**3. Fine-Tuning Basics (40 minutes)**
 - Understanding pre-trained models
 - Introduction to fine-tuning techniques
 - Hyperparameter tuning
@@ -57,7 +57,7 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 | ----- | ------ |----------- |
 | 4 | Deploying models to a cloud endpoint | Learn how to deploy models to a cloud endpoint for inference using Azure AI Studio. |
 
-**5. Optimizing Performance (15 minutes)**
+**5. Optimizing Performance (30 minutes)**
 - Monitoring and evaluating model performance
 - Using Microsoft Olive for optimization
 - Hands-on exercise: Performance tuning
@@ -66,7 +66,7 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 | ----- | ------ |----------- |
 | 5 | Optimize your model for Inference using Microsoft Olive | Learn to optimize your model for on-device inference using Olive. This will include quantization methods and ONNX runtime optimizations. |
 
-**6. Evaluation of Fine-Tuned Models (15 minutes)**
+**6. Evaluation of Fine-Tuned Models (45 minutes)**
 - Evaluating the fine-tuned model
 - Responsible AI considerations
 - Hands-on exercise: Evaluating the model
@@ -75,7 +75,7 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 | ----- | ------ |----------- |
 | 6 | How to evaluate AI models | In this lab we show you how to evaluate your models to ensure they give trustworthy and safe responses. |
 
-**7. Consumption of the Model (15 minutes)**
+**7. Consumption of the Model (30 minutes)**
 - Using .NET Aspire Application to consumed the fine tuned model
 - Optimize the model for specific hardware
 

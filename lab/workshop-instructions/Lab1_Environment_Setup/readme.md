@@ -2,7 +2,7 @@
 
 ## Introduction 
 > [!NOTE]
->This is a **10-minute** lab that will give you a hands-on introduction to setting up the environment for the workshop.
+>This is a **15-minute** lab that will give you a hands-on introduction to setting up the environment for the workshop.
 
 ## Learning Objectives
 

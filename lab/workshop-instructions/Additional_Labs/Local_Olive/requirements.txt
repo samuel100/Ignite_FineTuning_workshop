@@ -1,0 +1,15 @@
+git+https://github.com/microsoft/Olive
+flash-attn
+transformers
+accelerate
+bitsandbytes
+datasets
+trl
+protobuf
+einops
+peft
+numpy
+optimum
+onnxruntime-gpu
+onnxruntime-genai-cuda
+ipykernel
