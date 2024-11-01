@@ -21,8 +21,8 @@ This lab comprises the following exercises:
 
 - Create an OpenAI Deployment
 - Option1. Create synthetic data using GPT 
-    - Create a prompt to create synthetic data
-- Option 2. Prepare Dataset for Fine-tuning from a known Data Set 
+    - Create a prompt to create synthetic data and save this as in jsonl format.
+- Option 2. Prepare Dataset for Fine-tuning from a known Data Set. 
 
 ## Setup Azure OpenAI services 
 
