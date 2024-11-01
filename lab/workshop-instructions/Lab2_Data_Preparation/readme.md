@@ -7,20 +7,22 @@
 ## Learning Objectives
 
 By the end of this workshop, you should be able to: 
-1. Prepare a dataset for fine-tuning with Azure Machine Learning.
-1. Download the dataset using the download_dataset.py file.
-1. Verify that the datasets were saved successfully to your local finetune-phi/data directory.
-1. Understand the importance of dataset preparation in the machine learning process.
+1. Use GPT To create synthetic data based on a known scenario.
+1. Prepare a dataset for fine-tuning with Azure AI Studio.
+1. Download the dataset using the a python script file.
+1. Verify that the datasets were saved successfully.
+1. Understand the importance of the dataset preparation process.
 
 ## Lab Scenario
-This lab will guide you through the process of fine-tuning a pre-trained model using Azure Machine Learning. In this lab, you will prepare the dataset for fine-tuning with Azure Machine Learning. You will download the `training.jsonl' to your local environment and use this dataset to fine-tune the model in Azure AI Studio.
+This lab will guide you through the process of creating data set for use in fine tuning experiementation. In this lab, you will prepare the dataset for fine-tuning. You will create and deploy a GPT model to create a synthetic data. In option2 you will download a known dataset using python to your local environment.
 
 ## Lab Outline
 This lab comprises the following exercises:
 
-- Create an OpenAI Deployment 
-- Create a prompt to create synthetic data
-- Prepare Dataset for Fine-tuning with Azure AI Studio 
+- Create an OpenAI Deployment
+- Option1. Create synthetic data using GPT 
+    - Create a prompt to create synthetic data
+- Option 2. Prepare Dataset for Fine-tuning from a known Data Set 
 
 ## Setup Azure OpenAI services 
 
@@ -87,7 +89,7 @@ Now that you've deployed a model, you can use it to generate responses based on 
 
 ### Prepare Dataset for Fine-tuning
 
-## Option1: Using GPT to create synethic Data 
+## Option1: Using GPT to create synthetic Data 
 
 **Prompt:** 
 Generate me some sample travel agent interactions which could happen in the commerical travel industry with realise content of a maximum of 80 words be accurate and realistic. Extact conversations from each discussion in JSON Format with a Prompt:<string>. Response:<String> here are some examples {"prompt": "What are the top attractions in Rome?", "response": "Rome, the Eternal City! You can't miss the Colosseum, the Vatican City, and the Pantheon. Don't forget to explore the charming streets of Trastevere and indulge in delicious Italian cuisine. Want to visit any specific historical site or try a local dish?"}, 
