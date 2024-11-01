@@ -13,6 +13,7 @@ By the end of this workshop, you should be able to:
 > [!NOTE]
 >In this workshop lab, you will:
 
+- Setup VScode and necessary frameworks
 - Create a new Azure AI Studio Hub
 - Create a new Azure AI Project
 
@@ -31,7 +32,53 @@ We will focus on the specific areas
 - Evaluate the model's performance and compare it with the Azure-deployed model.
 - Evaluate which method provided better performance and insights.
   
-### Set up the environment for the workshop
+### Set up the environment for the workshop on your personal machine
+
+## Setup Local Dev Environment 
+
+## install az cli
+winget install -e --id Microsoft.AzureCLI
+
+## install az ml extension
+az extension add -n ml
+
+## Install .NET 8 on Windows
+
+- Download .NET 8.0: Visit the [official .NET download page](https://dotnet.microsoft.com) and download the .NET 8.0 SDK for Windows
+- Run the Installer: Open the downloaded installer and follow the prompts to install the .NET 8.0 SDK
+- Restart Your Computer: After installation, restart your computer to complete the setup
+
+**Optional Steps:**
+- Install the .NET Runtime: If you need to run .NET applications, you might also want to install the .NET Runtime and ASP.NET Core Runtime
+- Install Visual Studio Code: If you haven't already, you can install Visual Studio Code and the C# Dev Kit extension for a better development experience
+
+## Installing Visual Studio Code on Windows
+
+Download VS Code: Visit the VS Code download page and download the [installer for Windows](https://vscode.microsoft.com)
+
+- Run the Installer: Open the downloaded installer and follow the prompts to install VS Code
+- Launch VS Code: Once installed, you can open VS Code from the start menu
+
+## Installing the Python Extension
+- Open VS Code: Launch VS Code
+- Open the Extensions View: Press Ctrl+Shift+X or click on the Extensions icon in the Activity Bar on the side of the window
+- Search for Python: In the Extensions view, search for "Python" and click on the Python extension by Microsoft
+- Install the Extension: Click the "Install" button to install the Python extension
+- Select Python Interpreter: After installation, you may need to select your Python interpreter by clicking on the Python version in the bottom left corner and choosing the appropriate interpreter.
+
+## Installing the .NET Extension
+- Open the Extensions View: Press Ctrl+Shift+X or click on the Extensions icon in the Activity Bar
+- Search for .NET: In the Extensions view, search for ".NET" and click on the C# Dev Kit extension by Microsoft
+- Install the Extension: Click the "Install" button to install the .NET extension.
+- Install .NET SDK: Follow the prompts to install the .NET SDK if it is not already installed
+
+## Setting Up Your Environment
+Create a Project: Open a new folder or create a new project
+
+- Initialize a .NET Project: Open a terminal in VS Code (Ctrl+ or Ctrl+Shift+M) and run the command dotnet new console to create a new .NET console project
+- Run the Project: Run the project by typing dotnet run in the terminal
+
+You should now have a working setup with VS Code, the Python extension, and the .NET extension. If you encounter any issues or need further assistance, feel free to ask!
 
 ## Create an Azure AI hub
 
