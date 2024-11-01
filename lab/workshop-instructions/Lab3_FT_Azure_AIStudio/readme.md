@@ -30,28 +30,15 @@ When you want a language model to behave a certain way, you can use prompt engin
 
 ## Create an AI hub and project in the Azure AI Studio
 
-You start by creating an Azure AI Studio project within an Azure AI hub:
+See [Lab1_Environmental Setup](../Lab1_Environment_Setup/readme.md)
 
-1. In a web browser, open [https://ai.azure.com](https://ai.azure.com) and sign in using your Azure credentials.
-1. Select the **Home** page, then select **+ New project**.
-1. In the **Create a new project** wizard, create a project with the following settings:
-    - **Project name**: *A unique name for your project*
-    - **Hub**: *Create a new hub with the following settings:*
-    - **Hub name**: *A unique name*
-    - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *A new resource group*
-    - **Location**: Select **Help me choose** and then select **gpt-35-turbo** in the Location helper window and use the recommended region\*
-    - **Connect Azure AI Services or Azure OpenAI**: *Create a new connection*
-    - **Connect Azure AI Search**: Skip connecting
+You start by using your Azure AI Studio project within your Azure AI hub previous created in Lab1.
 
-    > \* Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions in the location helper include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region. Learn more about [model availability per region](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#gpt-35-turbo-model-availability)
+## Fine-tuning a Large Language Model using Microsoft AI Studio UI Based Fine Tuning 
 
-1. Review your configuration and create your project.
-1. Wait for your project to be created.
+## Task: Fine-tune a GPT-3.5 model
 
-## Fine-tune a GPT-3.5 model
-
-As fine-tuning a model takes some time to complete, you'll start the fine-tuning job first. Before you can fine-tune a model, you need a dataset.
+As fine-tuning a model takes some time to complete, you'll start the fine-tuning job first. Before you can fine-tune a model, you need a dataset based on our scenario we have provided a sample dataset based on the travel agent scenario.
 
 1. Save the training dataset as JSONL file locally: https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-finetune.jsonl
 1. Navigate to the **Fine-tuning** page under the **Tools** section, using the menu on the left.
@@ -109,35 +96,4 @@ While you wait for the fine-tuning job to complete, let's chat with a base GPT 3
 
 1. Navigate to the **Fine-tuning** page under **Tools** to find your fine-tuning job and its status. If it's still running, you can opt to continue manually evaluating your deployed base model. If it's completed, you can continue with the next section.
 
-## Deploy the fine-tuned model
-
-When fine-tuning has successfully completed, you can deploy the fine-tuned model.
-
-1. Select the fine-tuned model. Select the **Metrics** tab and explore the fine-tune metrics.
-1. Deploy the fine-tuned model with the following configurations:
-    - **Deployment name**: *A unique name for your model, you can use the default*
-    - **Deployment type**: Standard
-    - **Tokens per Minute Rate Limit (thousands)**: 5K
-    - **Content filter**: Default
-1. Wait for the deployment to be complete before you can test it, this may take a while.
-
-## Test the fine-tuned model
-
-Now that you deployed your fine-tuned model, you can test the model like you can tested the your deployed base model.
-
-1. When the deployment is ready, navigate to the fine-tuned model and select **Open in playground**.
-1. Update the system message with the following instructions:
-
-    ```
-    You are an AI travel assistant that helps people plan their trips. Your objective is to offer support for travel-related inquiries, such as visa requirements, weather forecasts, local attractions, and cultural norms.
-    You should not provide any hotel, flight, rental car or restaurant recommendations.
-    Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
-    ```
-
-1. Test your fine-tuned model to assess whether its behavior is more consistent now. For example, ask the following questions again and explore the model's answers:
-   
-     `Where in Rome should I stay?`
-    
-    `Where should i go on Holiday for my 30th Birthday and I love active Sight seeing trips?`
-    
 

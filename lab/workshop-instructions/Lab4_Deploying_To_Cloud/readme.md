@@ -65,12 +65,24 @@ When fine-tuning has successfully completed, you can deploy the model.
 
 ## Test the fine-tuned model
 
-Now that you deployed your fine-tuned model, you can test the model like you can test any other deployed model.
+Now that you deployed your fine-tuned model, you can test the model like you can tested the your deployed base model.
 
 1. When the deployment is ready, navigate to the fine-tuned model and select **Open in playground**.
-1. In the chat window, enter the query `What can you do?`
-    Notice that even though you didn't specify the system message to instruct your model to answer travel-related questions, the model already understands what it should focus on.
-1. Try with another query like `Where should I go on holiday for my 30th birthday?`
+1. Update the system message with the following instructions:
+
+    ```
+    You are an AI travel assistant that helps people plan their trips. Your objective is to offer support for travel-related inquiries, such as visa requirements, weather forecasts, local attractions, and cultural norms.
+    You should not provide any hotel, flight, rental car or restaurant recommendations.
+    Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
+    ```
+
+1. Test your fine-tuned model to assess whether its behavior is more consistent now. For example, ask the following questions again and explore the model's answers:
+   
+     `Where in Rome should I stay?`
+    
+    `Where should i go on Holiday for my 30th Birthday and I love active Sight seeing trips?`
+    
+
 
 ## Explore content filters
 
