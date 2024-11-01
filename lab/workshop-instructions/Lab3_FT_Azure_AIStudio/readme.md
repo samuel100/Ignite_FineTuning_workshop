@@ -6,7 +6,7 @@ In this exercise, you'll fine-tune a language model with the Azure AI Studio tha
 
 You work for a travel agency and you're developing a chat application to help people plan their vacations. The goal is to create a simple and inspiring chat that suggests destinations and activities. Since the chat isn't connected to any data sources, it should **not** provide specific recommendations for hotels, flights, or restaurants to ensure trust with your customers.
 
-This exercise will take approximately **60** minutes.
+This exercise will take approximately **40** minutes.
 
 
 ## Learning Objectives
