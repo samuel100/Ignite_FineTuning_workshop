@@ -307,6 +307,11 @@ You can now start to chat
 ![Chat with Phi-3](./images/0304.png)
 
 
+### Change your fine-tuning model path
+
+Please go to scripts\Phi3DotNETAspire\Phi3.Aspire.ModelService change model Path to check your fine tuning model with ONNX model
+
+
 
 
 
