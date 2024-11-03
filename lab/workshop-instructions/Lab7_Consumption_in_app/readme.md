@@ -162,3 +162,31 @@ Here's an example of the results: Now you can chat with your custom Phi-3 model.
 
 ![Screenshot of example deployment](./images/11-1-promptflow-example.png)
 
+
+
+### Exercise 2. Running fine-tuned Phi-3 model in local event
+
+Now that you have successfully run the application in the cloud, let's see how to run it on a local device.
+
+In this exercise, you will:
+
+- using ONNX Runtime GenAI to call fine-tuned Phi-3 model
+- using .NET Aspire to create local Copilot Solution
+
+- Install .NET Aspire
+
+
+```bash
+
+dotnet workload update
+
+dotnet workload install aspire
+
+
+```
+
+
+
+
+
+

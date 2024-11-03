@@ -106,4 +106,7 @@ To deliver this session with no Skillable access, please make sure to that the a
 - [Visual Studio Code Extensions](https://marketplace.visualstudio.com/VSCode)
 - [Python](https://marketplace.visualstudio.com/items?itemName=ms-python.python)
 - [AI Toolkit](https://marketplace.visualstudio.com/items?itemName=ms-windows-ai-studio.windows-ai-studio)
+- [.NET](http://dot.net/)
+- [.NET Aspire](https://learn.microsoft.com/en-us/dotnet/aspire/get-started/aspire-overview)
+- [ONNX Runtime GenAI](https://github.com/microsoft/onnxruntime-genai)
   
