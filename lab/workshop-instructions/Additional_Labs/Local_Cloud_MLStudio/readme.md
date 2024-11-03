@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to Cloud Inference Fine Tuning
 
 > [!NOTE]
 >This is a **40-minute** workshop that will give you a hands-on introduction to the core concepts and best practices for interacting with OpenAI models.
