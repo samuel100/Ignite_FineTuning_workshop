@@ -98,7 +98,7 @@ Before you begin this tutorial, make sure you have the following prerequisites, 
 > [!NOTE]
 >You will use the test_data.jsonl file, located in the data folder from the ULTRACHAT_200k dataset downloaded in the previous blog posts, as the dataset to evaluate the fine-tuned model.
 
-# Evaluate the performance of your custom copilot in the Azure AI Studio
+# Evaluate the performance of your model in Azure AI Studio
 
 In this exercise, you'll explore built-in and custom evaluations to assess and compare the performance of your AI applications with the Azure AI Studio.
 
@@ -203,9 +203,9 @@ You can manually review model responses based on test data. Manually reviewing a
 1. Using the menu on the left, navigate to **Evaluation**.
 1. Select the **Manual evaluations** tab to find the manual evaluations you just saved. Note that you can explore your previously created manual evaluations, continue where you left of, and save the updated evaluations.
 
-## Evaluate your copilot with the built-in metrics
+## Evaluate your model with the built-in metrics
 
-When you have created a copilot with a chat flow, you can evaluate the flow by doing a batch run and assessing the performance of the flow with built-in metrics.
+When you have created a model with a chat flow, you can evaluate the flow by doing a batch run and assessing the performance of the flow with built-in metrics.
 
 1. Select the **Automated evaluations** tab and create a **New evaluation** with the following settings:
     <details>  
@@ -228,7 +228,7 @@ When you have created a copilot with a chat flow, you can evaluate the flow by d
         - Download the https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-qa.jsonl JSONL file and upload it to the UI.
     - **Select metrics**: Coherence, Fluency
     - **Connection**: *Your AI Services connection*
-    - **Deployment name/Model**: *Your deployed GPT-3.5 model*
+    - **Deployment name/Model**: *Your deployed model*
 1. Select **Next** then review your data and submit the new evaluation.
 1. Wait for the evaluations to be completed, you may need to refresh.
 1. Select the evaluation run you just created.
