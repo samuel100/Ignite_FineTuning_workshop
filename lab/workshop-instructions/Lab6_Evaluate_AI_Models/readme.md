@@ -94,10 +94,7 @@ Before you begin this tutorial, make sure you have the following prerequisites, 
 - A prepared dataset to evaluate the fine-tuned model.
 - A model that has been fine-tuned and deployed
 - A Prompt flow integrated with your fine-tuned model in Azure AI Studio.
-
-> [!NOTE]
->You will use the test_data.jsonl file, located in the data folder from the ULTRACHAT_200k dataset downloaded in the previous blog posts, as the dataset to evaluate the fine-tuned model.
-
+ 
 # Evaluate the performance of your model in Azure AI Studio
 
 In this exercise, you'll explore built-in and custom evaluations to assess and compare the performance of your AI applications with the Azure AI Studio.
