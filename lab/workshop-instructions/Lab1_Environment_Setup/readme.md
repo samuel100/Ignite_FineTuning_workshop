@@ -173,11 +173,11 @@ Select Manage in the Azure portal to navigate to the project resources in the Az
 
 1. Under **Settings**, select **Create compute**.
 
-    <img src="./images/compute-create.png" alt="create Azure AI Compute" width="600"/>
+  ![Create Azure AI Compute](./images/compute-create.png)
 
 1. Select your **Virtual machine type** as **GPU**. *Filter* the list of **Virtual machine size** on **A100**: 
     
-    <img src="./images/compute-size.png" alt="ccompute size" width="600"/>
+  ![Compte Size](./images/compute-size.png)
     
     Select a VM you have available quota for.
 
