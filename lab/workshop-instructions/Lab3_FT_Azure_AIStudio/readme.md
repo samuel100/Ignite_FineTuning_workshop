@@ -28,11 +28,10 @@ This lab consists of the following exercises:
 
 When you want a language model to behave a certain way, you can use prompt engineering to define the desired behavior. When you want to improve the consistency of the desired behavior, you can opt to fine-tune a model, comparing it to your prompt engineering approach to evaluate which method best fits your needs.
 
-## Create an AI hub and project in the Azure AI Studio
+## Open your AI hub and project in the Azure AI Studio
 
-See [Lab1_Environmental Setup](../Lab1_Environment_Setup/readme.md)
+You start by using your Azure AI Studio project within your Azure AI hub previous created in Lab1. If you have not created your AI Hub see [Lab1_Environmental Setup](../Lab1_Environment_Setup/readme.md)
 
-You start by using your Azure AI Studio project within your Azure AI hub previous created in Lab1.
 
 ## Fine-tuning a Large Language Model using Microsoft AI Studio UI Based Fine Tuning 
 
@@ -40,7 +39,7 @@ You start by using your Azure AI Studio project within your Azure AI hub previou
 
 As fine-tuning a model takes some time to complete, you'll start the fine-tuning job first. Before you can fine-tune a model, you need a dataset based on our scenario we have provided a sample dataset based on the travel agent scenario. In [Lab2.Data_Preparation](../Lab2_Data_Preparation/readme.md) you should of also created datasets, please select a jsonl file.
 
-1. If you dont have a prepared training dataset as JSONL file locally: you can [download this sample](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-finetune.jsonl) or use a data set which you created in [Lab2 Data_Preperation](../Lab2_Data_Preparation/readme.md).
+1. If you dont have a prepared training dataset as JSONL file locally: you can download this sample [https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-finetune.jsonl](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-finetune.jsonl) or use a data set which you created in [Lab2 Data_Preperation](../Lab2_Data_Preparation/readme.md).
 1. Open up [AI Studio](https://ai.azure.com)
 1. Navigate to the **Fine-tuning** page under the **Tools** section, using the menu on the left.
 1. Select the button to add a new fine-tune model, select the model you wish to fine tune `gpt-35-turbo` model, and select **Confirm**.
