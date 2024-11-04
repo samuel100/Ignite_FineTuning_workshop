@@ -98,7 +98,67 @@ Before you begin this tutorial, make sure you have the following prerequisites, 
 > [!NOTE]
 >You will use the test_data.jsonl file, located in the data folder from the ULTRACHAT_200k dataset downloaded in the previous blog posts, as the dataset to evaluate the fine-tuned model.
 
- 
+# Evaluate the performance of your custom copilot in the Azure AI Studio
+
+In this exercise, you'll explore built-in and custom evaluations to assess and compare the performance of your AI applications with the Azure AI Studio.
+
+## Create an AI hub and project in the Azure AI Studio
+
+You start by creating an Azure AI Studio project within an Azure AI hub:
+
+1. In a web browser, open [https://ai.azure.com](https://ai.azure.com) and sign in using your Azure credentials.
+1. Select the **Home** page, then select **+ New project**.
+1. In the **Create a project** wizard, give a unique name for your project then select **Customize** and set the following settings:
+    - **Hub name**: *A unique name*
+    - **Subscription**: *Your Azure subscription*
+    - **Resource group**: *A new resource group*
+    - **Location**: Select **Help me choose** and then select **gpt-35-turbo** in the Location helper window and use the recommended region\*
+    - **Connect Azure AI Services or Azure OpenAI**: *Create a new connection*
+    - **Connect Azure AI Search**: Skip connecting
+
+    > \* Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions in the location helper include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region. Learn more about [model availability per region](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#gpt-35-turbo-model-availability)
+
+1. Select **Next** and review your configuration.
+1. Select **Create a project** and wait for the process to complete.
+
+## Deploy a GPT model
+
+To use a language model in prompt flow, you need to deploy a model first. The Azure AI Studio allows you to deploy OpenAI models that you can use in your flows.
+
+1. In the navigation pane on the left, under **Components**, select the **Deployments** page.
+1. Create a new deployment of the **gpt-35-turbo** model with the following settings:
+    - **Deployment name**: *A unique name for your model deployment*
+    - **Deployment type**: Standard
+    - **Model version**: *Select the default version*
+    - **AI resource**: *Select the resource created previously*
+    - **Tokens per Minute Rate Limit (thousands)**: 5K
+    - **Content filter**: DefaultV2
+    - **Enable dynamic quota**: Disabled
+1. Wait for the model to be deployed. When the deployment is ready, select **Open in playground**.
+1. Change the **System message** to the following:
+
+   ```
+   **Objective**: Assist users with travel-related inquiries, offering tips, advice, and recommendations as a knowledgeable travel agent.
+
+   **Capabilities**:
+   - Provide up-to-date travel information, including destinations, accommodations, transportation, and local attractions.
+   - Offer personalized travel suggestions based on user preferences, budget, and travel dates.
+   - Share tips on packing, safety, and navigating travel disruptions.
+   - Help with itinerary planning, including optimal routes and must-see landmarks.
+   - Answer common travel questions and provide solutions to potential travel issues.
+    
+   **Instructions**:
+   1. Engage with the user in a friendly and professional manner, as a travel agent would.
+   2. Use available resources to provide accurate and relevant travel information.
+   3. Tailor responses to the user's specific travel needs and interests.
+   4. Ensure recommendations are practical and consider the user's safety and comfort.
+   5. Encourage the user to ask follow-up questions for further assistance.
+   ```
+
+1. Select **Save**.
+1. In the chat window, enter the query: `What can you do?` to verify that the language model is behaving as expected.
+
+Now that you have a deployed model with an updated system message, you can evaluate the model.
 
 ## Manually evaluate a language model in the Azure AI Studio
 
@@ -143,7 +203,7 @@ You can manually review model responses based on test data. Manually reviewing a
 1. Using the menu on the left, navigate to **Evaluation**.
 1. Select the **Manual evaluations** tab to find the manual evaluations you just saved. Note that you can explore your previously created manual evaluations, continue where you left of, and save the updated evaluations.
 
-## Evaluate your with built-in metrics
+## Evaluate your copilot with the built-in metrics
 
 When you have created a copilot with a chat flow, you can evaluate the flow by doing a batch run and assessing the performance of the flow with built-in metrics.
 
@@ -173,6 +233,7 @@ When you have created a copilot with a chat flow, you can evaluate the flow by d
 1. Wait for the evaluations to be completed, you may need to refresh.
 1. Select the evaluation run you just created.
 1. Explore the **Metric dashboard** and **Detailed metrics result**.
+
 
 ## Integrate the custom model with Prompt flow in Azure AI Studio(Code first approach)
  
