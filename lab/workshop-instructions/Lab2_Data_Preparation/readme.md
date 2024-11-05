@@ -208,9 +208,9 @@ python download_dataset.py
 
 ## Option3: Using GretelAI using GPT
 
-To create synthetic data using [Gretel.ai](https://www.gretel.ai), follow these steps:
+To create synthetic data using [Gretel.ai](https://gretel.ai), follow these steps:
 
-- Create a Project: Log into the [Gretel console](https://www.gretel.ai) and create a new project.
+- Create a Project: Log into the [Gretel console](https://gretel.ai) and create a new project.
 
 - Upload Data: Upload a CSV file or DataFrame containing the data you want to synthesize.
 
