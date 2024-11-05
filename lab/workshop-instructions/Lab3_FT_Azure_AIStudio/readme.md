@@ -2,10 +2,13 @@
 
 ## Introduction
 
+You work for a travel agency and you're developing a chat application to help people plan their vacations. The goal is to create a simple and inspiring chat that suggests destinations and activities.
+
+When you want a language model to behave a certain way, you can use prompt engineering to define the desired behavior. When you want to improve the consistency of the desired behavior, you can opt to fine-tune a model, comparing it to your prompt engineering approach to evaluate which method best fits your needs.
+
 In this exercise, you'll fine-tune a language model with the Azure AI Studio that you want to use for a custom chat application scenario. You'll compare the fine-tuned model with a base model to assess whether the fine-tuned model fits your needs better.
 
-You work for a travel agency and you're developing a chat application to help people plan their vacations. The goal is to create a simple and inspiring chat that suggests destinations and activities. Since the chat isn't connected to any data sources, it should **not** provide specific recommendations for hotels, flights, or restaurants to ensure trust with your customers.
-
+Imagine you work for a travel agency and you're developing a chat application to help people plan their vacations. The goal is to create a simple and inspiring chat that suggests destinations and activities. Since the chat isn't connected to any data sources, it should not provide specific recommendations for hotels, flights, or restaurants to ensure trust with your customers.
 This exercise will take approximately **40** minutes.
 
 
@@ -60,7 +63,7 @@ As fine-tuning a model takes some time to complete, you'll start the fine-tuning
 
 ## Chat with a base model
 
-While you wait for the fine-tuning job to complete, let's chat with a base GPT 3.5 model to assess how it performs.
+While you wait for the fine-tuning job to complete, let's chat with a base GPT 3.5 model to assess how it performs. Since the chat isn't connected to any data sources, it should **not** provide specific recommendations for hotels, flights, or restaurants to ensure trust with your customers.
 
 1. Navigate to the **Deployments** page under the **Components** section, using the menu on the left.
 1. Select the **+ Deploy model** button, and select the **Deploy base model** option.
