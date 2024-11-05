@@ -80,77 +80,26 @@ Create a Project: Open a new folder or create a new project
 
 You should now have a working setup with VS Code, the Python extension, and the .NET extension. If you encounter any issues or need further assistance, feel free to ask!
 
-## Create an Azure AI hub
+# Create an AI Hub and Project in the Azure AI Studio
 
-You need an [Azure AI Studio hub](https://ai.azure.com) in your Azure subscription to host projects. You can either create this resource while creating a project, 
+You start by creating an Azure AI Studio project within an Azure AI hub:
 
-1. Go to [Azure AI Studio](https://ai.azure.com)
-2. In the **Management** section, select **All hubs**, then select **+ New hub**. Create a new hub with the following settings:
+1. In a web browser, open [https://ai.azure.com](https://ai.azure.com) and sign in using your Azure credentials.
+1. Select the **Home** page, then select **+ New project**.
+1. In the **Create a new project** wizard, create a project with the following settings:
+    - **Project name**: *A unique name for your project*
+    - **Hub**: *Create a new hub with the following settings:*
     - **Hub name**: *A unique name*
     - **Subscription**: *Your Azure subscription*
-    - **Resource group**: *Create a new resource group with a unique name, or select an existing one*
-    - **Location**: *Make a **random** choice from any of the following regions*\*
-        - Australia East
-        - Canada East
-        - East US
-        - East US 2
-        - France Central
-        - Japan East
-        - North Central US
-        - Sweden Central
-        - Switzerland North
-        - UK South
-    - **Connect Azure AI Services or Azure OpenAI**: *Select to create a new AI Services or use an existing one*
+    - **Resource group**: *A new resource group*
+    - **Location**: Select **Help me choose** and then select **gpt-35-turbo** in the Location helper window and use the recommended region\*
+    - **Connect Azure AI Services or Azure OpenAI**: (New) *Autofills with your selected hub name*
     - **Connect Azure AI Search**: Skip connecting
 
-> [!NOTE] 
-> Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit in scenarios where you are sharing a tenant with other users. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region.
+    > \* Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions in the location helper include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region. Learn more about [model availability per region](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#gpt-35-turbo-model-availability)
 
-
-After the Azure AI hub has been created, it should look similar to the following image:
-
-![Screenshot of a Azure AI hub details in Azure AI Studio.](./images/azure-ai-resource.png)
-
-1. Open a new browser tab (leaving the Azure AI Studio tab open) and browse to the Azure portal at [https://portal.azure.com](https://portal.azure.com?azure-portal=true), signing in with your Azure credentials if prompted.
-1. Browse to the resource group where you created your Azure AI hub, and view the Azure resources that have been created.
-
-    ![Screenshot of an Azure AI hub and related resources in the Azure portal.](./images/azure-portal.png)
-
-1. Return to the Azure AI Studio browser tab.
-1. View each of the pages in the pane on the left side of the page for your Azure AI hub, and note the artifacts you can create and manage. On the **Connections** page, observe that connections to Azure OpenAI and AI services have already been created.
-
-
-### Create a new project
-
-An Azure AI hub provides a collaborative workspace within which you can define one or more *projects*. Let's create a project in your Azure AI hub.
-
-1. In [Azure AI Studio](https://ai.azure.com), ensure you're in the hub you just created (you can verify your location by checking the path at the top of the screen).
-1. Navigate to **All projects** using the menu on the left.
-1. Select **+ New project**.
-1. In the **Create a new project** wizard, create a project with the following settings:
-    - **Current hub**: *Your AI hub*
-    - **Project name**: *A unique name for your project*
-
-![Screenshot of the create resource page within the create project dialog.](./images/projects-create-resource.png)
-
-5. On the Review and finish page, you see the Azure AI services resource name and other settings to review.
-
-![Screenshot of the review and finish page within the create project dialog.](./images/projects-create-review-finish.png)
-
-6. Review the project details and then select Create a project. You see progress of resource creation and the project is created when the process is complete.
-
-
-![Screenshot of the resource creation progress within the create project dialog.](./images/projects-create-review-finish-progress.png)
-
-7. Wait for your project to be created. When it's ready, it should look similar to the following image:
-
-![Screenshot of a project details page in Azure AI Studio.](./images/azure-ai-project.png)
-
-8. View the pages in the pane on the left side, expanding each section, and note the tasks you can perform and the resources you can manage in a project.
-To create a project in Azure AI Studio, follow these steps:
-
-Go to the Home page of [Azure AI Studio](https://ai.azure.com).
-
+1. Review your configuration and create your project.
+1. Wait for your project to be created.
 
 **Note:** To create a hub, you must have Owner or Contributor permissions on the selected resource group. It's recommended to share a hub with your team. This lets you share configurations like data connections with all projects, and centrally manage security settings and spend. For more options to create a hub, see how to create and manage an Azure AI Studio hub. A project name must be unique between projects that share the same hub..
 
@@ -169,7 +118,7 @@ Subscription: The subscription that hosts the hub that hosts the project.
 Resource group: The resource group that hosts the hub that hosts the project.
 Select Manage in the Azure portal to navigate to the project resources in the Azure portal.
 
-## Create your Cloud Compute Resources
+# Create your Cloud Compute Resources for Cloud based inference
 
 1. Under **Settings**, select **Create compute**.
 
