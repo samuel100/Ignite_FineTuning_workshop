@@ -204,3 +204,20 @@ python download_dataset.py
 
 > [!NOTE]
 >Note on dataset size and fine-tuning time. In this tutorial, you use only 1% of the dataset (train_sft[:1%]). This significantly reduces the amount of data, speeding up both the upload and fine-tuning processes. You can adjust the percentage to find the right balance between training time and model performance. Using a smaller subset of the dataset reduces the time required for fine-tuning, making the process more manageable for a tutorial.
+
+
+## Option3: Using GretelAI using GPT
+
+To create synthetic data using [Gretel.ai](https://www.gretel.ai), follow these steps:
+
+- Create a Project: Log into the [Gretel console](https://www.gretel.ai) and create a new project.
+
+- Upload Data: Upload a CSV file or DataFrame containing the data you want to synthesize.
+
+- Generate Synthetic Data: Choose to generate synthetic data and customize the configuration if needed.
+
+- Train the Model: Wait for the model to train and generate synthetic records.
+
+- Review Quality: Review the synthetic data quality report to compare statistics and distributions with the original data.
+
+- Download Data: Download the synthetic dataset and model for further use or sharing.
