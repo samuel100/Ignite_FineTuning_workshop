@@ -42,7 +42,7 @@ You start by using your Azure AI Studio project within your Azure AI hub previou
 
 As fine-tuning a model takes some time to complete, you'll start the fine-tuning job first. Before you can fine-tune a model, you need a dataset based on our scenario we have provided a sample dataset based on the travel agent scenario. In [Lab2.Data_Preparation](../Lab2_Data_Preparation/readme.md) you should of also created datasets, please select a jsonl file.
 
-1. If you dont have a prepared training dataset as JSONL file locally: you can download this sample [https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-finetune.jsonl](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-finetune.jsonl) or use a data set which you created in [Lab2 Data_Preperation](../Lab2_Data_Preparation/readme.md).
+1. If you dont have a prepared training dataset as JSONL file locally: you can download this sample [https://raw.githubusercontent.com/Azure/Ignite_FineTuning_workshop/refs/heads/main/lab/workshop-instructions/Lab5-Optimize-Model/data/data_sample_travel.jsonl) or use a data set which you created in [Lab2 Data_Preperation](../Lab2_Data_Preparation/readme.md).
 1. Open up [AI Studio](https://ai.azure.com)
 1. Navigate to the **Fine-tuning** page under the **Tools** section, using the menu on the left.
 1. Select the button to add a new fine-tune model, select the model you wish to fine tune `gpt-35-turbo` model, and select **Confirm**.
