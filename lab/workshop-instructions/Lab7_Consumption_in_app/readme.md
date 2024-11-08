@@ -27,9 +27,9 @@ git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 ## Open the solution in VScode
 
 ```
-cd Ignite_FineTuning_workshop
+cd application/lab/workshop-instructions/Lab7_Consumption_in_app/scripts/
 
-
+```
 
 ## Running fine-tuned GPT model in the cloud 
 
