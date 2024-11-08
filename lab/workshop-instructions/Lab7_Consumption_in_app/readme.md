@@ -14,7 +14,12 @@ By the end of this workshop, you should be able to:
 1. Demonstrate offline model inference
 1. Demonstrate local and cloud inference
 
+## Lab Scenario
+Use ONNX Runtime for On-device, Use Azure AI for Cloud.
+
 ## Running fine-tuned GPT model in the cloud 
+
+Needs to be updated for calling GPT3.5 Fine tuned model 
 
 ## Running fine-tuned Phi local model application
 
