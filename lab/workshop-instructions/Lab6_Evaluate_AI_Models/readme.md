@@ -127,7 +127,7 @@ Let's see how the model behaves in a conversational interaction.
 
 8. Observe the output, which should hopefully indicate that the request to be racist and derogative is not supported. This prevention of offensive output is the result of the default content filters in Azure AI.
 
-> **Tip**: For more details about the categories and severity levels used in content filters, see [Content filtering](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering) in the Azure AI documentation.
+> **Tip**: For more details about the categories and severity levels used in content filters, see Content filtering +++https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering+++ in the Azure AI documentation.
 
 ### Introduction to performance evaluation
 
@@ -170,7 +170,7 @@ In this exercise, you'll explore built-in and custom evaluations to assess and c
 
 You start by creating an Azure AI project within an Azure AI hub:
 
-1. In a web browser, open [https://ai.azure.com](https://ai.azure.com) and sign in using your Azure credentials.
+1. In a web browser, open +++https://ai.azure.com+++ and sign in using your Azure credentials.
 1. Select the **Home** page, then select **+ New project**.
 1. In the **Create a project** wizard, give a unique name for your project then select **Customize** and set the following settings:
     - **Hub name**: *A unique name*
@@ -180,7 +180,7 @@ You start by creating an Azure AI project within an Azure AI hub:
     - **Connect Azure AI Services or Azure OpenAI**: *Create a new connection*
     - **Connect Azure AI Search**: Skip connecting
 
-    > \* Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions in the location helper include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region. Learn more about [model availability per region](https://learn.microsoft.com/azure/ai-services/openai/concepts/models#gpt-35-turbo-model-availability)
+    > \* Azure OpenAI resources are constrained at the tenant level by regional quotas. The listed regions in the location helper include default quota for the model type(s) used in this exercise. Randomly choosing a region reduces the risk of a single region reaching its quota limit. In the event of a quota limit being reached later in the exercise, there's a possibility you may need to create another resource in a different region. Learn more about model availability per region +++https://learn.microsoft.com/azure/ai-services/openai/concepts/models#gpt-35-turbo-model-availability+++
 
 1. Select **Next** and review your configuration.
 1. Select **Create a project** and wait for the process to complete.
@@ -289,7 +289,7 @@ When you have created a model with a chat flow, you can evaluate the flow by doi
     - **What kind of scenario are you evaluating?**: Question and answer without context
     - Select **Next**
     - **Select the data you want to evaluate**: Add your dataset
-        - Download the +++[https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-qa.jsonl](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-qa.jsonl)+++ JSONL file and upload it to the UI.
+        - Download the +++https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-qa.jsonl+++ JSONL file and upload it to the UI.
     - **Select metrics**: Coherence, Fluency
     - **Connection**: *Your AI Services connection*
     - **Deployment name/Model**: *Your deployed model*
