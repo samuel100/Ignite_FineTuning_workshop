@@ -14,16 +14,16 @@ By the end of this workshop, you should be able to:
 >In this workshop lab, you will:
 
 - Setup VScode and necessary frameworks
-- Create a new Azure AI Studio Hub
+- Create a new Azure AI Hub
 - Create a new Azure AI Project
 
 ### Task 
-During this lab we will develop a travel companion application that leverages Large Language Models (LLMs) to provide personalized travel recommendations, itinerary planning, and real-time assistance to travellers. The labs will focus on fine-tuning a GPT model using Azure AI Studio and a code-first approach using Python and Microsoft Olive.
+During this lab we will develop a travel companion application that leverages Large Language Models (LLMs) to provide personalized travel recommendations, itinerary planning, and real-time assistance to travellers. The labs will focus on fine-tuning a GPT model using Azure AI and a code-first approach using Python and Microsoft Olive.
 
 We will focus on the specific areas 
-- Setting up Azure AI Studio
+- Setting up Azure AI Hub & Project
 - Prepare Training Data
-- One-Button Fine-Tuning with Azure AI Studio
+- One-Button Fine-Tuning with Azure AI
 - Import a pre-trained model into the project.
 - Deploy the Fine-Tuned Model
 - Test the model by querying travel recommendations and itinerary planning.
@@ -80,9 +80,9 @@ Create a Project: Open a new folder or create a new project
 
 You should now have a working setup with VS Code, the Python extension, and the .NET extension. If you encounter any issues or need further assistance, feel free to ask!
 
-# Create an AI Hub and Project in the Azure AI Studio
+# Create an AI Hub and Project in the Azure AI
 
-You start by creating an Azure AI Studio project within an Azure AI hub:
+You start by creating an Azure AI project within an Azure AI hub:
 
 1. In a web browser, open [https://ai.azure.com](https://ai.azure.com) and sign in using your Azure credentials.
 1. Select the **Home** page, then select **+ New project**.
@@ -101,7 +101,7 @@ You start by creating an Azure AI Studio project within an Azure AI hub:
 1. Review your configuration and create your project.
 1. Wait for your project to be created.
 
-**Note:** To create a hub, you must have Owner or Contributor permissions on the selected resource group. It's recommended to share a hub with your team. This lets you share configurations like data connections with all projects, and centrally manage security settings and spend. For more options to create a hub, see how to create and manage an Azure AI Studio hub. A project name must be unique between projects that share the same hub..
+**Note:** To create a hub, you must have Owner or Contributor permissions on the selected resource group. It's recommended to share a hub with your team. This lets you share configurations like data connections with all projects, and centrally manage security settings and spend. For more options to create a hub, see how to create and manage an Azure AI hub. A project name must be unique between projects that share the same hub..
 
 **Tip:** Especially for getting started it's recommended to create a new resource group for your project. This allows you to easily manage the project and all of its resources together. When you create a project, several resources are created in the resource group, including a hub, a container registry, and a storage account.
 
@@ -109,11 +109,11 @@ Once a project is created, you can access the playground, tools, and other asset
 
 On the project Settings page you can find information about the project, such as the project name, description, and the hub that hosts the project. You can also find the project ID, which is used to identify the project via SDK or API.
 
-![Screenshot of an AI Studio project settings page.](./images/project-settings.png)
+![Screenshot of an AI project settings page.](./images/project-settings.png)
 
 Name: The name of the project corresponds to the selected project in the left panel.
 Hub: The hub that hosts the project.
-Location: The location of the hub that hosts the project. For supported locations, see Azure AI Studio regions.
+Location: The location of the hub that hosts the project. For supported locations, see Azure AI regions.
 Subscription: The subscription that hosts the hub that hosts the project.
 Resource group: The resource group that hosts the hub that hosts the project.
 Select Manage in the Azure portal to navigate to the project resources in the Azure portal.
