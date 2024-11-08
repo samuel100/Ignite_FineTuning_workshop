@@ -121,7 +121,7 @@ Select Manage in the Azure portal to navigate to the project resources in the Az
 
 # Create your Cloud Compute Resources for Cloud based inference
 
-1. Under **Settings**, select **Create compute**.
+1. Under **Settings**, **Compute**, select **Create Compute**.
 
   ![Create Azure AI Compute](./images/compute-create.png)
 
