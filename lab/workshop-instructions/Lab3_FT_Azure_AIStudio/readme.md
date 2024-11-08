@@ -107,4 +107,11 @@ While you wait for the fine-tuning job to complete, let's chat with a base GPT 3
 
 If it's completed, you can continue with the next section.
 
+## Model Metrics
+When fine-tuning has successfully completed, you can deploy the fine-tuned model.
+
+1. Select the fine-tuned model. Select the **Metrics** tab and explore the fine-tune metrics.
+
+- **Loss:** (Top Graph) This graph plots the loss function values of the model as it undergoes training. The loss function measures how well the model's predictions match the actual data. Generally, a decreasing trend in the loss graph is desirable as it indicates that the model is improving and learning from the training data. In this case, the graph shows a steady decline in loss values as the number of training steps increases, suggesting that the model is gradually becoming more accurate.
+- **Token Accuracy:** (Bottom Graph): This graph displays the token accuracy over time. Token accuracy is a measure used in tasks like language processing to evaluate how accurately each token (such as a word or character) is predicted by the model. The graph shows some fluctuations but generally maintains a level that indicates how often the model correctly predicts a token. The variations might reflect the complexity of different parts of the training data or adjustments in the model parameters during training.
 
