@@ -17,6 +17,20 @@ By the end of this workshop, you should be able to:
 ## Lab Scenario
 Use ONNX Runtime for On-device, Use Azure AI for Cloud.
 
+
+## Setup 
+```
+mkdir Application
+cd application
+git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
+```
+## Open the solution in VScode
+
+```
+cd Ignite_FineTuning_workshop
+
+
+
 ## Running fine-tuned GPT model in the cloud 
 
 Needs to be updated for calling GPT3.5 Fine tuned model 
