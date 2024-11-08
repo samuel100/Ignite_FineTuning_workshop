@@ -20,43 +20,16 @@ In this exercise, you will:
 - Set the model name, endpoint name, and deployment name for deployment.
 - Deploy the fine-tuned model in the Azure AI.
 
-## Deploy and test a model
-
-A full exploration of all of the development options available in Azure AI is beyond the scope of this exercise, but we'll explore some basic ways in which you can work with models in a project.
-
-1. In the pane on the left for your project, in the **Components** section, select the **Deployments** page.
-1. On the **Deployments** page, in the **Model deployments** tab, select **+ Deploy model**.
-1. Search for the **gpt-35-turbo** model from the list, select and confirm.
-1. Deploy the model with the following settings:
-    - **Deployment name**: *A unique name for your model deployment*
-    - **Deployment type**: Standard
-    - **Model version**: *Select the default version*
-    - **AI resource**: *Select the resource created previously*
-    - **Tokens per Minute Rate Limit (thousands)**: 5K
-    - **Content filter**: DefaultV2
-    - **Enable dynamic quota**: Disabled
-      
-    > **Note**: Reducing the TPM helps avoid over-using the quota available in the subscription you are using. 5,000 TPM is sufficient for the data used in this exercise.
-
-1. After the model has been deployed, in the deployment overview page, select **Open in playground**.
-1. In the **Chat playground** page, ensure that your model deployment is selected in the **Deployment** section.
-1. In the chat window, enter a query such as *What is AI?* and view the response:
-
-    ![Screenshot of the playground in Azure AI.](./images/playground.png)
-
-
 ## Deploy the fine-tuned model
 
 When fine-tuning has successfully completed, you can deploy the model.
 
-1. Select the fine-tuned model. Select the **Metrics** tab and explore the fine-tune metrics.
+1. Select **Fine-tuning** under **tools**
+1. Select your fine-tuned model
+1. Select **Deploy**
 1. Deploy the fine-tuned model with the following configurations:
-  
-    - **Model**: Your Model
     - **Deployment name**: *A unique name for your model deployment*
     - **Deployment type**: Standard
-    - **Model version**: *Select the default version*
-    - **AI resource**: *Select the resource created previously*
     - **Tokens per Minute Rate Limit (thousands)**: 5K
     - **Content filter**: DefaultV2
     - **Enable dynamic quota**: Disabled
