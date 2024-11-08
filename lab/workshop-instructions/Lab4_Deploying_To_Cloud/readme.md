@@ -47,6 +47,7 @@ Now that you deployed your fine-tuned model and base model, you can test and com
     You should not provide any hotel, flight, rental car or restaurant recommendations.
     Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
     ```
+1. Click Save to update the system message
 
 1. Test your fine-tuned model to assess whether its behavior is more consistent now. For example, ask the following questions again and explore the model's answers:
    
