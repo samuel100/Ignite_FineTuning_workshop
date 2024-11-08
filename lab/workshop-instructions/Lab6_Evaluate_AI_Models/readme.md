@@ -7,10 +7,10 @@
 
 ## Learning Objectives
 
-You will learn how to evaluate the safety and performance of a fine-tuned model integrated with Prompt flow in Azure AI Studio.
+You will learn how to evaluate the safety and performance of a fine-tuned model integrated with Prompt flow in Azure AI.
 
 ## Lab Scenario
-Introduction to Azure AI Studio's Prompt flow evaluation
+Introduction to Azure AI Prompt flow evaluation
 - Introduction to safety evaluation
 - Introduction to performance evaluation
 
@@ -18,9 +18,9 @@ Introduction to Azure AI Studio's Prompt flow evaluation
 
 ![Project Architecture](./images/architecture1.png)
 
-### Introduction to Azure AI Studio's Prompt flow evaluation
+### Introduction to Azure AI Prompt flow evaluation
 
-To ensure that your AI model is ethical and safe, it's crucial to evaluate it against Microsoft's Responsible AI Principles. In Azure AI Studio, safety evaluations allow you to evaluate an your model’s vulnerability to jailbreak attacks and its potential to generate harmful content, which is directly aligned with these principles.
+To ensure that your AI model is ethical and safe, it's crucial to evaluate it against Microsoft's Responsible AI Principles. In Azure AI, safety evaluations allow you to evaluate an your model’s vulnerability to jailbreak attacks and its potential to generate harmful content, which is directly aligned with these principles.
 
 ### Microsoft’s Responsible AI Principles
 
@@ -85,23 +85,23 @@ These metrics help you evaluate the model's effectiveness in generating accurate
 
 ![Screenshot of RAI Metrics](./images/6_evaluate-based-on-performance.png)
 
-## Evaluating the model in Azure AI Studio
+## Evaluating the model in Azure AI
  
-In this lab, you will deploy an model as an evaluator in Azure AI Studio and use it to evaluate your fine-tuned model.
+In this lab, you will deploy an model as an evaluator in Azure AI and use it to evaluate your fine-tuned model.
 
 Before you begin this tutorial, make sure you have the following prerequisites, as described in the previous tutorials:
 
 - A prepared dataset to evaluate the fine-tuned model.
 - A model that has been fine-tuned and deployed
-- A Prompt flow integrated with your fine-tuned model in Azure AI Studio.
+- A Prompt flow integrated with your fine-tuned model in Azure AI.
  
-# Evaluate the performance of your model in Azure AI Studio
+# Evaluate the performance of your model in Azure AI
 
-In this exercise, you'll explore built-in and custom evaluations to assess and compare the performance of your AI applications with the Azure AI Studio.
+In this exercise, you'll explore built-in and custom evaluations to assess and compare the performance of your AI applications with the Azure AI.
 
-## Create an AI hub and project in the Azure AI Studio
+## Create an AI hub and project in the Azure AI
 
-You start by creating an Azure AI Studio project within an Azure AI hub:
+You start by creating an Azure AI project within an Azure AI hub:
 
 1. In a web browser, open [https://ai.azure.com](https://ai.azure.com) and sign in using your Azure credentials.
 1. Select the **Home** page, then select **+ New project**.

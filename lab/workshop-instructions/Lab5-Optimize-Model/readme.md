@@ -39,7 +39,7 @@ OLIVE executes a *workflow*, which is an ordered sequence of individual model op
 
 ## Lab Instructions
 > [!NOTE]
-> Please ensure you have provision your Azure AI Studio Hub and Project as per Lab 1.
+> Please ensure you have provision your Azure AI Hub and Project as per Lab 1.
 
 ### Step 0: Connect to your Azure AI Compute
 

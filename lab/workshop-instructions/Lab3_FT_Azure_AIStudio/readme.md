@@ -1,4 +1,4 @@
-# Lab 3. Fine-tune a language model for chat completion in the Azure AI Studio
+# Lab 3. Fine-tune a language model for chat completion in the Azure AI
 
 ## Introduction
 
@@ -6,7 +6,7 @@ You work for a travel agency and you're developing a chat application to help pe
 
 When you want a language model to behave a certain way, you can use prompt engineering to define the desired behavior. When you want to improve the consistency of the desired behavior, you can opt to fine-tune a model, comparing it to your prompt engineering approach to evaluate which method best fits your needs.
 
-In this exercise, you'll fine-tune a language model with the Azure AI Studio that you want to use for a custom chat application scenario. You'll compare the fine-tuned model with a base model to assess whether the fine-tuned model fits your needs better.
+In this exercise, you'll fine-tune a language model with the Azure AI that you want to use for a custom chat application scenario. You'll compare the fine-tuned model with a base model to assess whether the fine-tuned model fits your needs better.
 
 Imagine you work for a travel agency and you're developing a chat application to help people plan their vacations. The goal is to create a simple and inspiring chat that suggests destinations and activities. Since the chat isn't connected to any data sources, it should not provide specific recommendations for hotels, flights, or restaurants to ensure trust with your customers.
 This exercise will take approximately **40** minutes.
@@ -14,36 +14,36 @@ This exercise will take approximately **40** minutes.
 
 ## Learning Objectives
 By the end of this workshop, you should be able to:
-1. Explore the model catalog in Azure AI Studio.
+1. Explore the model catalog in Azure AI.
 1. Deploy a model from the model catalog
-1. Fine-tune and deploy the GPT model in Azure AI Studio
+1. Fine-tune and deploy the GPT model in Azure AI.
 1. Test the fine-tuned model
 
 ## Lab Scenario
-The lab scenario of this lab, you will fine-tune the GPT3.5 model using Azure AI Studio one button fine tuning and Azure Model Catalog.
+The lab scenario of this lab, you will fine-tune the GPT3.5 model using Azure AI one button fine tuning and Azure Model Catalog.
 
 ## Lab Outline
 This lab consists of the following exercises:
-1. Fine-tune and Deploy the GPT model in Azure AI Studio
-1. The Azure AI Studio’s model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
+1. Fine-tune and Deploy the GPT model in Azure AI
+1. The Azure AI model catalog serves as a central repository where you can explore and use a variety of models, facilitating the creation of your generative AI scenario.
 
-# Fine-tune a language model for chat completion in the Azure AI Studio
+# Fine-tune a language model for chat completion in the Azure AI
 
 When you want a language model to behave a certain way, you can use prompt engineering to define the desired behavior. When you want to improve the consistency of the desired behavior, you can opt to fine-tune a model, comparing it to your prompt engineering approach to evaluate which method best fits your needs.
 
-## Open your AI hub and project in the Azure AI Studio
+## Open your AI hub and project in the Azure AI
 
-You start by using your Azure AI Studio project within your Azure AI hub previous created in Lab1. If you have not created your AI Hub see [Lab1_Environmental Setup](../Lab1_Environment_Setup/readme.md)
+You start by using your Azure AI project within your Azure AI hub previous created in Lab1. If you have not created your AI Hub see [Lab1_Environmental Setup](../Lab1_Environment_Setup/readme.md)
 
 
-## Fine-tuning a Large Language Model using Microsoft AI Studio UI Based Fine Tuning 
+## Fine-tuning a Large Language Model using Microsoft AI UI Based Fine Tuning 
 
 ## Task: Fine-tune a GPT-3.5 model
 
 As fine-tuning a model takes some time to complete, you'll start the fine-tuning job first. Before you can fine-tune a model, you need a dataset based on our scenario we have provided a sample dataset based on the travel agent scenario. In [Lab2.Data_Preparation](../Lab2_Data_Preparation/readme.md) you should of also created datasets, please select a jsonl file.
 
 1. If you dont have a prepared training dataset as JSONL file locally: you can download this sample [https://raw.githubusercontent.com/Azure/Ignite_FineTuning_workshop/refs/heads/main/lab/workshop-instructions/Lab5-Optimize-Model/data/data_sample_travel.jsonl) or use a data set which you created in [Lab2 Data_Preperation](../Lab2_Data_Preparation/readme.md).
-1. Open up [AI Studio](https://ai.azure.com)
+1. Open up [Azure AI](https://ai.azure.com)
 1. Navigate to the **Fine-tuning** page under the **Tools** section, using the menu on the left.
 1. Select the button to add a new fine-tune model, select the model you wish to fine tune `gpt-35-turbo` model, and select **Confirm**.
 1. **Fine-tune** the model using the following configuration:
