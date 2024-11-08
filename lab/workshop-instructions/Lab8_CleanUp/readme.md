@@ -22,7 +22,7 @@ This lab consists of the following exercises:
 1. Verify the deletion of the resource group
 
 ## Clean up Resources
-When you finish exploring the Azure AI Studio, you should delete the resources you’ve created to avoid unnecessary Azure costs.
+When you finish exploring the Azure AI, you should delete the resources you’ve created to avoid unnecessary Azure costs.
 
 Navigate to the Azure portal at https://portal.azure.com.
 In the Azure portal, on the Home page, select Resource groups.

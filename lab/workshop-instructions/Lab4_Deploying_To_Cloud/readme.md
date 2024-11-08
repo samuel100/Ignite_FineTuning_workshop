@@ -3,13 +3,13 @@
 ## Introduction 
 
 > [!NOTE]
->This is a **45-minute** exercise, you will successfully fine-tune the GPT model using Azure AI Studio one deployment. Please note that the fine-tuning process can take a considerable amount of time.
+>This is a **45-minute** exercise, you will successfully fine-tune the GPT model using Azure AI one deployment. Please note that the fine-tuning process can take a considerable amount of time.
 
 ## Learning Objectives
 
 By the end of this workshop, you should be able to:
-1. Deploy a standard model using Azure AI Studio model deployment.
-2. Deploy the fine-tuned model using Azure AI Studio model deployment.
+1. Deploy a standard model using Azure AI model deployment.
+2. Deploy the fine-tuned model using Azure AI model deployment.
 
 ## Lab Scenario
 To integrate the fine-tuned model with an application, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
@@ -18,11 +18,11 @@ To integrate the fine-tuned model with an application, you need to deploy the mo
 In this exercise, you will:
 
 - Set the model name, endpoint name, and deployment name for deployment.
-- Deploy the fine-tuned model in the Azure AI Studio.
+- Deploy the fine-tuned model in the Azure AI.
 
 ## Deploy and test a model
 
-A full exploration of all of the development options available in Azure AI Studio is beyond the scope of this exercise, but we'll explore some basic ways in which you can work with models in a project.
+A full exploration of all of the development options available in Azure AI is beyond the scope of this exercise, but we'll explore some basic ways in which you can work with models in a project.
 
 1. In the pane on the left for your project, in the **Components** section, select the **Deployments** page.
 1. On the **Deployments** page, in the **Model deployments** tab, select **+ Deploy model**.
@@ -42,7 +42,7 @@ A full exploration of all of the development options available in Azure AI Studi
 1. In the **Chat playground** page, ensure that your model deployment is selected in the **Deployment** section.
 1. In the chat window, enter a query such as *What is AI?* and view the response:
 
-    ![Screenshot of the playground in Azure AI Studio.](./images/playground.png)
+    ![Screenshot of the playground in Azure AI.](./images/playground.png)
 
 
 ## Deploy the fine-tuned model
@@ -144,6 +144,6 @@ Let's see how the model behaves in a conversational interaction.
    Describe characteristics of Scottish people.
     ```
 
-8. Observe the output, which should hopefully indicate that the request to be racist and derogative is not supported. This prevention of offensive output is the result of the default content filters in Azure AI Studio.
+8. Observe the output, which should hopefully indicate that the request to be racist and derogative is not supported. This prevention of offensive output is the result of the default content filters in Azure AI.
 
-> **Tip**: For more details about the categories and severity levels used in content filters, see [Content filtering](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering) in the Azure AI Studio service documentation.
+> **Tip**: For more details about the categories and severity levels used in content filters, see [Content filtering](https://learn.microsoft.com/azure/ai-studio/concepts/content-filtering) in the Azure AI documentation.
