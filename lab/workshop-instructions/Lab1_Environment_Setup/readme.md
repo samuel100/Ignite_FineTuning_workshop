@@ -86,13 +86,14 @@ You start by creating an Azure AI project within an Azure AI hub:
 
 1. In a web browser, open [https://ai.azure.com](https://ai.azure.com) and sign in using your Azure credentials.
 1. Select the **Home** page, then select **+ New project**.
-1. In the **Create a new project** wizard, create a project with the following settings:
+1. In the **Create a new project** wizard,create a project with the following settings:
     - **Project name**: *A unique name for your project*
+    - **Select Customize**
     - **Hub**: *Create a new hub with the following settings:*
     - **Hub name**: *A unique name*
     - **Subscription**: *Your Azure subscription*
     - **Resource group**: *A new resource group*
-    - **Location**: Select **Help me choose** and then select **gpt-35-turbo** in the Location helper window and use the recommended region\*
+    - **Location**: Choose one of the following regions **North Central US**, **Sweden Central**\*
     - **Connect Azure AI Services or Azure OpenAI**: (New) *Autofills with your selected hub name*
     - **Connect Azure AI Search**: Skip connecting
 
