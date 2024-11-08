@@ -33,6 +33,7 @@ When fine-tuning has successfully completed, you can deploy the model.
     - **Tokens per Minute Rate Limit (thousands)**: 5K
     - **Content filter**: DefaultV2
     - **Enable dynamic quota**: Disabled
+1. Wait for the deployment to be complete before you can test it, this may take a while
 
 ## Test the fine-tuned model
 
