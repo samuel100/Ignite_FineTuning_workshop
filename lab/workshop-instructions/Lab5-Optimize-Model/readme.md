@@ -18,7 +18,7 @@ By the end of this lab, you will be able to use OLIVE to:
 
 ### What is OLIVE
 
-OLIVE (ONNX LIVE) is a model optimization toolkit with accompanying CLI that enables you to ship models for the [ONNX runtime](https://onnxruntime.ai) with quality and performance.
+OLIVE (ONNX LIVE) is a model optimization toolkit with accompanying CLI that enables you to ship models for the ONNX runtime +++https://onnxruntime.ai+++ with quality and performance.
 
 ![Olive Flow](./images/olive-flow.png)
 
@@ -102,7 +102,7 @@ Next, execute the following Olive commands in the command line.
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called [Active Aware Quantization (AWQ)](https://arxiv.org/abs/2306.00978), which provides more accurate results than the Round to Nearest (RTN) technique:
+1. **Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++, which provides more accurate results than the Round to Nearest (RTN) technique:
     
     ```bash
     olive quantize \
@@ -129,7 +129,7 @@ Next, execute the following Olive commands in the command line.
         --log_level 1
     ```
     
-    It takes **~10mins** to complete the Fine-tuning (depending on the number of epochs).Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others](https://huggingface.co/docs/optimum/en/exporters/onnx/overview). For more information on available options, read the [Olive Finetune documentation](https://microsoft.github.io/Olive/features/cli.html#finetune).
+    It takes **~10mins** to complete the Fine-tuning (depending on the number of epochs).Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others +++https://huggingface.co/docs/optimum/en/exporters/onnx/overview+++. For more information on available options, read the Olive Finetune documentation +++https://microsoft.github.io/Olive/features/cli.html#finetune+++.
 
 1. **Capture ONNX Graph:** With the model trained, you need to capture the ONNX graph, which will add the adapter nodes into the graph.
 

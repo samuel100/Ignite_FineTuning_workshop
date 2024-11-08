@@ -129,7 +129,7 @@ Tou undertake fine tuning we recommed you create 60 samples Simply copy and past
 
 
 ## Option2: Using A DataSet to Create Training Data
-In this exercise, you will run the download_dataset.py file to download the [HuggingFace Travel Planner Dataset](https://huggingface.co/datasets/osunlp/TravelPlanner) to your local environment. You will then use this datasets to fine-tune the model using a DataSet.
+In this exercise, you will run the download_dataset.py file to download the HuggingFace Travel Planner Dataset +++https://huggingface.co/datasets/osunlp/TravelPlanner+++ to your local environment. You will then use this datasets to fine-tune the model using a DataSet.
 
 In this exercise, you will:
 
@@ -223,9 +223,9 @@ python download_dataset.py
 
 ## Option3: Using Gretel.ai
 
-To create synthetic data using [Gretel.ai](https://gretel.ai), follow these steps:
+To create synthetic data using Gretel.ai +++https://gretel.ai+++, follow these steps:
 
-- Create a Project: Log into the [Gretel console](https://gretel.ai) and create a new project.
+- Create a Project: Log into the Gretel console +++https://gretel.ai+++ and create a new project.
 
 - Upload Data: Upload a CSV file or DataFrame containing the data you want to synthesize.
 
