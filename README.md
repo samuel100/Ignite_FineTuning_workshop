@@ -111,9 +111,8 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 * Fine-Tuning techniques and best practices​
 
 ## Technology Used
-* Azure AI Studio
-* Azure ML Studio 
-* AI Toolkit 
+* Azure AI
+* Azure Machine Learning
 * Microsoft Olive
 * Microsoft ONNX Runtime
 
