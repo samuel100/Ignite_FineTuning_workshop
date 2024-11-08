@@ -54,7 +54,7 @@ As fine-tuning a model takes some time to complete, you'll start the fine-tuning
     - **Training data**: Upload files
     - **Upload file**: Select the JSONL file you downloaded in a previous step.
     
-    > **Note**:[you can download this sample dataset for fine tuning GPT](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl">raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl) 
+    > **Note**:you can download this sample dataset for fine tuning GPT +++[https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl](https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl)+++ 
 
     > **Tip**: You don't have to wait for the data processing to be completed to continue to the next step.
 
