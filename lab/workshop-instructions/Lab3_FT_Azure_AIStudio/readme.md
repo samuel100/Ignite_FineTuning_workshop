@@ -43,8 +43,7 @@ You start by using your Azure AI project within your Azure AI hub previous creat
 As fine-tuning a model takes some time to complete, you'll start the fine-tuning job first. Before you can fine-tune a model, you need a dataset based on our scenario we have provided a sample dataset based on the travel agent scenario. In [Lab2.Data_Preparation](../Lab2_Data_Preparation/readme.md) you should of also created datasets, please select a jsonl file.
 
 > **Note**: If you dont have a prepared training dataset as JSONL file locally:
-> you can download this sample
-> [https://raw.githubusercontent.com/Azure/Ignite_FineTuning_workshop/refs/heads/main/lab/workshop-instructions/Lab5-Optimize-Model/data/data_sample_travel.jsonl) 
+> [you can download this sample](https://raw.githubusercontent.com/Azure/Ignite_FineTuning_workshop/refs/heads/main/lab/workshop-instructions/Lab5-Optimize-Model/data/data_sample_travel.jsonl) 
 
 1. Open up [Azure AI](https://ai.azure.com)
 1. Navigate to the **Fine-tuning** page under the **Tools** section, using the menu on the left.
