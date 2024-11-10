@@ -35,29 +35,7 @@ Microsoft Phi-3.5 allows us to run smoothly in different edge devices. The local
    - .NET 8
 
 
-2. Compile ORT GenAI Library in your local CPU env
-
-
-
-```bash
-
-cd ../../
-
-git clone https://github.com/microsoft/onnxruntime-genai
-
-cd onnxruntime-genai
-
-curl -L https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-linux-x64-1.19.2.tgz -o onnxruntime-linux-x64-1.19.2.tgz
-
-tar xvzf onnxruntime-linux-x64-1.19.2.tgz
-
-mv onnxruntime-linux-x64-1.19.2 ort 
-
-python build.py --config Release
-
-```
-
-3. Using  notebook and select Kernel for .NET to run ONNX model
+2. Using  notebook and select Kernel for .NET to run ONNX model
 
 **Note**： Please download Microsoft Phi-3.5 ONNX model from Hugging face(https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx) firstly
 
