@@ -25,63 +25,17 @@ Users can call a high level generate() method, or run each iteration of the mode
 It has support for greedy/beam search and TopP, TopK sampling to generate token sequences and built-in logits processing like repetition penalties. You can also easily add custom scoring.
 
 
-### Compile ONNX Runtime GenAI with Cmake
+### Running local onnx model with ONNX Runtime GenAI 
 
-Microsoft Phi-3.5 allows us to run smoothly in different edge devices. The local edge devices can have the computing power of CPU, GPU, and NPU. We hope that you can use the local CPU to run our FT computing power. Before running, we need to compile based on the local environment.
+Microsoft Phi-3.5 allows us to run smoothly in different edge devices. The local edge devices can have the computing power of CPU, GPU, and NPU. We hope that you can use the local CPU to run local ONNX model 
 
 1. Set up dev env
 
    - Visual Studio Code .NET Extension Pack 
    - .NET 8
 
-2. Install CMake in bash
 
-
-```bash
-
-mkdir libs
-
-cd ./libs
-
-wget https://github.com/Kitware/CMake/releases/download/v3.30.4/cmake-3.30.4.tar.gz
-
-tar -zxvf cmake-3.30.4.tar.gz
-
-cd cmake-3.30.4
-
-sudo apt-get install libssl-dev
-
-./bootstrap
-
-make
-
-sudo make install
-
-```
-
-2. Compile ORT GenAI Library in your local CPU env
-
-
-
-```bash
-
-cd ../../
-
-git clone https://github.com/microsoft/onnxruntime-genai
-
-cd onnxruntime-genai
-
-curl -L https://github.com/microsoft/onnxruntime/releases/download/v1.19.2/onnxruntime-linux-x64-1.19.2.tgz -o onnxruntime-linux-x64-1.19.2.tgz
-
-tar xvzf onnxruntime-linux-x64-1.19.2.tgz
-
-mv onnxruntime-linux-x64-1.19.2 ort 
-
-python build.py --config Release
-
-```
-
-3. Using  notebook and select Kernel for .NET to run ONNX model
+2. Using  notebook and select Kernel for .NET to run ONNX model
 
 **Note**： Please download Microsoft Phi-3.5 ONNX model from Hugging face(https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx) firstly
 
@@ -101,9 +55,9 @@ write this code in your notebook
 
 ```
 
-#r "nuget: Microsoft.ML.OnnxRuntime, 1.19.2"
+#r "nuget: Microsoft.ML.OnnxRuntime, *-*"
 
-#r "nuget: Microsoft.ML.OnnxRuntimeGenAI"
+#r "nuget: Microsoft.ML.OnnxRuntimeGenAI, *-*"
 
 using Microsoft.ML.OnnxRuntimeGenAI;
 
@@ -113,29 +67,32 @@ var model = new Model(modelPath);
 
 var tokenizer = new Tokenizer(model);
 
-string userPrompt = "What is your name?";
+TokenizerStream tokenizerStream = tokenizer.CreateStream();
 
-string chatTemplate = $"<|user|>\n{userPrompt}<|end|><|assistant|>\n";
+var input = "Can you introduce yourself?";
 
- var tokens = tokenizer.Encode(chatTemplate);
+string prompt = "<|user|>" + input + "\n<|end|>\n<|assistant|>";
 
-var tokenizerStream = tokenizer.CreateStream();
+var sequences = tokenizer.Encode(prompt);
 
-var generatorParams = new GeneratorParams(model);
-generatorParams.SetSearchOption("max_length", 1024);
-generatorParams.SetInputSequences(tokens);
+GeneratorParams gParams = new GeneratorParams(model);
+gParams.SetSearchOption("max_length", 200);
+gParams.SetInputSequences(sequences);
+gParams.SetSearchOption("past_present_share_buffer", false);
 
-var generator = new Generator(model, generatorParams);
+Generator generator = new(model, gParams);
 
 while (!generator.IsDone())
 {
-    generator.ComputeLogits();
-    generator.GenerateNextToken();
-    Console.Write(tokenizerStream.Decode(generator.GetSequence(0)[^1]));
+        generator.ComputeLogits();
+        generator.GenerateNextToken();
+        Console.Write(tokenizerStream.Decode(generator.GetSequence(0)[^1]));
 }
 
 
 ```
+
+**Note** Please focus that copy your onnx  dll to  onnxruntime genai folder
 
 
 
