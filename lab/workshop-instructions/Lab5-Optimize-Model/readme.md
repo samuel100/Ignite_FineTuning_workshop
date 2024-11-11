@@ -54,7 +54,7 @@ You'll connect to the Azure AI compute using the remote feature in VS Code. Open
 In VS Code, you can open a new terminal with **Ctrl+J** and clone this repo:
 
 ```bash
-cd ~/code/cloudfiles
+cd ~/cloudfiles/code
 git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 ```
 
