@@ -100,7 +100,7 @@ Next, execute the following Olive commands in the command line.
 
 1. **Inspect the data:** In this example, you're going to fine-tune Phi-3.5-Mini model so that it is specialized in answering travel related questions. The code below displays the first few records of the dataset, which are in JSON lines format:
     ```bash
-    head data/data_sample_travel.jsonl
+   head data/data_sample_travel.jsonl
     ```
 1. **Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++, which provides more accurate results than the Round to Nearest (RTN) technique:
     
