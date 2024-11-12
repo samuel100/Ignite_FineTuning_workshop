@@ -15,7 +15,7 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 
 ## Session Overview 
 
-** Introduction and Overview (15 minutes)**
+**Introduction and Overview (15 minutes)**
 - Welcome and objectives
 - Overview of Fine Tuning 
 - Solution Scenario 
@@ -23,6 +23,7 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 
 **0. Setting Up the Environment (15 minutes)**
 - Step-by-step guide to setting your VScode and CLI
+- This step has been completed if your using Skillable labs
 
 | Lab # | Title | Description |
 | ----- | ------ |----------- |
