@@ -26,7 +26,7 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 
 | Lab # | Title | Description |
 | ----- | ------ |----------- |
-| 1 | Set up | Learn how to set-up your Azure resources for this lab. |
+| 0 | Set up | Learn how to set-up your Azure resources for this lab. |
 
 **1. Login to Azure AI and Setup Compute Node (15 minutes)**
 - Setting up a Cloud GPU environment
