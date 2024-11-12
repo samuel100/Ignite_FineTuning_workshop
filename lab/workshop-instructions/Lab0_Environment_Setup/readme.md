@@ -119,16 +119,4 @@ Subscription: The subscription that hosts the hub that hosts the project.
 Resource group: The resource group that hosts the hub that hosts the project.
 Select Manage in the Azure portal to navigate to the project resources in the Azure portal.
 
-# Create your Cloud Compute Resources for Cloud based inference
 
-1. Under **Settings**, **Compute**, select **Create Compute**.
-
-  ![Create Azure AI Compute](./images/compute-create.png)
-
-1. Select your **Virtual machine type** as **GPU**. *Filter* the list of **Virtual machine size** on **A100**: 
-    
-  ![Compte Size](./images/compute-size.png)
-    
-    Select a VM you have available quota for.
-
-1. Select **Review+Create** and then **Create**.
