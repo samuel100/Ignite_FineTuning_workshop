@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>c579a4a2-24a5-4c12-8684-d5fabcb7556c</UserSecretsId>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\ChatWithSLM.API\ChatWithSLM.API.csproj" />
+    <ProjectReference Include="..\ChatWithSLM.UI\ChatWithSLM.UI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.2.2" />
+    <PackageReference Include="Aspire.Hosting.Redis" Version="8.2.2" />
+  </ItemGroup>
+
+</Project>
