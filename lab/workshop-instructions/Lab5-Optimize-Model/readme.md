@@ -6,7 +6,7 @@
 > This lab requires an **Nvidia A10 or A100 GPU** with associated drivers and CUDA toolkit (version 12+) installed.
 
 > [!NOTE]
-> This is a **30-minute** lab that will give you a hands-on introduction to the core concepts of optimizing models for on-device inference using OLIVE.
+> This is a **35-minute** lab that will give you a hands-on introduction to the core concepts of optimizing models for on-device inference using OLIVE.
 
 ## Learning Objectives
 
@@ -76,8 +76,10 @@ Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl
 conda create -n olive-ai python=3.11 -y
 conda activate olive-ai
 pip install -r requirements.txt
-sudo apt-get -y install cudnn9-cuda-12
 ```
+
+> [!NOTE]
+> It will take ~5mins to install all the dependencies.
 
 In this lab you'll download and upload models to the Azure AI Model catalog. So that you can access the model catalog, you'll need to login to Azure using:
 
@@ -88,7 +90,7 @@ az login
 > [!NOTE]
 > At login time you'll be asked to select your subscription. Ensure you set the subscription to the one provided for this lab.
 
-### Step 4: Execute OLIVE commands 
+### Step 4: Execute Olive commands 
 
 Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl+J**) and ensure the `olive-ai` conda environment is activated:
 
@@ -103,7 +105,7 @@ Next, execute the following Olive commands in the command line.
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++, which provides more accurate results than the Round to Nearest (RTN) technique:
+1. **Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++, which provides more accurate results than standard quantization:
     
     ```bash
     olive quantize \
@@ -113,7 +115,7 @@ Next, execute the following Olive commands in the command line.
         --log_level 1
     ```
     
-    It takes **~5mins** to complete the AWQ quantization.
+    It takes **~8mins** to complete the AWQ quantization. It will take a few minutes to download the data from the Registry, and you can ignore warnings around using `azcopy`.
 
 1. **Train the model:** Next, the `olive finetune` command finetunes the quantized model. We find that quantizing the model *before* fine-tuning greatly improves the accuracy.
     
@@ -130,7 +132,7 @@ Next, execute the following Olive commands in the command line.
         --log_level 1
     ```
     
-    It takes **~10mins** to complete the Fine-tuning (depending on the number of epochs).Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others +++https://huggingface.co/docs/optimum/en/exporters/onnx/overview+++. For more information on available options, read the Olive Finetune documentation +++https://microsoft.github.io/Olive/features/cli.html#finetune+++.
+    It takes **~6mins** to complete the Fine-tuning (depending on the number of epochs).Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others +++https://huggingface.co/docs/optimum/en/exporters/onnx/overview+++. For more information on available options, read the Olive Finetune documentation +++https://microsoft.github.io/Olive/features/cli.html#finetune+++.
 
 1. **Capture ONNX Graph:** With the model trained, you need to capture the ONNX graph, which will add the adapter nodes into the graph.
 
@@ -152,7 +154,7 @@ Next, execute the following Olive commands in the command line.
         --log_level 1
     ```
     
-    It takes **~2mins** to complete the adapter extraction and ONNX optimization.
+    It takes **~2mins** to complete the adapter extraction.
 
 ### Step 5: Model inference quick test
 
@@ -162,22 +164,25 @@ To test inferencing the model, create a Python file in your folder called **app.
 import onnxruntime_genai as og
 import numpy as np
 
+print("loading model and adapters (from an Azure Fileshare)...", end="", flush=True)
 model = og.Model("models/phi/ft-ready/model")
 adapters = og.Adapters(model)
 adapters.load("models/phi/ft-ready/model/adapter_weights.onnx_adapter", "travel")
+print("DONE!")
 
 tokenizer = og.Tokenizer(model)
 tokenizer_stream = tokenizer.create_stream()
 
 params = og.GeneratorParams(model)
 params.set_search_options(max_length=100, past_present_share_buffer=False)
-params.input_ids = tokenizer.encode("Tell me what to do in London")
+user_input = "what is the best place to visit in chicago?"
+params.input_ids = tokenizer.encode(f"<|user|>\n{user_input}<|end|>\n<|assistant|>\n")
 
 generator = og.Generator(model, params)
 
 generator.set_active_adapter(adapters, "travel")
 
-print(f"[Travel]: Tell me what to do in London")
+print(f"{user_input}")
 
 while not generator.is_done():
     generator.compute_logits()
