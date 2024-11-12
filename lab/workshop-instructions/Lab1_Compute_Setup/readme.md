@@ -4,7 +4,7 @@ You start by creating an Azure AI project within an Azure AI hub:
 
 1. In a web browser, open +++https://ai.azure.com+++ and sign in using your Azure credentials.
 1. Select the **Home** 
-1. You should a valid **curent project** and **Hub**
+1. You should a valid **current project** and **Hub**
 
 # Create your Cloud Compute Resources for Cloud based inference
 
