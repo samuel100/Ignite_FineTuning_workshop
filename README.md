@@ -15,20 +15,25 @@ Abstract: Join us for an exclusive workshop on fine-tuning pre-trained language 
 
 ## Session Overview 
 
-**0. Introduction and Overview (15 minutes)**
+** Introduction and Overview (15 minutes)**
 - Welcome and objectives
 - Overview of Fine Tuning 
 - Solution Scenario 
 
 
-**1. Setting Up the Environment (15 minutes)**
-- Introduction to Azure and Local GPU setups
-- Step-by-step guide to configuring Azure for fine-tuning
-- Setting up a local GPU environment
+**0. Setting Up the Environment (15 minutes)**
+- Step-by-step guide to setting your VScode and CLI
 
 | Lab # | Title | Description |
 | ----- | ------ |----------- |
-| 1 | Set up | Learn how to set-up your Azure resources and local environment for this lab. |
+| 1 | Set up | Learn how to set-up your Azure resources for this lab. |
+
+**1. Login to Azure AI and Setup Compute Node (15 minutes)**
+- Setting up a Cloud GPU environment
+
+| Lab # | Title | Description |
+| ----- | ------ |----------- |
+| 1 | Set up | Login to your AI Hub and Project and deploy a GPU Compute resource. |
 
 **2. Data Preperation (15 minutes)**
 - Creating Synthentic Data using GPTs
