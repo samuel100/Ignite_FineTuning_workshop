@@ -17,25 +17,48 @@ Use ONNX Runtime for On-device, Use Azure AI for Cloud.
 
 
 ## Setup 
+
+Create a new folder on the desktop and clone the code using a command prompt.
+
+Open a new Powershell terminal window
+ 
+PS C:\Users\LabUser>
+
+### Download the solution 
+
 ```
+cd desktop
 mkdir Application
 cd application
 git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 ```
-## Open the solution in VScode
+
+### In the application folder navigate to the solution 
 
 ```
-cd application/lab/workshop-instructions/Lab7_Consumption_in_app/scripts/
+cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/scr
+ipts/ChatWithSLM
+```
+## Open the solution in VScode 
 
+```
+code
 ```
 
 ## Running fine-tuned GPT model in the cloud 
 
-Needs to be updated for calling GPT3.5 Fine tuned model 
+We will be using the previously created GPT-3.5 fined tuned model hosted in Azure AI
+You will need to make a note of the following settings from +++https://ai.azure.com+++
+
+The followng Endpoint, key and model name will be required in the next steps 
+
+```
+string aoai_endpoint = "Your AOAI Service Endpoint";        
+string aoai_key = "Your AOAI Service Key";        
+string aoai_model = "Your GPT-3.5 Fine tuning Deployment name";
+```
 
 ## Running fine-tuned Phi local model application
-
-Now that you have successfully run the application in the cloud, let's see how to run it on a local device.
 
 In this exercise, you will:
 
@@ -44,16 +67,18 @@ In this exercise, you will:
 
 ### Objectives 
 
-1. Learn to set ONNX Runtime GenAI env [click here](../Additional_Labs/Local_Deployment_Model/readme.md)
+1. Running the Fine Tuned Phi-3.5 Onnx Local Model with a .NET Aspire Application
+2. Running the Fine Tuned GPT-3.5 Model hosted in Azure AI Services 
 
-2. Learn more about .NET Aspire env [click here](../Additional_Labs/dotNETAspire/readme.md)
+### Additional Resources 
+- Learn to set ONNX Runtime GenAI env [click here](../Additional_Labs/Local_Deployment_Model/readme.md)
+-  Learn more about .NET Aspire env [click here](../Additional_Labs/dotNETAspire/readme.md)
 
-3. Add Your Model Path and AOAI Endpoint 
+## Add Your Fine Tuned GPT3.5 Model Path and Azure OpenAI Endpoint 
 
 Go to '/scripts/ChatWithSLM/ChatWithSLM.API/Utils/GenAI.cs' , add ONNX Model Path
 
 ```
-
 cd ./script/ChatWithSLM/ChatWithSLM.API/Utils/GenAI.cs
 
 ```
@@ -62,19 +87,24 @@ cd ./script/ChatWithSLM/ChatWithSLM.API/Utils/GenAI.cs
 
 
 ```
-
 cd ./scripts/ChatWithSLM/ChatWithSLM.UI/Utils/AOAIClient.cs
-
 ```
 
+### Update the following with the details 
+
+```
+string aoai_endpoint = "Your AOAI Service Endpoint";        
+string aoai_key = "Your AOAI Service Key";        
+string aoai_model = "Your GPT-3.5 Fine tuning Deployment name";
+```
 
 ![aoai](./images/aoai.png)
 
 
-
-4. Running Scripts
+## Running Scripts
 
 ### Navigate to the Project Directory:
+
 ```
 cd ./script/ChatWithSLM/ChatWithSLM.AppHost
 ```
