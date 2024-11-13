@@ -54,7 +54,7 @@ You'll connect to the Azure AI compute using the remote feature in VS Code. Open
 In VS Code, you can open a new terminal with **Ctrl+J** and clone this repo:
 
 ```bash
-cd ~/cloudfiles/code
+cd ~/localfiles
 git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 ```
 
@@ -107,20 +107,22 @@ Next, execute the following Olive commands in the command line.
     ```bash
     head data/data_sample_travel.jsonl
     ```
-1. **Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++, which provides more accurate results than standard quantization:
+1. **Quantize the model:** Before training the model, you first quantize with the following command that uses a technique called Active Aware Quantization (AWQ) +++https://arxiv.org/abs/2306.00978+++. AWQ quantizes the weights of a model by considering the activations produced during inference. This means that the quantization process takes into account the actual data distribution in the activations, leading to better preservation of model accuracy compared to traditional weight quantization methods.
     
     ```bash
     olive quantize \
-       --model_name_or_path azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4 \
+       --model_name_or_path microsoft/Phi-3.5-mini-instruct \
        --trust_remote_code \
        --algorithm awq \
        --output_path models/phi/awq \
        --log_level 1
     ```
     
-    It takes **~8mins** to complete the AWQ quantization. It will take a few minutes to download the data from the Registry, and you can ignore warnings around using `azcopy`. It is also possible to input models from Hugging Face using `{user_id}/{repo_id}` (for example: `microsoft/Phi-3.5-mini-instruct`).
+    It takes **~8mins** to complete the AWQ quantization, which will **reduce the model size from ~7.5GB to ~2.5GB**.
+   
+   In this lab, we're showing you how to input models from Hugging Face (for example: `microsoft/Phi-3.5-mini-instruct`). However, Olive also allows you to input models from the Azure AI catalog by updating the `model_name_or_path` argument to an Azure AI asset ID (for example:  `azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4`). 
 
-1. **Train the model:** Next, the `olive finetune` command finetunes the quantized model. We find that quantizing the model *before* fine-tuning greatly improves the accuracy.
+1. **Train the model:** Next, the `olive finetune` command finetunes the quantized model. Quantizing the model *before* fine-tuning instead of afterwards gives better accuracy as the fine-tuning process recovers some of the loss from the quantization.
     
     ```bash
     olive finetune \
@@ -135,7 +137,7 @@ Next, execute the following Olive commands in the command line.
         --log_level 1
     ```
     
-    It takes **~6mins** to complete the Fine-tuning (depending on the number of epochs).
+    It takes **~6mins** to complete the Fine-tuning (with 100 steps).
 
 1. **Optimize:** With the model trained, you now optimize the model using Olive's `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` arguments  - but for the purposes of this lab we'll use CPU.
 
@@ -171,7 +173,7 @@ tokenizer_stream = tokenizer.create_stream()
 
 params = og.GeneratorParams(model)
 params.set_search_options(max_length=100, past_present_share_buffer=False)
-user_input = "what is the best place to visit in chicago?"
+user_input = "what is the best place to visit in london?"
 params.input_ids = tokenizer.encode(f"<|user|>\n{user_input}<|end|>\n<|assistant|>\n")
 
 generator = og.Generator(model, params)
