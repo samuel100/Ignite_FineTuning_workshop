@@ -16,17 +16,17 @@ By the end of this lab, you will be able to use OLIVE to:
 - Fine-tune an AI model for a specific task.
 - Generate LoRA adapters (fine-tuned model) for efficient on-device inference on the ONNX Runtime.
 
-### What is OLIVE
+### What is Olive
 
 OLIVE (ONNX LIVE) is a model optimization toolkit with accompanying CLI that enables you to ship models for the ONNX runtime +++https://onnxruntime.ai+++ with quality and performance.
 
 ![Olive Flow](./images/olive-flow.png)
 
-The input to OLIVE is typically a PyTorch or Hugging Face model and the output is an optimized ONNX model that is executed on a device (deployment target) running the ONNX runtime. OLIVE will optimize the model for the deployment target's AI accelerator (NPU, GPU, CPU) provided by a hardware vendor such as Qualcomm, AMD, Nvidia or Intel.
+The input to Olive is typically a PyTorch or Hugging Face model and the output is an optimized ONNX model that is executed on a device (deployment target) running the ONNX runtime. Olive will optimize the model for the deployment target's AI accelerator (NPU, GPU, CPU) provided by a hardware vendor such as Qualcomm, AMD, Nvidia or Intel.
 
-OLIVE executes a *workflow*, which is an ordered sequence of individual model optimization tasks called *passes* - example passes include: model compression, graph capture, quantization, graph optimization. Each pass has a set of parameters that can be tuned to achieve the best metrics, say accuracy and latency, that are evaluated by the respective evaluator. OLIVE employs a search strategy that uses a search algorithm to auto-tune each pass one by one or set of passes together.
+Olive executes a *workflow*, which is an ordered sequence of individual model optimization tasks called *passes* - example passes include: model compression, graph capture, quantization, graph optimization. Each pass has a set of parameters that can be tuned to achieve the best metrics, say accuracy and latency, that are evaluated by the respective evaluator. Olive employs a search strategy that uses a search algorithm to auto-tune each pass one by one or set of passes together.
 
-#### Benefits of OLIVE
+#### Benefits of Olive
 
 - **Reduce frustration and time** of trial-and-error manual experimentation with different techniquies for graph optimization, compression and quantization. Define your quality and performance constraints and let OLIVE automatically find the best model for you.
 - **40+ built-in model optimization components** covering cutting edge techniques in quantization, compression, graph optimization and finetuning.
@@ -136,27 +136,20 @@ Next, execute the following Olive commands in the command line.
     
     It takes **~6mins** to complete the Fine-tuning (depending on the number of epochs).Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others +++https://huggingface.co/docs/optimum/en/exporters/onnx/overview+++. For more information on available options, read the Olive Finetune documentation +++https://microsoft.github.io/Olive/features/cli.html#finetune+++.
 
-1. **Capture ONNX Graph:** With the model trained, you need to capture the ONNX graph, which will add the adapter nodes into the graph.
+1. **Optimize** With the model trained, you now (automatically) optimize the model for CPU devices using Olive's `auto-opt` command, which will capture the ONNX graph and perform a number of optimizations to improve the model performance for CPU. It should be noted, that you can also optimize for other devices such as NPU - but for the purproses of this lab we'll use CPU.
 
     ```bash
-    olive capture-onnx-graph \
-        --model_name_or_path models/phi/ft/model \
-        --adapter_path models/phi/ft/adapter \
-        --use_ort_genai \
-        --output_path models/phi/onnx \
-        --log_level 1
-    ```
-
-1. **Generate adapters:** The following command will change the adapter nodes of the ONNX graph into inputs and saves the weights in a separate file:
-    
-    ```bash
-    olive generate-adapter \
-        --model_name_or_path models/phi/onnx \
-        --output_path models/phi/ft-ready \
-        --log_level 1
+    olive auto-opt \
+       --model_name_or_path models/phi/ft/model \
+       --adapter_path models/phi/ft/adapter \
+       --device cpu \
+       --provider CPUExecutionProvider \
+       --use_ort_genai \
+       --output_path models/phi/onnx-ao \
+       --log_level 1
     ```
     
-    It takes **~2mins** to complete the adapter extraction.
+    It takes **~2mins** to complete the optimization.
 
 ### Step 5: Model inference quick test
 
@@ -167,9 +160,9 @@ import onnxruntime_genai as og
 import numpy as np
 
 print("loading model and adapters (from an Azure Fileshare)...", end="", flush=True)
-model = og.Model("models/phi/ft-ready/model")
+model = og.Model("models/phi/onnx-ao/model")
 adapters = og.Adapters(model)
-adapters.load("models/phi/ft-ready/model/adapter_weights.onnx_adapter", "travel")
+adapters.load("models/phi/onnx-ao/model/adapter_weights.onnx_adapter", "travel")
 print("DONE!")
 
 tokenizer = og.Tokenizer(model)
@@ -213,7 +206,7 @@ Uploading the model to an Azure AI model repository makes the model sharable wit
 az ml model create \
     --name ft-for-travel \
     --version 1 \
-    --path ./models/phi/ft-ready \
+    --path ./models/phi/onnx-ao \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
 ```
