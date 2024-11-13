@@ -118,7 +118,7 @@ Next, execute the following Olive commands in the command line.
        --log_level 1
     ```
     
-    It takes **~8mins** to complete the AWQ quantization. It will take a few minutes to download the data from the Registry, and you can ignore warnings around using `azcopy`.
+    It takes **~8mins** to complete the AWQ quantization. It will take a few minutes to download the data from the Registry, and you can ignore warnings around using `azcopy`. It is also possible to input models from Hugging Face using `{user_id}/{repo_id}` (for example: `microsoft/Phi-3.5-mini-instruct`).
 
 1. **Train the model:** Next, the `olive finetune` command finetunes the quantized model. We find that quantizing the model *before* fine-tuning greatly improves the accuracy.
     
@@ -143,7 +143,6 @@ Next, execute the following Olive commands in the command line.
     olive auto-opt \
        --model_name_or_path models/phi/ft/model \
        --adapter_path models/phi/ft/adapter \
-       --trust_remote_code \
        --device cpu \
        --provider CPUExecutionProvider \
        --use_ort_genai \
