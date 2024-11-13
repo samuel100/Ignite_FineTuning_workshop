@@ -18,4 +18,18 @@ You start by creating an Azure AI project within an Azure AI hub:
     
     Select a **VM Standard NC24ads_A100v4**  **24 cores**
 
-1. Select **Review+Create** and then **Create**
+1. Select **Review+Create**
+
+On the Review Screen 
+
+We want to ensure the machine doesnt autoshutdown during the lab 
+
+Select scheduling and **review** button 
+
+Deselect the **Enable idle shutdown**
+
+1. Select **Review+Create**
+
+Check the machine size and scheduling 
+
+1. Select **Create**
