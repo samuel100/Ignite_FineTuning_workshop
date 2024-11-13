@@ -15,23 +15,17 @@ olive finetune \
     --data_files "data/data_sample_travel.jsonl" \
     --data_name "json" \
     --text_template "<|user|>\n{prompt}<|end|>\n<|assistant|>\n{response}<|end|>" \
-    --max_steps 15 \
+    --max_steps 100 \
     --output_path ./models/phi/ft \
     --log_level 1
 
-echo -e "\n>>>>>> running graph capture >>>>>>>>\n"
+echo -e "\n>>>>>> running optimizer >>>>>>>>\n"
 
-olive capture-onnx-graph \
+olive auto-opt \
     --model_name_or_path models/phi/ft/model \
     --adapter_path models/phi/ft/adapter \
+    --device cpu \
+    --provider CPUExecutionProvider \
     --use_ort_genai \
-    --output_path models/phi/onnx \
+    --output_path models/phi/onnx-ao \
     --log_level 1
-
-echo -e "\n>>>>>> generating adapters >>>>>>>>\n"
-
-olive generate-adapter \
-    --model_name_or_path models/phi/onnx \
-    --output_path models/phi/ft-ready \
-    --log_level 1
-
