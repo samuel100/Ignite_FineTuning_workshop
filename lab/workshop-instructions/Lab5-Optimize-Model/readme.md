@@ -10,13 +10,13 @@
 
 ## Learning Objectives
 
-By the end of this lab, you will be able to use OLIVE to:
+By the end of this lab, you will be able to use Olive to:
 
 - Quantize an AI Model using the AWQ quantization method.
 - Fine-tune an AI model for a specific task.
 - Generate LoRA adapters (fine-tuned model) for efficient on-device inference on the ONNX Runtime.
 
-### What is OLIVE
+### What is Olive
 
 OLIVE (ONNX LIVE) is a model optimization toolkit with accompanying CLI that enables you to ship models for the ONNX runtime +++https://onnxruntime.ai+++ with quality and performance.
 
@@ -111,10 +111,10 @@ Next, execute the following Olive commands in the command line.
     
     ```bash
     olive quantize \
-        --model_name_or_path azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4 \
-        --algorithm awq \
-        --output_path models/phi/awq \
-        --log_level 1
+       --model_name_or_path azureml://registries/azureml-meta/models/Llama-3.2-1B-Instruct/versions/1 \
+       --algorithm awq \
+       --output_path models/llama/awq \
+       --log_level 1
     ```
     
     It takes **~8mins** to complete the AWQ quantization. It will take a few minutes to download the data from the Registry, and you can ignore warnings around using `azcopy`.
@@ -123,40 +123,31 @@ Next, execute the following Olive commands in the command line.
     
     ```bash
     olive finetune \
-        --method lora \
-        --model_name_or_path models/phi/awq \
-        --trust_remote_code \
-        --data_files "data/data_sample_travel.jsonl" \
-        --data_name "json" \
-        --text_template "<|user|>\n{prompt}<|end|>\n<|assistant|>\n{response}<|end|>" \
-        --max_steps 100 \
-        --output_path ./models/phi/ft \
-        --log_level 1
+       --method lora \
+       --model_name_or_path models/llama/awq \
+       --trust_remote_code \
+       --data_files "data/data_sample_travel.jsonl" \
+       --data_name "json" \
+       --text_template "<|start_header_id|>user<|end_header_id|>\n{prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n{response}" \
+       --max_steps 100 \
+       --output_path ./models/llama/ft \
+       --log_level 1
     ```
     
     It takes **~6mins** to complete the Fine-tuning (depending on the number of epochs).Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others +++https://huggingface.co/docs/optimum/en/exporters/onnx/overview+++. For more information on available options, read the Olive Finetune documentation +++https://microsoft.github.io/Olive/features/cli.html#finetune+++.
 
-1. **Capture ONNX Graph:** With the model trained, you need to capture the ONNX graph, which will add the adapter nodes into the graph.
+1. **Optimize:** With the model trained, you can now run an automatic optimizer, which will convert the model to ONNX and run a number of optimizations on the ONNX graph.
 
     ```bash
-    olive capture-onnx-graph \
-        --model_name_or_path models/phi/ft/model \
-        --adapter_path models/phi/ft/adapter \
-        --use_ort_genai \
-        --output_path models/phi/onnx \
-        --log_level 1
+    olive auto-opt \
+       --model_name_or_path models/llama/ft/model \
+       --adapter_path models/llama/ft/adapter \
+       --device cpu \
+       --provider CPUExecutionProvider \
+       --use_ort_genai \
+       --output_path models/llama/onnx-ao \
+       --log_level 1
     ```
-
-1. **Generate adapters:** The following command will change the adapter nodes of the ONNX graph into inputs and saves the weights in a separate file:
-    
-    ```bash
-    olive generate-adapter \
-        --model_name_or_path models/phi/onnx \
-        --output_path models/phi/ft-ready \
-        --log_level 1
-    ```
-    
-    It takes **~2mins** to complete the adapter extraction.
 
 ### Step 5: Model inference quick test
 
@@ -178,7 +169,7 @@ tokenizer_stream = tokenizer.create_stream()
 params = og.GeneratorParams(model)
 params.set_search_options(max_length=100, past_present_share_buffer=False)
 user_input = "what is the best place to visit in chicago?"
-params.input_ids = tokenizer.encode(f"<|user|>\n{user_input}<|end|>\n<|assistant|>\n")
+params.input_ids = tokenizer.encode(f"<|begin_of_text|><|start_header_id|>user\n<|end_header_id|>{user_input}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n")
 
 generator = og.Generator(model, params)
 
