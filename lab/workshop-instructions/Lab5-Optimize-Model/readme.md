@@ -76,6 +76,8 @@ Open a terminal window in VS Code in your Azure AI Compute Instance (tip: **Ctrl
 conda create -n olive-ai python=3.11 -y
 conda activate olive-ai
 pip install -r requirements.txt
+az extension remove -n azure-cli-ml
+az extension add -n ml
 ```
 
 > [!NOTE]
