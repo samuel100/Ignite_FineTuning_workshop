@@ -16,6 +16,6 @@ You start by creating an Azure AI project within an Azure AI hub:
     
   ![Compte Size](./images/compute-size.png)
     
-    Select a VM Stanard NC24ads_A100v4
+    Select a **VM Standard NC24ads_A100v4**  **24 cores**
 
 1. Select **Review+Create** and then **Create**
