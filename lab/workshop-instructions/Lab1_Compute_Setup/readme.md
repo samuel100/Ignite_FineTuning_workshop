@@ -12,24 +12,23 @@ You start by creating an Azure AI project within an Azure AI hub:
 
   ![Create Azure AI Compute](./images/compute-create.png)
 
-1. Select your **Virtual machine type** as **GPU**. *Filter* the list of **Virtual machine size** on **A100**: 
+2. Select your **Virtual machine type** as **GPU**. *Filter* the list of **Virtual machine size** on **A100**: 
     
   ![Compte Size](./images/compute-size.png)
     
-    Select a **VM Standard NC24ads_A100v4**  **24 cores**
+3. Select a **VM Standard NC24ads_A100v4**  **24 cores**
 
-1. Select **Review+Create**
+4. Select **Review+Create**
 
-On the Review Screen 
 
-We want to ensure the machine doesnt autoshutdown during the lab 
+5. On the Review Screen, we want to ensure the machine doesnt autoshutdown during the lab 
 
-Select scheduling and **review** button 
+6. Select scheduling and **review** button 
 
-Deselect the **Enable idle shutdown**
+7. Deselect the **Enable idle shutdown**
 
-1. Select **Review+Create**
+8. Select **Review+Create**
 
-Check the machine size and scheduling 
+9. Check the machine size and scheduling 
 
-1. Select **Create**
+10. Select **Create**
