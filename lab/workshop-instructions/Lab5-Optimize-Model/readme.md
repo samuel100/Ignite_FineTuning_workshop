@@ -18,7 +18,7 @@ By the end of this lab, you will be able to use OLIVE to:
 
 ### What is Olive
 
-OLIVE (ONNX LIVE) is a model optimization toolkit with accompanying CLI that enables you to ship models for the ONNX runtime +++https://onnxruntime.ai+++ with quality and performance.
+Olive (*O*NNX *live*) is a model optimization toolkit with accompanying CLI that enables you to ship models for the ONNX runtime +++https://onnxruntime.ai+++ with quality and performance.
 
 ![Olive Flow](./images/olive-flow.png)
 
@@ -28,7 +28,7 @@ Olive executes a *workflow*, which is an ordered sequence of individual model op
 
 #### Benefits of Olive
 
-- **Reduce frustration and time** of trial-and-error manual experimentation with different techniquies for graph optimization, compression and quantization. Define your quality and performance constraints and let OLIVE automatically find the best model for you.
+- **Reduce frustration and time** of trial-and-error manual experimentation with different techniquies for graph optimization, compression and quantization. Define your quality and performance constraints and let Olive automatically find the best model for you.
 - **40+ built-in model optimization components** covering cutting edge techniques in quantization, compression, graph optimization and finetuning.
 - **Easy-to-use CLI** for common model optimization tasks. For example, olive quantize, olive auto-opt, olive finetune.
 - Model packaging and deployment built-in.
@@ -111,10 +111,11 @@ Next, execute the following Olive commands in the command line.
     
     ```bash
     olive quantize \
-        --model_name_or_path azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4 \
-        --algorithm awq \
-        --output_path models/phi/awq \
-        --log_level 1
+       --model_name_or_path azureml://registries/azureml/models/Phi-3.5-mini-instruct/versions/4 \
+       --trust_remote_code \
+       --algorithm awq \
+       --output_path models/phi/awq \
+       --log_level 1
     ```
     
     It takes **~8mins** to complete the AWQ quantization. It will take a few minutes to download the data from the Registry, and you can ignore warnings around using `azcopy`.
@@ -134,14 +135,15 @@ Next, execute the following Olive commands in the command line.
         --log_level 1
     ```
     
-    It takes **~6mins** to complete the Fine-tuning (depending on the number of epochs).Olive supports the following models out-of-the-box: Phi, Llama, Mistral, Gemma, Qwen, Falcon and [many others +++https://huggingface.co/docs/optimum/en/exporters/onnx/overview+++. For more information on available options, read the Olive Finetune documentation +++https://microsoft.github.io/Olive/features/cli.html#finetune+++.
+    It takes **~6mins** to complete the Fine-tuning (depending on the number of epochs).
 
-1. **Optimize** With the model trained, you now (automatically) optimize the model for CPU devices using Olive's `auto-opt` command, which will capture the ONNX graph and perform a number of optimizations to improve the model performance for CPU. It should be noted, that you can also optimize for other devices such as NPU - but for the purproses of this lab we'll use CPU.
+1. **Optimize:** With the model trained, you now optimize the model using Olive's `auto-opt` command, which will capture the ONNX graph and automatically perform a number of optimizations to improve the model performance for CPU by compressing the model and doing fusions. It should be noted, that you can also optimize for other devices such as NPU or GPU by just updating the `--device` and `--provider` arguments  - but for the purposes of this lab we'll use CPU.
 
     ```bash
     olive auto-opt \
        --model_name_or_path models/phi/ft/model \
        --adapter_path models/phi/ft/adapter \
+       --trust_remote_code \
        --device cpu \
        --provider CPUExecutionProvider \
        --use_ort_genai \
@@ -149,7 +151,7 @@ Next, execute the following Olive commands in the command line.
        --log_level 1
     ```
     
-    It takes **~2mins** to complete the optimization.
+    It takes **~5mins** to complete the optimization.
 
 ### Step 5: Model inference quick test
 
