@@ -1,4 +1,4 @@
-olive-ai==0.7.0
+olive-ai==0.7.1
 transformers==4.44.2
 autoawq==0.2.6
 optimum==1.23.1
