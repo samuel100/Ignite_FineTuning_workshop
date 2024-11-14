@@ -128,7 +128,6 @@ Next, execute the following Olive commands in the command line.
     olive finetune \
         --method lora \
         --model_name_or_path models/phi/awq \
-        --trust_remote_code \
         --data_files "data/data_sample_travel.jsonl" \
         --data_name "json" \
         --text_template "<|user|>\n{prompt}<|end|>\n<|assistant|>\n{response}<|end|>" \
@@ -162,7 +161,7 @@ To test inferencing the model, create a Python file in your folder called **app.
 import onnxruntime_genai as og
 import numpy as np
 
-print("loading model and adapters (from an Azure Fileshare)...", end="", flush=True)
+print("loading model and adapters...", end="", flush=True)
 model = og.Model("models/phi/onnx-ao/model")
 adapters = og.Adapters(model)
 adapters.load("models/phi/onnx-ao/model/adapter_weights.onnx_adapter", "travel")
@@ -173,7 +172,7 @@ tokenizer_stream = tokenizer.create_stream()
 
 params = og.GeneratorParams(model)
 params.set_search_options(max_length=100, past_present_share_buffer=False)
-user_input = "what is the best place to visit in london?"
+user_input = "what is the best thing to see in chicago"
 params.input_ids = tokenizer.encode(f"<|user|>\n{user_input}<|end|>\n<|assistant|>\n")
 
 generator = og.Generator(model, params)
