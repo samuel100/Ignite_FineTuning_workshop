@@ -176,7 +176,7 @@ You start by creating an Azure AI project within an Azure AI hub:
     - **Hub name**: *A unique name*
     - **Subscription**: *Your Azure subscription*
     - **Resource group**: *A new resource group*
-    - **Location**: Select **Help me choose** and then select **gpt-35-turbo** in the Location helper window and use the recommended region\*
+    - **Location**: Select **Help me choose** and then select **gpt-35-turbo** in the Location helper window and use the recommended region
     - **Connect Azure AI Services or Azure OpenAI**: *Create a new connection*
     - **Connect Azure AI Search**: Skip connecting
 
