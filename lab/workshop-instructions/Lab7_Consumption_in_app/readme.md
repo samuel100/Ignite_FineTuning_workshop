@@ -139,7 +139,8 @@ As shown in the figure
 
 Evaluate using other onnx model 
 
-You can simply download other models to evaluate the output
+You can simply download and evaluate additional models from `https://huggingface.co` simply download the new model and replace the model in the Python or .NET application.
+
 ```
 git lfs install
 git clone https://huggingface.co/<ModelID>
