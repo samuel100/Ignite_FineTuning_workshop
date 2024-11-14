@@ -1,9 +1,0 @@
-@ChatWithSLM.API_HostAddress = http://localhost:5079
-
-GET {{ChatWithSLM.API_HostAddress}}/
-Accept: application/json
-
-POST {{ChatWithSLM.API_HostAddress}}/v1/chat/completions
-Accept: application/json
-
-###
