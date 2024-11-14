@@ -60,11 +60,12 @@ As fine-tuning a model takes some time to complete, you'll start the fine-tuning
 
     - **Validation data**: None
     - **Task parameters**: *Keep the default settings*
-    - Select Submit to start the fine tuning process
+    - Select **Submit** to start the fine tuning process
 
 1. Fine-tuning will start and may take some time to complete.
 
-> **Note**: Fine-tuning and deployment can take some time, so you may need to check back periodically and refresh the browser windoes. You can already continue with the next step while you wait.
+> **Note**:
+> Fine-tuning and deployment can take some time, so you may need to check back periodically and refresh the browser windoes. You can already continue with the next step while you wait.
 
 ## Chat with a base model
 
