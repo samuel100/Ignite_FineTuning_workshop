@@ -36,4 +36,4 @@ This workshop is available at +++https://aka.ms/ignite/pre016+++
 
 Or simply scan this QR Code 
 
-![QRCodePre016Workshop](./images/pre016.jpg)
+![QRCodePre016Workshop](./images/pre016.png)
