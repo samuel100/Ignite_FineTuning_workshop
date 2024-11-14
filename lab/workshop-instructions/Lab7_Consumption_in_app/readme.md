@@ -68,6 +68,18 @@ cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
     -m ../Lab5-Optimize-Model/models/phi/onnx-ao/model \
     -g
    ```
+
+   Try the following prompt
+
+   ```
+   What is a nice place to goto in summer?
+   ```
+   Evaluate your response looking at time and number of tokens.
+
+   Try some more prompts.
+
+   To exit **Ctrl+C**
+   
 1. Run the application using the base model + Fine-tuned Adapter:
    ```bash
    python app.py \
@@ -76,11 +88,38 @@ cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
     -g
    ```
 
+   Try the following prompt
+
+   ```
+   What is a nice place to goto in summer?
+   ```
+   Evaluate your response looking at time and number of tokens.
+
+   Try some more prompts.
+
+   To exit **Ctrl+C**
 
 ## Option 2.Using the .NET application 
 
 This application requires .NET to be installed on the A100 compute node
 
+## Setup .NET
+
+Close the VS Code Terminal 
+
+```
+exit
+```
+Open a new VS Code terminal **Ctrl+J** 
+
+```
+azureuser@compute:~/cloudfiles/code$ 
+```
+```bash
+cd ~/localfiles
+cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console
+```
+ 
 ### Install .NET 8.
 
 ```
@@ -90,11 +129,7 @@ sudo apt-get install -y dotnet-sdk-8.0
 
 ### Edit your Model Locations in VSCode  
 
-Navigate to the folder in **VSCode solution explorer** left hand window
-
-```
-/workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console
-```
+Navigate to the folder in **VSCode solution** select **file** **open folder** add '/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console/'
 
 ## Running fine-tuned GPT model in the cloud 
 
@@ -107,10 +142,7 @@ You ONNX Path will be in the following format
 > For the Workshop Environment the we have provide copies of models in the `model`folder located on the desktop 
 
 ```
-private static string modelPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/Phi-3.5-mini-instruct-onnx/cpu_and_mobile/cpu-int4-awq-block-128-acc-level-4";    
- 
 private static string oftmodelPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model";    
-
 private static string oftadapterPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model/adapter_weights.onnx_adapter";
 
 ```
@@ -135,7 +167,6 @@ The Azure Open AI Key can be found in deployments and select your deployed GPT-3
 ```
 dotnet run
 ```
-
 You can choose two different scenarios
 
 1. Experience of different models based on travel data
@@ -147,6 +178,18 @@ As shown in the figure
 
 ![result](./images/result.png)
 
+
+Try the following prompt
+
+```
+   What is a nice place to goto in summer?
+```
+ 
+   Evaluate your response looking at time and number of tokens.
+
+   Try some more prompts.
+
+   To exit **Ctrl+C**
 
 ### Downloading Additional ONNX Models from Hugging face 
 
