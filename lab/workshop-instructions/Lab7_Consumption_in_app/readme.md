@@ -150,9 +150,9 @@ private static string oftadapterPath = @"/home/azureuser/localfiles/Ignite_FineT
 The Azure Open AI Key can be found in deployments and select your deployed GPT-35 Fine Tuned Model +++https://ai.azure.com+++ open the playground select **view code** select curl and then **key authentication** to find the **Endpoint** and **API Key**
 
 ```
-    Endpoint = "https://*******.openai.azure.com/";
-    Key = "********";
-    Model Name = "****";
+    Endpoint_url = "https://*******.openai.azure.com/";
+    AZURE_OPENAI_API_KEY = "********";
+    Deployment_name = "****";
 
 ``` 
 
