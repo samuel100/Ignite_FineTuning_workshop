@@ -139,10 +139,11 @@ As shown in the figure
 
 Evaluate using other onnx model 
 
-You can simply download and evaluate additional models from `https://huggingface.co` simply download the new model and replace the model in the Python or .NET application.
+You can simply download and evaluate additional models from `https://huggingface.co` use the **search** to search for additional models for optimized models we recommend the +++https://huggingface.co/onnx-community+++ select the new model card download the new model and replace the model name in the Python or .NET application.
 
 ```
 git lfs install
 git clone https://huggingface.co/<ModelID>
 # Example git clone https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
+# Example git clone https://huggingface.co/onnx-community/Llama-3.2-1B-Instruct-ONNX
 ```
