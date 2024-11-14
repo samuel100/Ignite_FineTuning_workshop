@@ -15,11 +15,8 @@ using Microsoft.ML.OnnxRuntimeGenAI;
 public class GenAI
 {
 
-    private static string modelPath = @"Phi-3.5 Mini Instruct ONNX Model Path";
-
-    private static string oftmodelPath = @"Your Phi-3.5 Fine-tuned with travel data ONNX optimization Model Path";
-    private static string oftadapterPath = @"Your Phi-3.5 Fine-tuned with travel data optimization adapter_weights.onnx_adapter path";
-
+    private static string modelPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model";    
+    private static string adapterPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model/adapter_weights.onnx_adapter";
 
     private static string aoai_endpoint = "Your Azure OpenAI GPT Fine tuned GPT-3.5 endpoint";
     private static string aoai_key = "Your Azure OpenAI GPT-3.5 Fine tuned endpoint key";
@@ -27,60 +24,19 @@ public class GenAI
 
     private static Microsoft.ML.OnnxRuntimeGenAI.Model model = null;
     private static Microsoft.ML.OnnxRuntimeGenAI.Tokenizer  tokenizer = null;
-
-
     private static Microsoft.ML.OnnxRuntimeGenAI.Adapters  adapters = null;
 
-    private static int status = -1;
-
-    private static int ft_status = -1;
-
-
    
-    public static void InitGenAI(int status, bool ft = false)
+    public static void InitGenAI()
     {
-        if (ft)
-        {
-            ft_status = 1;
-        }
-        else
-        {
-            ft_status = 0;
-        }
-        if (status != ft_status)
-        {
-            if (ft)
-            {
-                if (status == 2)
-                {
-                    model = new Model("path_to_new_model");
-                }
-                else
-                {
-                    model = new Model(oftmodelPath);
-                }
-                tokenizer = new Tokenizer(model);
-                adapters = new Adapters(model);
-                if (status == 2)
-                {
-                    adapters.LoadAdapter("path_to_new_adapter", "travel");
-                }
-                else
-                {
-                    adapters.LoadAdapter(oftadapterPath, "travel");
-                }
-            }
-            else
-            {
-                // Continue with the rest of your method
-            }
-        }
+        model = new Model(modelPath);    
+        tokenizer = new Tokenizer(model);
+        adapters = new Adapters(model);
+        adapters.LoadAdapter(adapterPath, "travel");
     }
 
-    public static void ChatWithGenAIONNXOpenAIAsync(int status,string prompt, bool ft = false)
+    public static void ChatWithGenAIONNXOpenAIAsync(string prompt, bool set_adapter = false)
     {
-        InitGenAI(status,ft);
-
         string userPrompt = prompt;
         string chatTemplate = "";
 
@@ -97,24 +53,17 @@ public class GenAI
 
         Generator generator = new(model, generatorParams);
 
-        if(ft)
+        if(set_adapter)
         {
             generator.SetActiveAdapter(adapters, "travel");
         }
 
-
-
-        int token_count = 0;
         while (!generator.IsDone())
         {
             generator.ComputeLogits();
             generator.GenerateNextToken();
-            // var token = generator.GetSequence(0)[token_count];
-            // Console.Out.Write(tokenizerStream.Decode(token));
             Console.Out.Write(tokenizerStream.Decode(generator.GetSequence(0)[^1]));
             Console.Out.Flush();
-            token_count++;
-
         }
         Console.WriteLine();
 
