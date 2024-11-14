@@ -44,8 +44,7 @@ git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 ### In the application folder navigate to the solution 
 
 ```
-cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/scr
-ipts/ChatWithSLM.Console
+cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console
 ```
 
 ## Open the solution in VScode 
