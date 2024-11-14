@@ -14,8 +14,13 @@ By the end of this workshop, you should be able to:
 
 ## Lab Scenario
 In this lab you utilise a console application to validate the following scenarios 
-1. Chat with Phi-3.5 ONNX unoptizimed fine tuned model, Phi-3.5 ONNX OLIVE Optimized fine tuned Model and GPT-.3.5 fine tuned Model - To this will allow you to compare the resulting messages.
-2. Evaluation of the Phi-3.5 ONNX Olive Fine tuned Model 
+1. Chat with:
+Phi-3.5 Mini Instruct ONNX Model from Hugging Face https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
+Phi-3.5 ONNX unoptizimed fine tuned model  
+Phi-3.5 ONNX OLIVE Optimized fine tuned Model you created in Lab5
+GPT-.3.5 fine tuned Model your created in Lab3
+3. Evaluation - this will allow you to compare the resulting messages.
+4. Exit the application to complete this lab 
 
 ## Setup 
 
@@ -53,6 +58,29 @@ code
 
 Go to ChatWithSLM.Console/Utils/GenAI.cs , add your onnx models path, save
 
+You ONNX Path will be in the following format
+
+
+> [!NOTE]
+> For the Workshop Environment the we have provide copies of models in the `model`folder located on the desktop 
+
+```
+    private static string modelPath = @"/Users/%username%/Desktop/models/phi-instruct/Phi-3.5-mini-instruct-onnx/cpu_and_mobile/cpu-int4-awq-block-128-acc-level-4";
+    private static string ftmodelPath = @"/Users/%username%/Desktop/models/phi/ft-ready/model";
+    private static string ftadapterPath = @"/Users/%username%/Desktop/models/phi/ft-ready/model/adapter_weights.onnx_adapter";
+
+    private static string oftmodelPath = @"/Users/%username%/Desktop/models/onnx-ao/model";
+    private static string oftadapterPath = @"/Users/%username%/Desktop/models/onnx-ao/model/adapter_weights.onnx_adapter";
+```
+The Azure Open AI Key can be found in deployments and select your deployed GPT-35 Fine Tuned Model +++https://ai.azure.com+++
+
+```
+    Endpoint = "https://*******.openai.azure.com/";
+    Key = "********";
+    Model Name = "****";
+
+``` 
+
 ![location](./images/location.png)
 
 
@@ -75,3 +103,15 @@ As shown in the figure
 
 
 ![result](./images/result.png)
+
+
+### Downloading Additional Models from Hugging face 
+
+Evaluate using other model 
+
+You can simply download other models to evaluate the output
+```
+git lfs install
+git clone https://huggingface.co/<ModelID>
+# Example git clone https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
+```
