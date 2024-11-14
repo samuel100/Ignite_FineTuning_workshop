@@ -35,6 +35,8 @@ You'll connect to the Azure AI compute using the remote feature in VS Code.
 
 ## Open a terminal in VSCode
 
+In **VS Code**, you can open a new terminal with **Ctrl+J** and clone this repo:
+
 ```
 cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
 ```
