@@ -9,7 +9,7 @@
 
 By the end of this workshop, you should be able to:
 1. Integrate the custom fined Phi local model with the application.
-1. Intergrate the custom fine tuned GPT Model with the applciation.
+1. Intergrate the custom fine tuned GPT Model with the application.
 2. Compare the results of the models
 
 ## Lab Scenario
