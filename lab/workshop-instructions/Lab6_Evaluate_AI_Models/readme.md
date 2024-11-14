@@ -249,7 +249,7 @@ When you have created a model with a chat flow, you can evaluate the flow by doi
     - **Description**: *Enter a description*
     - **Tags**: *these can be left blank*
 1. Select **Next**
-    - Select **use existing dataset** this is the dataset you want to evaluate**
+    - Select **use existing dataset** this is the dataset you want to **evaluate**
         - You can see the preview of the previously used questions.
 1. Select **Next**
     - **Select metrics**: Coherence, Fluency
@@ -271,7 +271,7 @@ When you have created a model with a chat flow, you can evaluate the flow by doi
     - **Description**: *Enter a description*
     - **Tags**: *these can be left blank*
 1. Select **Next**
-    - Select **add your dataset** this is the dataset you want to evaluate**
+    - Select **add your dataset** this is the dataset you want to **evaluate**
         - Download the +++https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-qa.jsonl+++ JSONL file and upload it to the UI.
 1. Select **Next**
     - **Select metrics**: Coherence, Fluency
