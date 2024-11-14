@@ -66,6 +66,9 @@ Now that you've deployed a model, you can use it to generate responses based on 
 
 ### Prepare Dataset for Fine-tuning
 
+> [!NOTE]
+> For the Ignite workshop please focus on Option1 only due to time constraints. 
+
 ## Option1: Using GPT to create synthetic Data 
 
 
