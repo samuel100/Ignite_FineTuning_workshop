@@ -257,7 +257,7 @@ When you have created a model with a chat flow, you can evaluate the flow by doi
 1. Select **Next** then review your data
 1. Select **Submit** the new evaluation.
 1. You may receive a storage permission error, please wait a minute for the permissions to be updated and then select **Submit** 
-1. Wait for the evaluations to be completed, you may need to refresh.
+1. Wait for the evaluations to start running this will take approx 10 mins and to be 30 mins to completed, you may need to refresh.
 1. Select the evaluation run you just created.
 1. Explore the **Metric dashboard** and **Detailed metrics result**.
 
