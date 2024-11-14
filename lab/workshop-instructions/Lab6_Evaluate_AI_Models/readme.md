@@ -150,7 +150,7 @@ These metrics help you evaluate the model's effectiveness in generating accurate
 
 ![Screenshot of RAI Metrics](./images/6_evaluate-based-on-performance.png)
 
-## Evaluating the model in Azure AI
+# Evaluating the model in Azure AI
  
 In this lab, you will deploy an model as an evaluator in Azure AI and use it to evaluate your fine-tuned model.
 
@@ -160,7 +160,7 @@ Before you begin this tutorial, make sure you have the following prerequisites, 
 - A model that has been fine-tuned and deployed
 - A Prompt flow integrated with your fine-tuned model in Azure AI.
  
-# Evaluate the performance of your model in Azure AI
+## Evaluate the performance of your model in Azure AI
 
 In this exercise, you'll explore built-in and custom evaluations to assess and compare the performance of your AI applications with the Azure AI.
 
@@ -241,7 +241,7 @@ You can manually review model responses based on test data. Manually reviewing a
 
 When you have created a model with a chat flow, you can evaluate the flow by doing a batch run and assessing the performance of the flow with built-in metrics.
 
-### Using your `Manual_Evaulation`
+### Using your Manual_Evaulation Questions DataSet
 
 1. Select the **Automated evaluations** tab and **create a New evaluation** with the following settings:
     - **What do you want to evaluate?**: Dataset
