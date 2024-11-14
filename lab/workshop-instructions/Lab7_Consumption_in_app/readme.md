@@ -41,7 +41,27 @@ cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
 
 ## Option1. Using Python application
 
-TBC
+> [!NOTE]
+> You will be running the model on the **CPU** of the A100, *not* the GPU. This is to give you a flavour of the inference performance on a CPU device, which are more ubiquitous.
+
+1. Ensure you are running the `olive-ai` environment from Lab 5:
+   ```bash
+   conda activate olive-ai
+   ```
+1. Run the application using the base model:
+   ```bash
+   python app.py \
+    -m ../Lab5-Optimize-Model/models/phi/onnx-ao/model \
+    -g
+   ```
+1. Run the application using the base model + Fine-tuned Adapter:
+   ```bash
+   python app.py \
+    -m ../Lab5-Optimize-Model/models/phi/onnx-ao/model \
+    -a ../Lab5-Optimize-Model/models/phi/onnx-ao/model/adapter_weights.onnx_adapter \
+    -g
+   ```
+
 
 ## Option2.Using the .NET application 
 
