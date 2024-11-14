@@ -13,23 +13,26 @@ By the end of this workshop, you should be able to:
 2. Compare the results of the models
 
 ## Lab Scenario
-This is console application
-
+In this lab you utilise a console application to validate the following scenarios 
+1. Chat with Phi-3.5 ONNX unoptizimed fine tuned model, Phi-3.5 ONNX OLIVE Optimized fine tuned Model and GPT-.3.5 fine tuned Model - To this will allow you to compare the resulting messages.
+2. Evaluation of the Phi-3.5 ONNX Olive Fine tuned Model 
 
 ## Setup 
 
-Create a new folder on the desktop and clone the code using a command prompt.
+### Create a new folder on the desktop and clone the code using a command prompt.
 
 Open a new Powershell terminal window
- 
+
+``` 
 PS C:\Users\LabUser>
+```
 
 ### Download the solution 
 
 ```
 cd desktop
 mkdir Application
-cd application
+cd Application
 git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 ```
 
@@ -39,6 +42,7 @@ git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/scr
 ipts/ChatWithSLM.Console
 ```
+
 ## Open the solution in VScode 
 
 ```
