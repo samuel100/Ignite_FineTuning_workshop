@@ -14,12 +14,12 @@ By the end of this workshop, you should be able to:
 
 ## Lab Scenario
 In this lab you utilise a console application to validate the following scenarios 
-1. Chat with:
-Phi-3.5 Mini Instruct ONNX Model from Hugging Face https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
-Phi-3.5 ONNX unoptizimed fine tuned model  
-Phi-3.5 ONNX OLIVE Optimized fine tuned Model you created in Lab5
-GPT-.3.5 fine tuned Model your created in Lab3
-3. Evaluation - this will allow you to compare the resulting messages.
+1. Chat with and evaliate resulting messages from various models:
+- Phi-3.5 Mini Instruct ONNX Model from Hugging Face https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
+- Phi-3.5 ONNX unoptizimed fine tuned model  
+- Phi-3.5 ONNX OLIVE Optimized fine tuned Model you created in Lab5
+- GPT-.3.5 fine tuned Model your created in Lab3
+3. Evaluation - this will allow you to compare the resulting messages, speed and quality.
 4. Exit the application to complete this lab 
 
 ## Setup 
