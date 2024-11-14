@@ -51,7 +51,11 @@ Now that you deployed your fine-tuned model and base model, you can test and com
 
 1. Test your fine-tuned model to assess whether its behavior is more consistent now. For example, ask the following questions again and explore the model's answers:
    
-     `Where in Rome should I stay?`
+   ```
+   Where in Rome should I stay?
+   ```
     
-    `Where should i go on Holiday for my 30th Birthday and I love active Sight seeing trips?`
+   ```
+   Where should i go on Holiday for my 30th Birthday and I love active Sight seeing trips?
+   ```
     
