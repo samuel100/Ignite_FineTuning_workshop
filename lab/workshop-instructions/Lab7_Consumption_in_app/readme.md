@@ -28,11 +28,17 @@ In this lab you utilise a console application to validate the following scenario
 
 Open a new Powershell terminal window
 
+
+> [!NOTE]
+> For the Workshop Environment the you should see
+
 ``` 
 PS C:\Users\LabUser>
 ```
 
 ### Download the solution 
+
+Create a folder for the application on the desktop and clone the solution. 
 
 ```
 cd desktop
@@ -43,6 +49,7 @@ git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
 
 ### In the application folder navigate to the solution 
 
+Naviagte to the folder 
 ```
 cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console
 ```
@@ -50,7 +57,7 @@ cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/
 ## Open the solution in VScode 
 
 ```
-code
+code .
 ```
 
 ## Running fine-tuned GPT model in the cloud 
