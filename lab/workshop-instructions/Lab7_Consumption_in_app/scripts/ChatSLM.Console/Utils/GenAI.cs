@@ -18,9 +18,9 @@ public class GenAI
     private static string modelPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model";    
     private static string adapterPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model/adapter_weights.onnx_adapter";
 
-    private static string aoai_endpoint = "Your Azure OpenAI GPT Fine tuned GPT-3.5 endpoint";
-    private static string aoai_key = "Your Azure OpenAI GPT-3.5 Fine tuned endpoint key";
-    private static string aoai_model = "Your Azure OpenAI GPT-3.5 Fine tuned endpoint deploymen";
+    private static string aoai_endpoint = "ENDPOINT_URL";
+    private static string aoai_key = "AZURE_OPENAI_API_KEY";
+    private static string aoai_model = "DEPLOYMENT_NAME";
 
     private static Microsoft.ML.OnnxRuntimeGenAI.Model model = null;
     private static Microsoft.ML.OnnxRuntimeGenAI.Tokenizer  tokenizer = null;
