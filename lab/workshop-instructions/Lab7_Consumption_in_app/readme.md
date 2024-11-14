@@ -105,9 +105,9 @@ As shown in the figure
 ![result](./images/result.png)
 
 
-### Downloading Additional Models from Hugging face 
+### Downloading Additional ONNX Models from Hugging face 
 
-Evaluate using other model 
+Evaluate using other onnx model 
 
 You can simply download other models to evaluate the output
 ```
