@@ -228,6 +228,3 @@ az ml model create \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
 ```
-
-### Step 7. Keep your VSCode Open
-Please **Do not Close your VS Code** application, simply minimise your VS Code windows as you will use this in Lab7. 
