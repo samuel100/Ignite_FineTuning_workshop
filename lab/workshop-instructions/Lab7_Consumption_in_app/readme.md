@@ -48,7 +48,8 @@ azureuser@compute:~/cloudfiles/code$
 To open VS Code in the relevant folder execute the following command in the terminal, which will open a new window:
 
 ```bash
-code Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
+cd ~/localfiles
+cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
 ```
 
 ## Option 1. Using Python application
