@@ -26,12 +26,12 @@ In this lab you utilise a .NET console application or a Python Application to va
 
 ### Connect to your Azure AI Compute
 
-You'll connect to the Azure AI compute using the remote feature in VS Code. Open your VS Code desktop application:
+You'll connect to the Azure AI compute using the remote feature in VS Code. 
 
+1. Open your **VS Code desktop application**:
 1. Open the **command palette** using  **Shift+Ctrl+P**
 1. In the command palette search for **AzureML - remote: Connect to compute instance in New Window**.
 1. Follow the on-screen instructions to connect to the Compute. This will involve selecting your Azure Subscription, Resource Group, Project and Compute name you set up in Lab 1.
-
 
 ## Open a terminal in VSCode
 
@@ -39,11 +39,12 @@ You'll connect to the Azure AI compute using the remote feature in VS Code. Open
 cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
 ```
 
-## Option1. Using Python application
+## Option 1. Using Python application
 
 > [!NOTE]
 > You will be running the model on the **CPU** of the A100, *not* the GPU. This is to give you a flavour of the inference performance on a CPU device, which are more ubiquitous.
 
+1. Open a **terminal** within your VScode A100 Session
 1. Ensure you are running the `olive-ai` environment from Lab 5:
    ```bash
    conda activate olive-ai
@@ -63,7 +64,9 @@ cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
    ```
 
 
-## Option2.Using the .NET application 
+## Option 2.Using the .NET application 
+
+This application requires .NET to be installed on the A100 compute node
 
 ### Install .NET 8.
 
@@ -72,28 +75,19 @@ sudo apt-get update
 sudo apt-get install -y dotnet-sdk-8.0
 ```
 
-### Install Git LFS
-
-```
-sudo apt-get install git-lfs
-```
-
-### Clone the Phi-3.5-mini-instruct-onnx model 
-
-```
-git clone https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
-```
-
 ### Edit your Model Locations in VSCode  
 
 Naviagte to the folder 
+
+In VSCode Solution explorer
+
 ```
 /workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console
 ```
 
 ## Running fine-tuned GPT model in the cloud 
 
-Go to `ChatWithSLM.Console/Utils/GenAI.cs` add your onnx models path, and save the file.
+Open `ChatWithSLM.Console/Utils/GenAI.cs` in VSCode and add your onnx models path, and save the file.
 
 You ONNX Path will be in the following format
 
@@ -124,11 +118,11 @@ The Azure Open AI Key can be found in deployments and select your deployed GPT-3
 
 ## Running console application
 
+1. Open a VSCode **Terminal** ensure your in '/workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console' folder
+1. Run the following command to start the .NET application 
 
 ```
-
 dotnet run
-
 ```
 
 You can choose two different scenarios
