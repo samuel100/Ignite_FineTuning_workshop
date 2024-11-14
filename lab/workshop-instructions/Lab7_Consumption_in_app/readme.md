@@ -3,7 +3,7 @@
 ## Introduction
 
 > [!NOTE]
->This is a **10-minute** workshop that will give you a hands-on introduction to the core concepts of using a code first approach to consuming a deployed model endpoint.
+>This is a **10-minute** workshop that will give you a hands-on introduction to the core concepts of using a code first approach to consuming a deployed model endpoint. 
 
 ## Learning Objectives
 
@@ -13,51 +13,62 @@ By the end of this workshop, you should be able to:
 2. Compare the results of the models
 
 ## Lab Scenario
-In this lab you utilise a console application to validate the following scenarios 
+In this lab you utilise a .NET console application or a Python Application to validate the following scenarios 
+
 1. Chat with and evaliate resulting messages from various models:
 - Phi-3.5 Mini Instruct ONNX Model from Hugging Face https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
-- Phi-3.5 ONNX unoptizimed fine tuned model  
 - Phi-3.5 ONNX OLIVE Optimized fine tuned Model you created in Lab5
 - GPT-.3.5 fine tuned Model your created in Lab3
 3. Evaluation - this will allow you to compare the resulting messages, speed and quality.
 4. Exit the application to complete this lab 
 
-## Setup 
+## Setup
 
-### Create a new folder on the desktop and clone the code using a command prompt.
+### Connect to your Azure AI Compute
 
-Open a new Powershell terminal window
+You'll connect to the Azure AI compute using the remote feature in VS Code. Open your VS Code desktop application:
+
+1. Open the **command palette** using  **Shift+Ctrl+P**
+1. In the command palette search for **AzureML - remote: Connect to compute instance in New Window**.
+1. Follow the on-screen instructions to connect to the Compute. This will involve selecting your Azure Subscription, Resource Group, Project and Compute name you set up in Lab 1.
 
 
-> [!NOTE]
-> For the Workshop Environment the you should see
-
-``` 
-PS C:\Users\LabUser>
-```
-
-### Download the solution 
-
-Create a folder for the application on the desktop and clone the solution. 
+## Open a terminal in VSCode
 
 ```
-cd desktop
-mkdir Application
-cd Application
-git clone https://github.com/Azure/Ignite_FineTuning_workshop.git
+cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
 ```
 
-### In the application folder navigate to the solution 
+## Option1. Using Python application
+
+TBC
+
+## Option2.Using the .NET application 
+
+### Install .NET 8.
+
+```
+sudo apt-get update 
+sudo apt-get install -y dotnet-sdk-8.0
+```
+
+### Install Git LFS
+
+```
+sudo apt-get install git-lfs
+```
+
+### Clone the Phi-3.5-mini-instruct-onnx model 
+
+```
+git clone https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
+```
+
+### Edit your Model Locations in VSCode  
 
 Naviagte to the folder 
 ```
-cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console
-```
-
-## Open the solution in VScode 
-
-```
-code .
+/workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console
 ```
 
 ## Running fine-tuned GPT model in the cloud 
@@ -71,13 +82,14 @@ You ONNX Path will be in the following format
 > For the Workshop Environment the we have provide copies of models in the `model`folder located on the desktop 
 
 ```
-    private static string modelPath = @"/Users/labuser/Desktop/models/phi-instruct/Phi-3.5-mini-instruct-onnx/cpu_and_mobile/cpu-int4-awq-block-128-acc-level-4";
-    private static string ftmodelPath = @"/Users/labuser/Desktop/models/phi/ft-ready/model";
-    private static string ftadapterPath = @"/Users/labuser/Desktop/models/phi/ft-ready/model/adapter_weights.onnx_adapter";
+private static string modelPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/Phi-3.5-mini-instruct-onnx/cpu_and_mobile/cpu-int4-awq-block-128-acc-level-4";    
+ 
+private static string oftmodelPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model";    
 
-    private static string oftmodelPath = @"/Users/labuser/Desktop/models/onnx-ao/model";
-    private static string oftadapterPath = @"/Users/labuser/Desktop/models/onnx-ao/model/adapter_weights.onnx_adapter";
+private static string oftadapterPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model/adapter_weights.onnx_adapter";
+
 ```
+
 The Azure Open AI Key can be found in deployments and select your deployed GPT-35 Fine Tuned Model +++https://ai.azure.com+++ open the playground select **view code** select curl and then **key authentication** to find the **Endpoint** and **API Key**
 
 ```
