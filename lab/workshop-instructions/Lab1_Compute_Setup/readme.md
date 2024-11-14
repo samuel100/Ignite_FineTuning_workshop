@@ -2,9 +2,12 @@
 
 You start by creating an Azure AI project within an Azure AI hub:
 
-1. In a web browser, open +++https://ai.azure.com+++ and sign in using your Azure credentials.
+> [!NOTE]
+> For Lab users please use the Azure username and password provided in the resources tab in the instructions pane.
+
+1. In a web browser, open +++https://ai.azure.com+++ and sign in using the Azure credentials provided.
 1. Select the **Home** 
-1. You should a valid **current project** and **Hub**
+1. You should have a valid **current project** and **Hub**
 
 # Create your Cloud Compute Resources for Cloud based inference
 
@@ -12,9 +15,13 @@ You start by creating an Azure AI project within an Azure AI hub:
 
   ![Create Azure AI Compute](./images/compute-create.png)
 
-2. Select your **Virtual machine type** as **GPU**. *Filter* the list of **Virtual machine size** on **A100**: 
+2. Select your **Virtual machine type** as **GPU**. *Filter* the list of **Virtual machine size** is a **A100**: 
     
-  ![Compte Size](./images/compute-size.png)
+  ![Compute Size](./images/compute-size.png)
+
+  Create a **Computer Name** 
+  
+  You need to click on the **Select from all Options** to be able to filter machines sizes and specific select **GPU**
     
 3. Select a **VM Standard NC24ads_A100v4**  **24 cores**
 
