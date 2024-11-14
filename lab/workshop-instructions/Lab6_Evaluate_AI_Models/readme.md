@@ -237,9 +237,33 @@ You can manually review model responses based on test data. Manually reviewing a
 1. Using the menu on the left, navigate to **Evaluation**.
 1. Select the **Manual evaluations** tab to find the `manual evaluations` you just saved. Note that you can explore your previously created manual evaluations, continue where you left of, and save the updated evaluations.
 
-## Evaluate your model with the built-in metrics
+## Evaluate your GP3.5 Fine Tuned model with the built-in metrics
 
 When you have created a model with a chat flow, you can evaluate the flow by doing a batch run and assessing the performance of the flow with built-in metrics.
+
+### Using your `Manual_Evaulation`
+
+1. Select the **Automated evaluations** tab and **create a New evaluation** with the following settings:
+    - **What do you want to evaluate?**: Dataset
+    - **Evaluation name**: *Enter a unique name*
+    - **Description**: *Enter a description*
+    - **Tags**: *these can be left blank*
+1. Select **Next**
+    - Select **use existing dataset** this is the dataset you want to evaluate**
+        - You can see the preview of the previously used questions.
+1. Select **Next**
+    - **Select metrics**: Coherence, Fluency
+    - **Connection**: *Your AI Services connection*
+    - **Deployment name/Model**: *Your deployed fine tuned GPT-3.5 model*
+    - How does your dataset map to your evaluation input? Select Query = Data Source **Question** response = Data Source **Answer**
+1. Select **Next** then review your data
+1. Select **Submit** the new evaluation.
+1. You may receive a storage permission error, please wait a minute for the permissions to be updated and then select **Submit** 
+1. Wait for the evaluations to start running this will take approx 10 mins to complete, you may need to refresh.
+1. Select the evaluation run you just created.
+1. Explore the **Metric dashboard** and **Detailed metrics result**.
+
+### Using a .jsonl Data Set for Evaluation 
 
 1. Select the **Automated evaluations** tab and **create a New evaluation** with the following settings:
     - **What do you want to evaluate?**: Dataset
@@ -260,7 +284,6 @@ When you have created a model with a chat flow, you can evaluate the flow by doi
 1. Wait for the evaluations to start running this will take approx 10 mins to complete, you may need to refresh.
 1. Select the evaluation run you just created.
 1. Explore the **Metric dashboard** and **Detailed metrics result**.
-
 
 By evaluating your custom model against both performance and safety metrics, you can confirm that the model is not only effective, but also adheres to responsible AI practices, making it ready for real-world deployment.
 
