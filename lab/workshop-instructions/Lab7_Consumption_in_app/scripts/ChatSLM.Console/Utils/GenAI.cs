@@ -15,17 +15,15 @@ using Microsoft.ML.OnnxRuntimeGenAI;
 public class GenAI
 {
 
-    private static string modelPath = @"Your Phi-3.5 ONNX Model Path";
-    private static string ftmodelPath = @"Your Phi-3.5 Fine-tuned with travel data ONNX  Model Path";
-    private static string ftadapterPath = @"Your Phi-3.5 Fine-tuned with travel data ONNX   adapter_weights.onnx_adapter path";
+    private static string modelPath = @"Phi-3.5 Mini Instruct ONNX Model Path";
 
-    private static string oftmodelPath = @"Your Phi-3.5 Fine-tuned with travel data ONNX optimization  Model Path";
+    private static string oftmodelPath = @"Your Phi-3.5 Fine-tuned with travel data ONNX optimization Model Path";
     private static string oftadapterPath = @"Your Phi-3.5 Fine-tuned with travel data optimization adapter_weights.onnx_adapter path";
 
 
-    private static string aoai_endpoint = "Your Azure OpenAI endpoint";
-    private static string aoai_key = "Your Azure OpenAI endpoint key";
-    private static string aoai_model = "Your Azure OpenAI endpoint deployment";
+    private static string aoai_endpoint = "Your Azure OpenAI GPT Fine tuned GPT-3.5 endpoint";
+    private static string aoai_key = "Your Azure OpenAI GPT-3.5 Fine tuned endpoint key";
+    private static string aoai_model = "Your Azure OpenAI GPT-3.5 Fine tuned endpoint deploymen";
 
     private static Microsoft.ML.OnnxRuntimeGenAI.Model model = null;
     private static Microsoft.ML.OnnxRuntimeGenAI.Tokenizer  tokenizer = null;
@@ -39,9 +37,9 @@ public class GenAI
 
 
    
-    public static void InitGenAI(int status,bool ft = false)
+    public static void InitGenAI(int status, bool ft = false)
     {
-        if(ft)
+        if (ft)
         {
             ft_status = 1;
         }
@@ -49,13 +47,13 @@ public class GenAI
         {
             ft_status = 0;
         }
-        if(status != ft_status)
+        if (status != ft_status)
         {
-
-            if(ft)
+            if (ft)
             {
-                if(status ==2){
-                    model = new Model(ftmodelPath);
+                if (status == 2)
+                {
+                    model = new Model("path_to_new_model");
                 }
                 else
                 {
@@ -63,8 +61,9 @@ public class GenAI
                 }
                 tokenizer = new Tokenizer(model);
                 adapters = new Adapters(model);
-                if(status ==2){
-                    adapters.LoadAdapter(ftadapterPath, "travel");
+                if (status == 2)
+                {
+                    adapters.LoadAdapter("path_to_new_adapter", "travel");
                 }
                 else
                 {
@@ -73,16 +72,11 @@ public class GenAI
             }
             else
             {
-                model = new Model(modelPath);
-                tokenizer = new Tokenizer(model);
+                // Continue with the rest of your method
             }
-
-            status = ft_status;
-
-            
         }
-
     }
+
     public static void ChatWithGenAIONNXOpenAIAsync(int status,string prompt, bool ft = false)
     {
         InitGenAI(status,ft);
