@@ -241,17 +241,21 @@ You can manually review model responses based on test data. Manually reviewing a
 
 When you have created a model with a chat flow, you can evaluate the flow by doing a batch run and assessing the performance of the flow with built-in metrics.
 
-1. Select the **Automated evaluations** tab and create a **New evaluation** with the following settings:
+1. Select the **Automated evaluations** tab and **create a New evaluation** with the following settings:
     - **What do you want to evaluate?**: Dataset
     - **Evaluation name**: *Enter a unique name*
-    - **What kind of scenario are you evaluating?**: Question and answer without context
-    - Select **Next**
-    - **Select the data you want to evaluate**: Add your dataset
+    - **Description**: *Enter a description*
+    - **Tags**: *these can be left blank*
+1. Select **Next**
+    - Select **add your dataset** this is the dataset you want to evaluate**
         - Download the +++https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/main/data/travel-qa.jsonl+++ JSONL file and upload it to the UI.
+1. Select **Next**
     - **Select metrics**: Coherence, Fluency
     - **Connection**: *Your AI Services connection*
-    - **Deployment name/Model**: *Your deployed model*
-1. Select **Next** then review your data and submit the new evaluation.
+    - **Deployment name/Model**: *Your deployed fine tuned GPT-3.5 model*
+    - How does your dataset map to your evaluation input? Select Query = Data Source **Question** response = Data Source **Answer**
+1. Select **Next** then review your data
+2. Select **Submit** the new evaluation.
 1. Wait for the evaluations to be completed, you may need to refresh.
 1. Select the evaluation run you just created.
 1. Explore the **Metric dashboard** and **Detailed metrics result**.
