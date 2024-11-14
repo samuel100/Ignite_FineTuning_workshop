@@ -77,9 +77,7 @@ sudo apt-get install -y dotnet-sdk-8.0
 
 ### Edit your Model Locations in VSCode  
 
-Naviagte to the folder 
-
-In VSCode Solution explorer
+Navigate to the folder in **VSCode solution explorer** left hand window
 
 ```
 /workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console
