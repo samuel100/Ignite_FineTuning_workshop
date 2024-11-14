@@ -62,7 +62,7 @@ code .
 
 ## Running fine-tuned GPT model in the cloud 
 
-Go to ChatWithSLM.Console/Utils/GenAI.cs , add your onnx models path, save
+Go to `ChatWithSLM.Console/Utils/GenAI.cs` add your onnx models path, and save the file.
 
 You ONNX Path will be in the following format
 
