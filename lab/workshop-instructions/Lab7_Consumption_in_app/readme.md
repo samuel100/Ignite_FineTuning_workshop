@@ -8,19 +8,32 @@
 ## Learning Objectives
 
 By the end of this workshop, you should be able to:
-1. Integrate the custom fined Phi local model with the application.
-1. Intergrate the custom fine tuned GPT Model with the application.
-2. Compare the results of the models
+1. Integrate the on-device Phi-3.5-mini-instruct base model (from Lab 5) with the application.
+1. Set the on-device fine-tuned LoRA adapter (from Lab 5) during inference time in the application.
+1. Integrate the custom fine tuned GPT-3.5-Turbo Model in the cloud (from Lab 4) with the application using the Azure OpenAI Client SDK.
+1. Compare the results of the models
 
 ## Lab Scenario
-In this lab you utilise a .NET console application or a Python Application to validate the following scenarios 
+In this lab you have the option of utilizing either 
 
-1. Chat with and evaliate resulting messages from various models:
-- Phi-3.5 Mini Instruct ONNX Model from Hugging Face https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
-- Phi-3.5 ONNX OLIVE Optimized fine tuned Model you created in Lab5
-- GPT-.3.5 fine tuned Model your created in Lab3
-3. Evaluation - this will allow you to compare the resulting messages, speed and quality.
-4. Exit the application to complete this lab 
+1. a .NET console application, or 
+1. a Python Application
+
+The application allows you to compare and contrast the results from the on-device models:
+
+- Phi-3.5-Mini-Instruct base model (quantized with AWQ) - i.e. no finetuning.
+- the Fine-tuned LoRA adapter
+
+You'll also see the results from your GPT-3.5-Turbo fine-tuned Model in the cloud.
+
+You should notice that the on-device models deliver performance that is faster than read speed - a key metric for user experience in chat applications. They are also not impacted by rate limits of a cloud AI model endpoint. 
+
+You can **use both on-device and cloud AI**: you can route user prompts to either on-device or cloud AI models based on a *routing strategy*:
+
+- *Random* - you can draw a random number so that x% of user prompts are handled by the on-device AI. The rationale would be to reduce load on your cloud AI endpoint for either reduced COGs.
+- *Prompt classication* - you can classify prompts for on-device or cloud inference. For example, you could classify prompts on simplicity with the more simple prompts being routed to an on-device SLM with more complex prompts being routed to an LLM in the cloud. You can also classify prompts based on the intent of the prompt and route to different FT adapters.
+- *Privacy* - you can route private user interactions to on-device AI.
+- *Agents* - In multi-agent flow, some components may be inferenced by on-device AI.
 
 ## Setup
 
@@ -39,117 +52,73 @@ You'll connect to the Azure AI compute using the remote feature in VS Code. Open
 cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
 ```
 
-## Option1. Using Python application
+## Option 1. Using Python application
 
 > [!NOTE]
-> You will be running the model on the **CPU** of the A100, *not* the GPU. This is to give you a flavour of the inference performance on a CPU device, which are more ubiquitous.
+> You will be running the on-device ONNX models on the **CPU** of the A100, *not* the GPU. This is to give you a flavour of the inference performance on a CPU device, which are more ubiquitous than GPU. The performance of the Phi-3.5-mini model (AWQ quantized and ONNX optimized) is:
+>
+> - CPU: ~19tokens/sec
+> - GPU: ~100tokens/sec
+>
+> Human read speed is 3-5tokens/sec.
 
-1. Ensure you are running the `olive-ai` environment from Lab 5:
+1. Ensure you are running the `olive-ai` conda environment from Lab 5, which has all the python dependencies to run this app:
    ```bash
    conda activate olive-ai
    ```
-1. Run the application using the base model:
+1. **Create a new file** in the Lab7-Consumption-In-App directory called `.env`. Add to the **.env** file the following environment variables:
    ```bash
-   python app.py \
-    -m ../Lab5-Optimize-Model/models/phi/onnx-ao/model \
-    -g
+   ENDPOINT_URL=ENDPOINT_URL_OF_FT_MODEL
+   DEPLOYMENT_NAME=DEPLOYMENT_NAME
+   AZURE_OPENAI_API_KEY=KEY
    ```
-1. Run the application using the base model + Fine-tuned Adapter:
+   You can get the URL, deployment name and Key from the Azure AI Studio **Models+endpoints** page by selecting the **Get endpoint** button.
+1. Run the application:
    ```bash
-   python app.py \
-    -m ../Lab5-Optimize-Model/models/phi/onnx-ao/model \
-    -a ../Lab5-Optimize-Model/models/phi/onnx-ao/model/adapter_weights.onnx_adapter \
-    -g
+   python app.py
    ```
 
+1. Enter a prompt, for example "what to do in rome?".
 
-## Option2.Using the .NET application 
+You should notice that the adapter gives a more concise and relevant answer than the base model:
 
-### Install .NET 8.
+![result](./images/python-results.png)
 
-```
-sudo apt-get update 
-sudo apt-get install -y dotnet-sdk-8.0
-```
+## Option 2. Using the .NET application 
 
-### Install Git LFS
+1. Install .NET 8.0 using the following bash command:
+   ```bash
+   sudo apt-get update 
+   sudo apt-get install -y dotnet-sdk-8.0
+   ```
+1. Go to `scripts/ChatWithSLM.Console/Utils/GenAI.cs` and update the following variables with the information from your Azure Open AI model deployment:
+   ```csharp
+   private static string aoai_endpoint = "Your Azure OpenAI GPT Fine tuned GPT-3.5 endpoint";
+   private static string aoai_key = "Your Azure OpenAI GPT-3.5 Fine tuned endpoint key";
+   private static string aoai_model = "Your Azure OpenAI GPT-3.5 Fine tuned endpoint deployment";
+   ```
+   You can get the URL, deployment name and Key from the Azure AI Studio **Models+endpoints** page by selecting the **Get endpoint** button.
 
-```
-sudo apt-get install git-lfs
-```
+1. Run the console application
+   ```bash
+   cd scripts/ChatWithSLM.Console
+   dotnet run
+   ```
+1. Select Option 1.
+1. Enter a prompt. For example: "what to do in rome?".
 
-### Clone the Phi-3.5-mini-instruct-onnx model 
-
-```
-git clone https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
-```
-
-### Edit your Model Locations in VSCode  
-
-Naviagte to the folder 
-```
-/workshop-instructions/Lab7_Consumption_in_app/scripts/ChatSLM.Console
-```
-
-## Running fine-tuned GPT model in the cloud 
-
-Go to `ChatWithSLM.Console/Utils/GenAI.cs` add your onnx models path, and save the file.
-
-You ONNX Path will be in the following format
+You should see the following results - notice how the adapter has given a more consise and precise answer:
 
 
-> [!NOTE]
-> For the Workshop Environment the we have provide copies of models in the `model`folder located on the desktop 
-
-```
-private static string modelPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app/Phi-3.5-mini-instruct-onnx/cpu_and_mobile/cpu-int4-awq-block-128-acc-level-4";    
- 
-private static string oftmodelPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model";    
-
-private static string oftadapterPath = @"/home/azureuser/localfiles/Ignite_FineTuning_workshop/lab/workshop-instructions/Lab5-Optimize-Model/models/phi/onnx-ao/model/adapter_weights.onnx_adapter";
-
-```
-
-The Azure Open AI Key can be found in deployments and select your deployed GPT-35 Fine Tuned Model +++https://ai.azure.com+++ open the playground select **view code** select curl and then **key authentication** to find the **Endpoint** and **API Key**
-
-```
-    Endpoint = "https://*******.openai.azure.com/";
-    Key = "********";
-    Model Name = "****";
-
-``` 
-
-![location](./images/location.png)
+![csharp results](./images/csharp-results.png)
 
 
-## Running console application
+## A note on downloading additional ONNX Models from Hugging face 
 
+There are over [200 ONNX models available on Hugging Face to bake into your applications](https://huggingface.co/onnx-community). You download them using either the HuggingFace CLI or using git:
 
-```
-
-dotnet run
-
-```
-
-You can choose two different scenarios
-
-1. Experience of different models based on travel data
-
-2. Experience of models before and after optimization
-
-As shown in the figure
-
-
-![result](./images/result.png)
-
-
-### Downloading Additional ONNX Models from Hugging face 
-
-Evaluate using other onnx model 
-
-You can simply download other models to evaluate the output
 ```
 git lfs install
 git clone https://huggingface.co/<ModelID>
-# Example git clone https://huggingface.co/microsoft/Phi-3.5-mini-instruct-onnx
+# Example git clone https://huggingface.co/onnx-community/Llama-3.2-1B-Instruct-ONNX
 ```
