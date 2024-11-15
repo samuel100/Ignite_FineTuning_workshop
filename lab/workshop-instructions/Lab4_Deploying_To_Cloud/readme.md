@@ -3,7 +3,7 @@
 ## Introduction 
 
 > [!NOTE]
->This is a **45-minute** exercise, you will successfully fine-tune the GPT model using Azure AI one deployment. Please note that the fine-tuning process can take a considerable amount of time.
+>This is a **45-minute** You will deploy your Fine Tuned GPT Models.
 
 ## Learning Objectives
 
