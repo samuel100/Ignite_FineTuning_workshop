@@ -40,12 +40,12 @@ public class GenAI
         string userPrompt = prompt;
         string chatTemplate = "";
 
-        chatTemplate = "<|user|>" + userPrompt + "\n<|end|>\n<|assistant|>";
-
+        chatTemplate = "<|user|>\n" + userPrompt + "<|end|>\n<|assistant|>\n";
+        
         var tokens = tokenizer.Encode(chatTemplate);
 
         var generatorParams = new GeneratorParams(model);
-        generatorParams.SetSearchOption("max_length", 200);
+        generatorParams.SetSearchOption("max_length", 100);
         generatorParams.SetInputSequences(tokens);
         generatorParams.SetSearchOption("past_present_share_buffer", false);
 

@@ -400,3 +400,5 @@ FodyWeavers.xsd
 # Models files
 models
 .olive*
+
+.env
