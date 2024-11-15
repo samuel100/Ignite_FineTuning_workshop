@@ -7,7 +7,8 @@
 ## Learning Objectives
 
 By the end of this workshop, you should be able to: 
-1. Use GPT-4 To create synthetic data based on a known scenario.
+1. Deploy a GPT-4 Model and interact with it in the Chat Playground
+2. Use GPT-3.5 To create synthetic data based on a known scenario.
 1. Prepare a dataset for fine-tuning with Azure AI Studio.
 1. Verify that the datasets.
 1. Understand the importance of the dataset preparation process.
