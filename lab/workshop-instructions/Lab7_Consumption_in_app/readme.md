@@ -62,7 +62,7 @@ To open VS Code in the relevant folder execute the following command in the term
 
 ```bash
 cd ~/localfiles
-cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
+code Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
 ```
 
 ## Option 1. Using Python application
