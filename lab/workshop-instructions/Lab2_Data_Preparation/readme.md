@@ -14,13 +14,13 @@ By the end of this workshop, you should be able to:
 1. Understand the importance of the dataset preparation process.
 
 ## Lab Scenario
-This lab will guide you through the process of creating data set for use in fine tuning experiementation. In this lab, you will prepare the dataset for fine-tuning. You will create and deploy a GPT model to create a synthetic data. In option2 you will download a known dataset using python to your local environment.
+This lab will guide you through the process of creating data set for use in fine tuning experiementation. In this lab, you will prepare the dataset for fine-tuning. You will create and deploy a GPT model to create a synthetic data. 
 
 ## Lab Outline
 This lab comprises the following exercises:
 
 - Create a GPT-4 OpenAI Deployment
-- Option1. Create synthetic data using GPT-4 
+- Option1. Create synthetic data using GPT
     - Create a prompt to create synthetic data and save this as in jsonl format.
 - Option 2. Prepare Dataset for Fine-tuning from a known Data Set. 
 
