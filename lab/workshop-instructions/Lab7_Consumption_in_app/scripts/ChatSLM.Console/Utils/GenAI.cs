@@ -42,7 +42,7 @@ public class GenAI
 
         chatTemplate = "<|user|>\n" + userPrompt + "<|end|>\n<|assistant|>\n";
         
-        var tokens = tokenizer.Enlocalfiles(chatTemplate);
+        var tokens = tokenizer.Encode(chatTemplate);
 
         var generatorParams = new GeneratorParams(model);
         generatorParams.SetSearchOption("max_length", 100);
@@ -62,7 +62,7 @@ public class GenAI
         {
             generator.ComputeLogits();
             generator.GenerateNextToken();
-            Console.Out.Write(tokenizerStream.Delocalfiles(generator.GetSequence(0)[^1]));
+            Console.Out.Write(tokenizerStream.Decode(generator.GetSequence(0)[^1]));
             Console.Out.Flush();
         }
         Console.WriteLine();
