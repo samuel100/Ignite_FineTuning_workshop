@@ -3,7 +3,7 @@
 ## Introduction
 
 > [!NOTE]
->This is a **45-minute** workshop that will give you a hands-on introduction Fine-tuning a model can sometimes lead to unintended or undesired responses. To ensure that the model remains safe and effective, it's important to evaluate it. This evaluation helps to assess the model's potential to generate harmful content and its ability to produce accurate, relevant, and coherent responses.
+>This is a **45-minute** workshop that will give you a hands-on introduction Fine-tuning a model can sometimes lead to unintended or undesired responses. To ensure that your AI model is safe and doesn’t produce harms, it's crucial to evaluate it against Microsoft's Responsible AI Principles.
 
 ## Learning Objectives
 
@@ -19,13 +19,13 @@ You will learn how to evaluate the safety and performance of a fine-tuned model.
 
 ### Introduction
 
-To ensure that your AI model is ethical and safe, it's crucial to evaluate it against Microsoft's Responsible AI Principles. In Azure AI, safety evaluations allow you to evaluate an your model’s vulnerability to jailbreak attacks and its potential to generate harmful content, which is directly aligned with these principles.
+To ensure that your AI model is safe and doesn’t produce harms, it's crucial to evaluate it against Microsoft's Responsible AI Principles. In Azure AI, safety evaluations allow you to evaluate an your model’s vulnerability to jailbreak attacks and its potential to generate harmful content, which is directly aligned with these principles.
 
 ### Microsoft’s Responsible AI Principles
 
 ![Microsoft RAI Principles](./images/responsibleai2.png)	
   
-Before beginning the technical steps, it's essential to understand Microsoft's Responsible AI Principles, an ethical framework designed to guide the responsible development, deployment, and operation of AI systems. These principles guide the responsible design, development, and deployment of AI systems, ensuring that AI technologies are built in a way that is fair, transparent, and inclusive. These principles are the foundation for evaluating the safety of AI models.
+Before beginning the technical steps, it's essential to understand Microsoft's Responsible AI Principles, a framework designed to guide the responsible development, deployment, and operation of AI systems. These principles guide the responsible design, development, and deployment of AI systems, ensuring that AI technologies are built in a way that is fair, transparent, and inclusive. These principles are the foundation for evaluating the safety of AI models.
 
 #### Microsoft's Responsible AI Principles include:
 
@@ -42,7 +42,7 @@ Accountability: The people who design and deploy AI systems must be accountable 
 ![Model Evaluation](./images/2_safety-evaluation.jpg)
 
 > [!NOTE]
->To learn more about Microsoft's Responsible AI Principles, visit the What is Responsible AI?.
+>To learn more about Microsoft's Responsible AI Principles, visit the What is Responsible AI? +++https://www.microsoft.com/en-gb/ai/responsible-ai+++.
 
  
 ### Safety metrics
@@ -51,7 +51,7 @@ Accountability: The people who design and deploy AI systems must be accountable 
 In this lab, you will evaluate the safety of the fine-tuned model using Azure AI Studio's safety metrics. These metrics help you assess the model's potential to generate harmful content and its vulnerability to jailbreak attacks. The safety metrics include:
 
  
--Self-harm-related Content: Evaluates whether the model has a tendency to produce self-harm related content.
+- Self-harm-related Content: Evaluates whether the model has a tendency to produce self-harm related content.
 - Hateful and Unfair Content: Evaluates whether the model has a tendency to produce hateful or unfair content.
 - Violent Content: Evaluates whether the model has a tendency to produce violent content.
 - Sexual Content: Evaluates whether the model has a tendency to produce inappropriate sexual content.
@@ -66,6 +66,10 @@ Evaluating these aspects ensures that the AI model does not produce harmful or o
 ## Explore content filters
 
 Content filters are applied to prompts and completions to prevent potentially harmful or offensive language being generated.
+
+1. Open up Azure AI +++https://ai.azure.com+++
+
+1. Open up your AI Project.
 
 1. Under **Assess and Improve** in the left navigation bar, select **Safety + Security**, then select **Content filters** select **+ Create content filter**.
 
