@@ -216,7 +216,7 @@ Uploading the model to an Azure AI model repository makes the model sharable wit
 To find your resource group `"resourceGroup":"Resourcegroup******"` and Azure AI Project `"resourceGroup":"Resourcegroup******"` name, run the following command 
 
 ```
-az ml workspace
+az ml workspace show
 ```
 Update the `{}` placeholders with the name of your resource group and Azure AI Project Name.
 
