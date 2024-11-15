@@ -33,14 +33,14 @@ When you want a language model to behave a certain way, you can use prompt engin
 
 ## Open your AI hub and project in the Azure AI
 
-You start by using your Azure AI project within your Azure AI hub previous created in Lab1. If you have not created your AI Hub see [Lab1_Environmental Setup](../Lab1_Environment_Setup/readme.md)
+You start by using your Azure AI project within your Azure AI hub previous created in Lab1. If you have not created your AI Hub see Lab1_Environmental Setup
 
 
 ## Fine-tuning a Large Language Model using Microsoft AI UI Based Fine Tuning 
 
 ## Task: Fine-tune a GPT-3.5 model
 
-As fine-tuning a model takes some time to complete, you'll start the fine-tuning job first. Before you can fine-tune a model, you need a dataset based on our scenario we have provided a sample dataset based on the travel agent scenario. In [Lab2.Data_Preparation](../Lab2_Data_Preparation/readme.md) you should of also created datasets, please select a jsonl file.
+As fine-tuning a model takes some time to complete, you'll start the fine-tuning job first. Before you can fine-tune a model, you need a dataset based on our scenario we have provided a sample dataset based on the travel agent scenario. In Lab2.Data_Preparation you should of also created datasets, please select a jsonl file.
 
 
 1. Open up Azure AI +++https://ai.azure.com+++
@@ -52,7 +52,7 @@ As fine-tuning a model takes some time to complete, you'll start the fine-tuning
     - **Model suffix**: `ft-travel`
     - **Azure OpenAI connection**: *Select the connection that was created when you created your hub*
     - **Training data**: Upload files
-    - **Upload file**: Select the JSONL file you downloaded in a previous step.
+    - **Upload file**: Select the JSONL file you created in Lab2 Data Preparation.
     
     > **Note**:you can download this sample dataset for fine tuning GPT +++https://raw.githubusercontent.com/MicrosoftLearning/mslearn-ai-studio/refs/heads/main/data/travel-finetune-hotel.jsonl+++
     
@@ -65,24 +65,24 @@ As fine-tuning a model takes some time to complete, you'll start the fine-tuning
 1. Fine-tuning will start and may take some time to complete.
 
 > **Note**:
-> Fine-tuning and deployment can take some time, so you may need to check back periodically and refresh the browser windoes. You can already continue with the next step while you wait.
+> Fine-tuning and deployment can take some time, so you may need to check back periodically and refresh the browser window. You can already continue with the next step while you wait.
 
 ## Chat with a base model
 
 While you wait for the fine-tuning job to complete, let's chat with a base GPT 3.5 model to assess how it performs. Since the chat isn't connected to any data sources, it should **not** provide specific recommendations for hotels, flights, or restaurants to ensure trust with your customers.
 
-1. Navigate to the **Deployments** page under the **Components** section, using the menu on the left.
+1. Navigate to the **Models + endpoints** page under the **My Assets** section, using the menu on the left.
 1. You should see in the deployment screen the **Gpt-35-turbo** model
 1. Select the `gpt-35-turbo` model 
 1. Chat with the model by selecting **Open in Plyground** button or select **Chat** under the **Project playground** section.
 1. Select your deployed `gpt-35-model` base model
 1. In the chat window, enter the query `What can you do?` and view the response.
     The answers are very generic. Remember we want to create a chat application that inspires people to travel.
-1. Update the system message with the following prompt:
+1. Update the system message with the following prompt to give the model instructions and context:
     ```
     You are an AI assistant that helps people plan their holidays.
     ```
-1. Select **Save**, then select **Clear chat**, and ask again `What can you do?`
+1. Select **Apply Changes** to **Save**, then select **Clear chat**, and ask again `What can you do?`
     As a response, the assistant may tell you that it can help you book flights, hotels and rental cars for your trip. You want to avoid this behavior.
 1. Update the system message again with a new prompt:
 
@@ -95,17 +95,11 @@ While you wait for the fine-tuning job to complete, let's chat with a base GPT 3
 1. Select **Save** or **Apply Changes**, and **Clear chat**.
 1. Continue testing your chat application to verify it doesn't provide any information that isn't grounded in retrieved data. For example, ask the following questions and explore the model's answers:
    
-   ```
-   Where in Rome should I stay
-   ```
+   `Where in Rome should I stay`
     
-   ```
-   I'm mostly there for the food. Where should I stay to be within walking distance of affordable restaurants?
-   ```
+   `I'm mostly there for the food. Where should I stay to be within walking distance of affordable restaurants?`
     
-    ```
-   Give me a list of five hotels in Trastevere.
-    ```
+   `Give me a list of five hotels in Trastevere.`
 
     The model may provide you with a list of hotels, even when you instructed it not to give hotel recommendations. This is an example of inconsistent behavior. Let's explore whether the fine-tuned model performs better in these cases.
 
