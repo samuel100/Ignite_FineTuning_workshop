@@ -39,19 +39,28 @@ Olive executes a *workflow*, which is an ordered sequence of individual model op
 
 ## Lab Instructions
 > [!NOTE]
-> Please ensure you have provision your Azure AI Hub and Project as per Lab 1.
+> Please ensure you have provision your Azure AI Hub and Project and setup your A100 compute as per Lab 1.
 
 ### Step 0: Connect to your Azure AI Compute
 
-You'll connect to the Azure AI compute using the remote feature in VS Code. Open your VS Code desktop application:
+You'll connect to the Azure AI compute using the remote feature in **VS Code.** 
 
+1. Open your **VS Code** desktop application:
 1. Open the **command palette** using  **Shift+Ctrl+P**
 1. In the command palette search for **AzureML - remote: Connect to compute instance in New Window**.
 1. Follow the on-screen instructions to connect to the Compute. This will involve selecting your Azure Subscription, Resource Group, Project and Compute name you set up in Lab 1.
+1. Once your connected to your Azure ML Compute node this will be displayed in the bottom right `><Azure ML: Compute Name`
 
 ### Step 1: Clone this repo
 
 In VS Code, you can open a new terminal with **Ctrl+J** and clone this repo:
+
+In the terminal you should see the prompt
+
+```
+azureuser@computername:~/cloudfiles/code$ 
+```
+Clone the solution 
 
 ```bash
 cd ~/localfiles
@@ -203,6 +212,13 @@ Uploading the model to an Azure AI model repository makes the model sharable wit
 
 > [!NOTE]
 > Update the `{}` placeholders with the name of your resource group and Azure AI Project Name.
+
+To find your resource group `"resourceGroup":"Resourcegroup******"` and Azure AI Project `"resourceGroup":"Resourcegroup******"` name, run the following command 
+
+```
+az ml workspace
+```
+Update the `{}` placeholders with the name of your resource group and Azure AI Project Name.
 
 ```bash
 az ml model create \

@@ -60,22 +60,22 @@ As fine-tuning a model takes some time to complete, you'll start the fine-tuning
 
     - **Validation data**: None
     - **Task parameters**: *Keep the default settings*
-    - Select Submit to start the fine tuning process
+    - Select **Submit** to start the fine tuning process
 
 1. Fine-tuning will start and may take some time to complete.
 
-> **Note**: Fine-tuning and deployment can take some time, so you may need to check back periodically and refresh the browser windoes. You can already continue with the next step while you wait.
+> **Note**:
+> Fine-tuning and deployment can take some time, so you may need to check back periodically and refresh the browser windoes. You can already continue with the next step while you wait.
 
 ## Chat with a base model
 
 While you wait for the fine-tuning job to complete, let's chat with a base GPT 3.5 model to assess how it performs. Since the chat isn't connected to any data sources, it should **not** provide specific recommendations for hotels, flights, or restaurants to ensure trust with your customers.
 
 1. Navigate to the **Deployments** page under the **Components** section, using the menu on the left.
-1. Select the **+ Deploy model** button, and select the **Deploy base model** option.
-1. Select **create resource and deploy** 
-1. Deploy a `gpt-35-turbo` model, which is the same type of model you used when fine-tuning.
-1. When deployment is completed, navigate to the **Chat** page under the **Project playground** section.
-1. Select your deployed `gpt-35-model` base model in the setup deployment.
+1. You should see in the deployment screen the **Gpt-35-turbo** model
+1. Select the `gpt-35-turbo` model 
+1. Chat with the model by selecting **Open in Plyground** button or select **Chat** under the **Project playground** section.
+1. Select your deployed `gpt-35-model` base model
 1. In the chat window, enter the query `What can you do?` and view the response.
     The answers are very generic. Remember we want to create a chat application that inspires people to travel.
 1. Update the system message with the following prompt:
@@ -92,18 +92,24 @@ While you wait for the fine-tuning job to complete, let's chat with a base GPT 3
     Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
     ```
 
-1. Select **Save**, and **Clear chat**.
+1. Select **Save** or **Apply Changes**, and **Clear chat**.
 1. Continue testing your chat application to verify it doesn't provide any information that isn't grounded in retrieved data. For example, ask the following questions and explore the model's answers:
    
-     `Where in Rome should I stay?`
+   ```
+   Where in Rome should I stay
+   ```
     
-    `I'm mostly there for the food. Where should I stay to be within walking distance of affordable restaurants?`
+   ```
+   I'm mostly there for the food. Where should I stay to be within walking distance of affordable restaurants?
+   ```
     
-    `Give me a list of five hotels in Trastevere.`
+    ```
+   Give me a list of five hotels in Trastevere.
+    ```
 
     The model may provide you with a list of hotels, even when you instructed it not to give hotel recommendations. This is an example of inconsistent behavior. Let's explore whether the fine-tuned model performs better in these cases.
 
-1. Navigate to the **Fine-tuning** page under **Tools** to find your fine-tuning job and its status. If it's still running, you can opt to continue manually evaluating your deployed base model or compare your Gpt-3.5 to your previous deployed Gpt-4 model by simply changing the **Deployment** in the chat playground. 
+1. Navigate to the **Fine-tuning** page under **Tools** to find your fine-tuning job and its status. If it's still running, you can opt to continue manually evaluating your deployed base model or compare your Gpt-3.5 to other model by simply changing the **Deployment** in the chat playground. 
 
 If it's completed, you can continue with the next section.
 

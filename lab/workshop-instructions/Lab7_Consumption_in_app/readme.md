@@ -39,16 +39,29 @@ You can **use both on-device and cloud AI**: you can route user prompts to eithe
 
 ### Connect to your Azure AI Compute
 
-You'll connect to the Azure AI compute using the remote feature in VS Code. Open your VS Code desktop application:
+You'll connect to the Azure AI compute using the remote feature in VS Code. 
 
-1. Open the **command palette** using  **Shift+Ctrl+P**
+1. Open your **VS Code desktop application**:
+1. If you have previously used your remote ML Compute this may be automatically loaded.
+1. If your ML Compute is not connected Open the **command palette** using  **Shift+Ctrl+P**
 1. In the command palette search for **AzureML - remote: Connect to compute instance in New Window**.
 1. Follow the on-screen instructions to connect to the Compute. This will involve selecting your Azure Subscription, Resource Group, Project and Compute name you set up in Lab 1.
 
-
 ## Open a terminal in VSCode
 
+In **VS Code**, you can open a new terminal with **Ctrl+J** and clone this repo:
+
+Your terminal 
+
 ```
+azureuser@compute:~/cloudfiles/code$ 
+
+```
+
+To open VS Code in the relevant folder execute the following command in the terminal, which will open a new window:
+
+```bash
+cd ~/localfiles
 cd Ignite_FineTuning_workshop/lab/workshop-instructions/Lab7_Consumption_in_app
 ```
 

@@ -8,8 +8,7 @@
 ## Learning Objectives
 
 By the end of this workshop, you should be able to:
-1. Deploy a standard model using Azure AI model deployment.
-2. Deploy the fine-tuned model using Azure AI model deployment.
+1. Deploy the fine-tuned model using Azure AI model deployment.
 
 ## Lab Scenario
 To integrate the fine-tuned model with an application, you need to deploy the model to make it accessible for real-time inference. This process involves registering the model, creating an online endpoint, and deploying the model.
@@ -37,9 +36,9 @@ When fine-tuning has successfully completed, you can deploy the model.
 
 ## Test the fine-tuned model
 
-Now that you deployed your fine-tuned model and base model, you can test and compare the models.
+Now that you deployed your fine-tuned model and base model, you can test and compare the models responses.
 
-1. When the deployment is ready, navigate to the fine-tuned model and select **Open in playground**.
+1. When the deployment is ready, navigate to the available models select **Open in playground** and select the model in the **Deployment** drop down.
 1. Update the system message with the following instructions:
 
     ```
@@ -47,11 +46,15 @@ Now that you deployed your fine-tuned model and base model, you can test and com
     You should not provide any hotel, flight, rental car or restaurant recommendations.
     Ask engaging questions to help someone plan their trip and think about what they want to do on their holiday.
     ```
-1. Click Save to update the system message
+1. Click **Save** or **Apply Changes** to update the system message
 
 1. Test your fine-tuned model to assess whether its behavior is more consistent now. For example, ask the following questions again and explore the model's answers:
    
-     `Where in Rome should I stay?`
+   ```
+   Where in Rome should I stay?
+   ```
     
-    `Where should i go on Holiday for my 30th Birthday and I love active Sight seeing trips?`
+   ```
+   Where should i go on Holiday for my 30th Birthday and I love active Sight seeing trips?
+   ```
     
