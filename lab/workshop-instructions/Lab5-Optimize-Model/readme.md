@@ -28,7 +28,7 @@ Olive executes a *workflow*, which is an ordered sequence of individual model op
 
 #### Benefits of Olive
 
-- **Reduce frustration and time** of trial-and-error manual experimentation with different techniquies for graph optimization, compression and quantization. Define your quality and performance constraints and let Olive automatically find the best model for you.
+- **Reduce frustration and time** of trial-and-error manual experimentation with different techniques for graph optimization, compression and quantization. Define your quality and performance constraints and let Olive automatically find the best model for you.
 - **40+ built-in model optimization components** covering cutting edge techniques in quantization, compression, graph optimization and finetuning.
 - **Easy-to-use CLI** for common model optimization tasks. For example, olive quantize, olive auto-opt, olive finetune.
 - Model packaging and deployment built-in.
