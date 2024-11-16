@@ -66,6 +66,10 @@ Now that you've deployed a model, you can use it to generate responses based on 
 
 ## Prepare Dataset for Fine-tuning
 
+For this excercise we will be creating a dataset with **10 samples only** this is to ensure the fine tuning process completes with 30-50 mins.
+
+> **Note**: To undertake fine tuning we recommed you create 60 samples. To get 60 samples you may need to do a few back an forth with the model and ensure **Max response token to 4096 and specify you need 60 sample**.   
+
 ### Using GPT to create synthetic Data 
 
 Based on LLM context you need to provide prompt templates based on the requirements here are some examples:
@@ -110,6 +114,5 @@ The final output should be in this format.
 ```
 Copy and paste the output into a notepad and save as `phidatasample.jsonl`
 
-To undertake fine tuning we recommed you create 60 samples. To get 60 samples you may need to do a few back an forth with the model and ensure **Max response token to 4096 and specify you need 60 sample**.   
 
 
