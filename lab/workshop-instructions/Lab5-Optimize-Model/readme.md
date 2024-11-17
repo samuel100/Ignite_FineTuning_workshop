@@ -211,13 +211,16 @@ python app.py
 Uploading the model to an Azure AI model repository makes the model sharable with other members of your development team and also handles version control of the model. To upload the model run the following command:
 
 > [!NOTE]
-> Update the `{}` placeholders with the name of your resource group and Azure AI Project Name.
+> Update the `{}` placeholders with the name of your resource group and Azure AI Project Name. 
 
-To find your resource group `"resourceGroup":"Resourcegroup******"` and Azure AI Project `"resourceGroup":"Resourcegroup******"` name, run the following command 
+To find your resource group `"resourceGroup"and Azure AI Project name, run the following command 
 
 ```
 az ml workspace show
 ```
+
+Or by going to +++ai.azure.com+++ and selecting **management center** **project** **overview**
+
 Update the `{}` placeholders with the name of your resource group and Azure AI Project Name.
 
 ```bash
