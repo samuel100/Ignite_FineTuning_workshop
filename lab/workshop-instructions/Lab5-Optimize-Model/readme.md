@@ -231,3 +231,4 @@ az ml model create \
     --resource-group {RESOURCE_GROUP_NAME} \
     --workspace-name {PROJECT_NAME}
 ```
+You can then see your uploaded model and deploy your model at +++https://ml.azure.com/model/list+++
