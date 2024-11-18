@@ -5,7 +5,7 @@ You start by creating an Azure AI project within an Azure AI hub:
 > [!NOTE]
 > For Lab users please use the Azure username and password provided in the resources tab in the instructions pane.
 
-1. In a web browser, open +++https://ai.azure.com+++ and sign in using the Azure credentials provided.
+1. In a web browser, open +++https://aka.ms/aistudio/ignite2024+++ and sign in using the Azure credentials provided.
 1. Select the **Home** 
 1. You should have a valid **current project** and **Hub**
 1. Select **Hub**
